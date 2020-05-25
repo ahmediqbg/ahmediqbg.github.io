@@ -5,6 +5,8 @@
 layout: home
 ---
 
+<i><small>Opinions expressed are solely my own and do not express the views or opinions of my employer.</small></i>
+
 This is the website of me, Henry Post, and it has my work experience, personal projects, and general info about me.
 
 I'm a Security Analyst at U.S. Bank, Illinois Institute of Technology alumni, and used to work as a private tutor for Python, Java, and web development.
