@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-bundle exec jekyll serve --watch
+# --watch recompiles on file changes
+# --drafts shows draft posts as if they aren't drafts
+bundle exec jekyll serve --watch --drafts
