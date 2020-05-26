@@ -24,9 +24,14 @@ title: Blog
             <div>
                 <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
                 <p>
-                    <small>{{ post.date }}</small>
+                    <small>Date published: {{ post.date | date: "%Y-%m-%d" }}</small>
                 </p>
-                <p>tags: {{ post.categories }}</p>
+                <p>tags:
+
+                    {% for category in post.categories %}
+                    <a href="#{{ category }}">{{ category }}</a>
+                    {% endfor %}
+                </p>
             </div>
         </li>
         {% endfor %}
@@ -40,11 +45,11 @@ title: Blog
         {% capture category_name %}{{ category | first }}{% endcapture %}
         <div id="#{{ category_name | slugize }}"></div>
 
-        <h3 class="category-head">{{ category_name }}</h3>
+        <h3 class="category-head" id="#{{ category_name }}">{{ category_name }}</h3>
         <a name="{{ category_name | slugize }}"></a>
         {% for post in site.categories[category_name] %}
         <article class="archive-item">
-            <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+            <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
         </article>
         {% endfor %}
     </div>
