@@ -4,13 +4,29 @@ permalink: /blog/
 title: Blog
 ---
 
+<div id="posts-by-date">
+    <h2>Blog posts by date </h2>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <div>
+                <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+                <p>
+                    <small>{{ post.date }}</small>
+                </p>
+                <p>tags: {{ post.categories }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
-<div id="archives">
+<div id="posts-by-category">
+    <h2>Blog posts by category</h2>
     {% for category in site.categories %}
     <div class="archive-group">
         {% capture category_name %}{{ category | first }}{% endcapture %}
         <div id="#{{ category_name | slugize }}"></div>
-        <p></p>
 
         <h3 class="category-head">{{ category_name }}</h3>
         <a name="{{ category_name | slugize }}"></a>
