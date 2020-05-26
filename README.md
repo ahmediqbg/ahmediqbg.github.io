@@ -13,4 +13,4 @@ Henry Post's personal website
 
 Run `bundle install` to install Jekyll and other deps.
 
-To run the server locally, run `bundle exec jekyll serve --watch`.
+To run the server locally, run `bundle exec jekyll serve --watch`. See `scripts/` for more scripts.
