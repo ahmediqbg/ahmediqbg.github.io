@@ -27,3 +27,5 @@ For inspiration or Jekyll/Liquid/Front Matter tips.
 
 <https://stackoverflow.com/questions/25452429/excluding-page-from-jekyll-navigation-bar>
 <https://stackoverflow.com/questions/38891463/jekyll-default-installation-doesnt-have-layouts-directory>
+<https://github.com/jekyll/minima>
+<https://jekyllrb.com/tutorials/navigation/#scenario-9-nested-tree-navigation-with-recursion>
