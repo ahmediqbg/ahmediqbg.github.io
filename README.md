@@ -15,9 +15,15 @@ Run `bundle install` to install Jekyll and other deps.
 
 To run the server locally, run `bundle exec jekyll serve --watch`. See `scripts/` for more scripts.
 
-## Similar Jekyll sites
+## Jekyll Stuff
+
+### Similar Jekyll sites
 
 For inspiration or Jekyll/Liquid/Front Matter tips.
 
 <https://github.com/jokecamp/jokecamp.com>
 
+### Jekyll tips
+
+<https://stackoverflow.com/questions/25452429/excluding-page-from-jekyll-navigation-bar>
+<https://stackoverflow.com/questions/38891463/jekyll-default-installation-doesnt-have-layouts-directory>
