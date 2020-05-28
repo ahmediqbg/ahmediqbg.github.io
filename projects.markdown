@@ -31,9 +31,32 @@ We won both Dean's Choice and Best in Track for a total of two awards.
 During my work at OBPL as a librarian, I was involved with a program to replace about 6 or so computers that were very
 old. The only purpose these new computers would serve would be to provide access to a book catalogue website, nothing else.
 
+### Guides
 
+-   Backing up and restoring
+    [(MD)](/static/files/opac-documentation/BACKING_UP_AND_RESTORING.txt)
+    [(PDF)](/static/files/opac-documentation/BACKING_UP_AND_RESTORING.pdf)
 
-TODO: Finish this section and provide some configuration files too!
+-   Booting into Linux
+    [(MD)](/static/files/opac-documentation/BOOTING_INTO_LINUX.txt)
+    [(PDF)](/static/files/opac-documentation/BOOTING_INTO_LINUX.pdf)
+
+-   Configuration directories
+    [(MD)](/static/files/opac-documentation/CONFIGURATION_DIRECTORIES.txt)
+    [(PDF)](/static/files/opac-documentation/CONFIGURATION_DIRECTORIES.pdf)
+
+-   Making a new Linux flash drive
+    [(MD)](/static/files/opac-documentation/MAKING_A_NEW_LINUX_FLASH_DRIVE.txt)
+    [(PDF)](/static/files/opac-documentation/MAKING_A_NEW_LINUX_FLASH_DRIVE.pdf)
+
+-   Power user tips
+    [(MD)](/static/files/opac-documentation/POWER_USER_TIPS.txt)
+    [(PDF)](/static/files/opac-documentation/POWER_USER_TIPS.pdf)
+
+-   Whitelisting new domains
+    [(MD)](/static/files/opac-documentation/WHITELISTING_NEW_DOMAINS.txt)
+    [(PDF)](/static/files/opac-documentation/WHITELISTING_NEW_DOMAINS.pdf)
+
 
 ## Arduino Soil Tester
 This was a small project undertaken for a club that I went to in Highschool called "Dirt Actualizers." The project consisted of a breadboard, an arduino, 3 wires, and 2 resistors. It was a very simple soil moisture sensor that worked by pulsing AC through its probes and measuring the average of readings. It just has to be calibrated on its lowest (open circuit) and highest (probes touching) bounds, and it's ready to sense moisture!
