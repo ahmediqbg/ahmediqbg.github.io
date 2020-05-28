@@ -4,12 +4,10 @@ title: Skills
 permalink: /skills/
 ---
 
-# TODO format this in markdown, update links, remove useless stuff
-
 This section is a detailed breakdown of my skills and knowledge. A resume for people who like to read!
 
 ## Interpersonal
-### Teaching
+### [Tutoring](/tutoring/)
 I have worked as a tutor for around 3 years, 2 years for my school, IIT, and 1 as a private tutor.
 
 While working either position, I was tasked with meeting with people, talking about homework, breaking down assignments,
