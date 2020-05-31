@@ -5,14 +5,14 @@ Henry Post's professional website
 
 ## Requirements
 
--   Ruby 2.6
+-   Ruby 2.6.5 (works for me on Windows)
     -   Bundler (`gem install bundler`)
 
 ### Notes
 
 - You may need MSYS2 (`ridk install`) if using Windows.
-- `choco install ruby` will give you the WRONG ruby version, i.e. Ruby > 2.6.
-	- Instead, run `choco install ruby --version=2.6.2.1`.
+- `choco install ruby` MIGHT give you the WRONG ruby version.
+	- If this happens, uninstall ruby, and run `choco install ruby --version=2.6.5`.
 
 
 ## Testing locally
