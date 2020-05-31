@@ -1,5 +1,5 @@
 # henryfbp.github.io
-Henry Post's personal website
+Henry Post's professional website
 
 <https://henryfbp.github.io>
 
