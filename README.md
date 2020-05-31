@@ -8,12 +8,16 @@ Henry Post's professional website
 -   Ruby
     -   Bundler (`gem install bundler`)
 
+### Notes
+
+- You may need MSYS2 (`ridk install`) if using Windows.
+
 
 ## Testing locally
 
-Run `bundle install` to install Jekyll and other deps.
+Run `bundle install` in this directory to install Jekyll and other deps.
 
-To run the server locally, run `bundle exec jekyll serve --watch`. See `scripts/` for more scripts.
+To run the server locally, run `bundle exec jekyll serve --watch` in this directory. See `scripts/` for more scripts.
 
 ## Jekyll Stuff
 
