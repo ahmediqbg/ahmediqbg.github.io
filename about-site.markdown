@@ -8,6 +8,8 @@ permalink: /about-site/
 
 A: Yes! Clone <http://github.com/HenryFBP/henryFBP.github.io> and just edit it and reupload it to GitHub!
 
+Alternatively, you can [fork it](https://github.com/HenryFBP/henryfbp.github.io/fork).
+
 See [this link](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll#creating-a-repository-for-your-site) for more info.
 
 ## Q: Nice favicon. Where's it from?
