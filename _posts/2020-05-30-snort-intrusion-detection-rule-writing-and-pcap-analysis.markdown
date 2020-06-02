@@ -14,7 +14,7 @@ The course this post is based off of is Snort Intrusion Detection, Rule Writing,
 -   OSes
     -   Kali
     -   Windows 7
-    -   Security Onion 
+    -   [Security Onion](https://github.com/Security-Onion-Solutions/security-onion/blob/master/Verify_ISO.md)
 -   Snort IDS
 -   Squirt
 
@@ -28,4 +28,10 @@ The course this post is based off of is Snort Intrusion Detection, Rule Writing,
 -   [Snort Community and Blog Network](https://snort.org/community)
 -   [Security Onion Google Group](https://groups.google.com/forum/#!forum/security-onion)
 
-TODO
+## Security Onion VM
+
+Some specific network settings should be used to allow capturing of packets.
+
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/vm-network-interfaces.PNG)
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/sec-onion-vm-network-settings-1.PNG)
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/sec-onion-vm-network-settings-2.PNG)
