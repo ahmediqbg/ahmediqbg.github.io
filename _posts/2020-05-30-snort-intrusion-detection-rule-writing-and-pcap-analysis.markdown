@@ -28,7 +28,7 @@ The course this post is based off of is Snort Intrusion Detection, Rule Writing,
 -   [Snort Community and Blog Network](https://snort.org/community)
 -   [Security Onion Google Group](https://groups.google.com/forum/#!forum/security-onion)
 
-## Security Onion VM
+## Lab 1: Security Onion VM Setup
 
 Some specific network settings should be used to allow capturing of packets.
 
@@ -140,3 +140,9 @@ Here is the text from the dialog boxes:
     -   Double click 'Squert' on the desktop and login.
         You should see alerts indicating ZEUS Trojan activity.
     -   If you don't see these alerts, this is bad and you must troubleshoot.
+
+## Lab 2: Boleto Malware Snort Rule Writing and PCAP analysis
+
+- Go to <http://malware-traffic-analysis.net/> and download the pcap file from the 'YOUR HOLIDAY PRESENT' exercise.
+
+TODO
