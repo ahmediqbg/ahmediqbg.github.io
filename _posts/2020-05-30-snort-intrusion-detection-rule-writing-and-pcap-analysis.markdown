@@ -249,6 +249,21 @@ After copying the rules into `/etc/nsm/rules/local.rules`, run
 
     sudo rule-update
 
-and then  
+to use the new rules, and then  
 
-    TODO
+    sudo tcpreplay -t -i enp0s8 2016-12-17-traffic-analysis-exercise.pcap
+
+To replay the captured packets over our sniffing interface.
+
+You can add `-l 5` to run it 5 times.
+
+Remember that `enp0s8` is our sniffing interface. Might be different for you depending on what VM 
+solution you use.
+
+If we wrote the rules correctly, we should see it show up in Squert!
+
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-squert.png)
+
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-squert2.png)
+
+That's it!
