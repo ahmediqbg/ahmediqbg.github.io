@@ -180,3 +180,58 @@ Packet number 199 shows the request that asks for the VBE file:
 
 VBE files are like VBS scripts, but encoded. <!-- TODO: decode it! analyze it! -->
 
+All of the .txt, .tiff, .dll, .exe files are post-infection files (i.e. packet 379):
+
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-post-infect-txt.png)
+
+Some other indicators of post-infection are packets like packet 484 or 2467.
+
+### Making snort rules based off of these packets
+
+-   Open a terminal
+-   `sudo nano /etc/nsm/rules/local.rules`
+
+{% highlight bash linenos %}
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable successful phishing attack."; flow:established,to_server; content:"GET"; http_method; content:"/1dkfJu.php?"; http_uri; classtype: trojan-activity; sid: 10000001; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable post-infection - Boleto-themed malicious spam. First indicator."; flow:established,to_server; content:"GET"; http_method; content:"/bibi/"; http_uri; pcre:"/(\.txt|\.tiff|\.zip|\.dll|\.exe)/U"; classtype:trojan-activity; sid:10000002; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable post-infection - Boleto-themed malicious spam. Second indicator."; flow:established,to_server; content:"GET"; http_method; content:"/bsb/infects/index.php?"; http_uri; classtype:trojan-activity; sid:10000003; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable post-infection - Boleto-themed malicious spam. Third indicator."; flow:established,to_server; content:"GET"; http_method; content:"/bsb/debugnosso/index.php?"; http_uri; classtype:trojan-activity; sid:10000004; rev:1;)
+
+{% endhighlight %}
+
+#### Line 1
+
+Alert on TCP traffic coming from our internal net to an external network that is using HTTP ports.
+
+The content match for the content after the 'HTTP GET' filter comes from TCP stream 1, which contains `/1dkfJu.php?`,
+which is an indicator of Boleto malware. This is static, as opposed to all parameters that come after the question 
+mark.
+
+Note that this will ONLY match HTTP request URI content containing `/1dkfJu.php?`, not HTTP request body content, 
+because of the rules.
+
+#### Line 2
+
+Alert on TCP traffic coming from our internal net to an external network that is using HTTP ports.
+
+The content match for the content of the HTTP URI comes from packets like 1393, which download payloads from
+the `/bibi/` directory.
+
+This expression, `pcre:"/(\.txt|\.tiff|\.zip|\.dll|\.exe)/U";`, is a Perl-style regex that matches a few file extensions.
+
+#### Line 3
+
+Similar to the first two, but a different URI indicator.
+
+Packet 484 has a URI beginning with `/bsb/infects/index.php?`.
+
+Follow the TCP stream of that packet, and you'll see what we use for line 4's rule.
+
+#### Line 4
+
+Similar to the first three, but again, a different URI indicator.
+
+Packet 487 has the URI we will use, which is `/bsb/debugnosso/index.php?`:
+
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-debugnosso.png)
