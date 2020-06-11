@@ -189,7 +189,7 @@ Some other indicators of post-infection are packets like packet 484 or 2467.
 ### Making snort rules based off of these packets
 
 -   Open a terminal
--   `sudo nano /etc/nsm/rules/local.rules`
+-   `sudo vi /etc/nsm/rules/local.rules`
 
 {% highlight bash linenos %}
 
@@ -197,6 +197,7 @@ alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable successful p
 alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable post-infection - Boleto-themed malicious spam. First indicator."; flow:established,to_server; content:"GET"; http_method; content:"/bibi/"; http_uri; pcre:"/(\.txt|\.tiff|\.zip|\.dll|\.exe)/U"; classtype:trojan-activity; sid:10000002; rev:1;)
 alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable post-infection - Boleto-themed malicious spam. Second indicator."; flow:established,to_server; content:"GET"; http_method; content:"/bsb/infects/index.php?"; http_uri; classtype:trojan-activity; sid:10000003; rev:1;)
 alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable post-infection - Boleto-themed malicious spam. Third indicator."; flow:established,to_server; content:"GET"; http_method; content:"/bsb/debugnosso/index.php?"; http_uri; classtype:trojan-activity; sid:10000004; rev:1;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:"Probable post-infection - Boleto-themed malicious spam. Fourth indicator."; flow:established,to_server; content:"POST"; http_method; content:"/mestre/admin/x.php"; http_uri; classtype:trojan-activity; sid:10000005; rev:1;)
 
 {% endhighlight %}
 
@@ -235,3 +236,19 @@ Similar to the first three, but again, a different URI indicator.
 Packet 487 has the URI we will use, which is `/bsb/debugnosso/index.php?`:
 
 ![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-debugnosso.png)
+
+#### Line 5
+
+Similar to the first four, but matches HTTP POST instead of HTTP GET.
+
+Packet 2467 has the URI we will use in this filter, `/mestre/admin/x.php`.
+
+### Testing the rules
+
+After copying the rules into `/etc/nsm/rules/local.rules`, run
+
+    sudo rule-update
+
+and then  
+
+    TODO
