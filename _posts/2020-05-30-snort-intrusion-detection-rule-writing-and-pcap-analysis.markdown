@@ -267,3 +267,24 @@ If we wrote the rules correctly, we should see it show up in Squert!
 ![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-squert2.png)
 
 That's it!
+
+## Lab 3: Vetting Snort Rule Quality with Dumbpig
+
+Dumbpig is a great tool to validate snort rules.
+
+<https://github.com/leonward/dumbpig/>
+
+Clone the repo:
+
+    git clone https://github.com/leonward/dumbpig/
+
+Install Parse::Snort in perl:
+
+    sudo cpan Parse::Snort
+    
+Test the Snort rules we wrote:
+
+    cd dumbpig
+    sudo perl dumbpig.pl -r /etc/nsm/rules/local.rules
+
+You can also [download some bad rules here](/static/files/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/bad-rules.rules). Feel free to test them.
