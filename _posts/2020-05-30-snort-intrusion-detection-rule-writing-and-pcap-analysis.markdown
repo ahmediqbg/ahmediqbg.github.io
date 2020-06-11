@@ -143,6 +143,40 @@ Here is the text from the dialog boxes:
 
 ## Lab 2: Boleto Malware Snort Rule Writing and PCAP analysis
 
-- Go to <http://malware-traffic-analysis.net/> and download the pcap file from the 'YOUR HOLIDAY PRESENT' exercise.
+### Setup
 
-TODO
+-   Go to <http://malware-traffic-analysis.net/> and download the pcap file from the 'YOUR HOLIDAY PRESENT' exercise.
+
+Optional UI options:
+
+-   edit > preferences > appearance > columns
+-   uncheck 'no', 'protocol', 'length' (if you want, I left 'no' and 'protocol'.)
+-   add 2 new columns:
+    -   'Src Port' - Src Port (unresolved)
+    -   'Dst Port' - Dst Port (unresolved)
+    
+-   Filter to only view `http.request` to only see HTTP requests:
+
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-httprequest.png)
+
+-   Then, click on any host in the request, and `right click > apply as column`.
+
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-httphost-column.png)
+
+-   `view > time display format > first option`
+-   `view > time display format > seconds: 0`
+
+### Analysis
+
+This network traffic is from a user called 'Matthew Frogman' who clicked on a malicious email and got infected.
+
+The domain `wme0hsxg [dot] e6to8jdmiysycbmeepm29nfprvigdwev [dot] top`, in packet 117, is the root cause of the infection.
+
+They clicked on this link in an email and as a result, downloaded a VBE file that kicked off the infection.
+
+Packet number 199 shows the request that asks for the VBE file:
+
+![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-vbe.png)
+
+VBE files are like VBS scripts, but encoded. <!-- TODO: decode it! analyze it! -->
+
