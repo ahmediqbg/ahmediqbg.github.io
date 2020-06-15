@@ -324,12 +324,12 @@ subject --- security server ---- permission granted? -- yes --> object access
 
 #### todo, section
 
-## Training 2 TODO
+## Security Design Principles
 
-## Training 3 TODO
+## Privacy
 
-## Training 4 TODO
+## Governance, Risk, and Compliance
 
-## Training 5 TODO
+## Software Development Methodologies
 
-## Training 6 TODO
+## Practice
