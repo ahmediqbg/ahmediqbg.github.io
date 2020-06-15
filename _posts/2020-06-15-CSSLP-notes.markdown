@@ -17,9 +17,11 @@ Hopefully they are useful to you as well!
 
 ## Secure Software Concepts
 
+### Core Concepts
+
 -   Main concept is about restricting user access
 
-### Confidentiality
+#### Confidentiality
 
 -   Keep info away from people who don't NEED to know it
 -   Secret info remains secret
@@ -40,7 +42,7 @@ publicly disclosed? --> no --> disclosed by roles? --> no --> [restricted]
   [public]                        [confidential]
 ```
 
-#### Data protection
+##### Data protection
 
 -   Confidentiality Controls
     -   *Masking*
@@ -55,7 +57,7 @@ publicly disclosed? --> no --> disclosed by roles? --> no --> [restricted]
             -   Encryption
             -   Hashing (i.e. passwords)
 
-#### Where do we need confidentiality?
+##### Where do we need confidentiality?
 -   In transit
     -   Unprotected Networks
 -   In processing
@@ -63,7 +65,7 @@ publicly disclosed? --> no --> disclosed by roles? --> no --> [restricted]
 -   In storage
     -   Data at rest
     
-### Integrity
+#### Integrity
 
 Integrity means the data is protected from any unauthorized change.
 
@@ -82,7 +84,7 @@ minimal/no damage upon change? --> no --> significant damage? --> no --> critica
 - Ensure accuracy
 - Completeness and consistency (i.e. incomplete update)
 
-#### Input validation
+##### Input validation
 
 -   Users inputting data accidentally
 -   Many types of accidental or intentional errors
@@ -90,7 +92,7 @@ minimal/no damage upon change? --> no --> significant damage? --> no --> critica
     -   Compromise input of data OR entire system
 -   Input validation ensures data integrity
 
-#### Parity Bit Checking
+##### Parity Bit Checking
 
 -   Detects errors or changes made during transit
 -   An extra bit is added to a piece of data
@@ -108,7 +110,7 @@ minimal/no damage upon change? --> no --> significant damage? --> no --> critica
    bit
 ```
 
-#### Cyclic Redundancy Checking (CRC)
+##### Cyclic Redundancy Checking (CRC)
 
 -   Uses parity bit checking for data integrity
 -   Good for integrity checking during transmission
@@ -125,7 +127,7 @@ minimal/no damage upon change? --> no --> significant damage? --> no --> critica
 
 <https://eklitzke.org/crcs-vs-hash-functions>
 
-#### Hashing
+##### Hashing
 
 -   A hash is a (generally) smaller value derived from performing a calculation on a large piece of data
 -   When putting the large data through a hash fn, the same hash is (almost always) going to be returned by the hash 
@@ -151,7 +153,7 @@ minimal/no damage upon change? --> no --> significant damage? --> no --> critica
 
 
 
-### Availability
+#### Availability
 
 -   Making sure data is available to users
 -   How valuable is the data?
@@ -173,7 +175,7 @@ minimal/no impact upon destruction? --> no --> significant impact? --> no --> cr
     -   A breach in any RELATED system could compromise the data
 
 
-#### Maximum Tolerable Downtime
+##### Maximum Tolerable Downtime
 -   Must establish a 'Maximum Tolerable Downtime'
     -   MOST systems CAN be down for some amount of time
         -   Maybe not nuclear reactors, but bank sites CAN be offline for a few hours per day/week.
@@ -181,7 +183,7 @@ minimal/no impact upon destruction? --> no --> significant impact? --> no --> cr
     -   Many systems (esp 3rd party) have SLAs (service level agreement) that ensures
         a minimum.
 
-#### Recovery Time Objective
+##### Recovery Time Objective
 
 -   Must consider RTO when UNPLANNED downtime occurs
 -   RTO is the maximum amount of time that it takes to recover a system from a failure
@@ -198,7 +200,7 @@ minimal/no impact upon destruction? --> no --> significant impact? --> no --> cr
 -   Measure impact quantitatively and qualitatively
 -   The way an org uses data will change over time, so both current and new data must be considered.
 
-### Authentication and Authorization 1
+#### Authentication and Authorization 1
 
 -   Many ways to authenticate
     -   Anonymous
@@ -243,7 +245,7 @@ minimal/no impact upon destruction? --> no --> significant impact? --> no --> cr
 
 Forms and basic are different because forms are made by web devs and basic auth is handled by the webserver software (sent in HTTP headers).
 
-### Authentication and Authorization 2
+#### Authentication and Authorization 2
 
 Authorization is the act of verifying an entity's permission to perform an action on an object.
 
@@ -298,16 +300,16 @@ subject --- security server ---- permission granted? -- yes --> object access
         -   RBAC works with the other AC models and simplifies management
     -   This model (RBAC) can work with DAC, NDAC, and MAC
 
-### Accounting
+#### Accounting
 
-### Non-repudiation
+#### Non-repudiation
 
-## Security Design Principles
+### Security Design Principles
 
-## Privacy
+### Privacy
 
-## Risk, Governance, and Compliance
+### Risk, Governance, and Compliance
 
-## Software Development Methodologies
+### Software Development Methodologies
 
-## Summary (?delete?)
+### Summary (?delete?)
