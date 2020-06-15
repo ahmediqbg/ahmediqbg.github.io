@@ -306,10 +306,20 @@ subject --- security server ---- permission granted? -- yes --> object access
 
 ### Security Design Principles
 
+#### todo, section
+
 ### Privacy
+
+#### todo, section
 
 ### Risk, Governance, and Compliance
 
+#### todo, section
+
 ### Software Development Methodologies
 
+#### todo, section
+
 ### Summary (?delete?)
+
+#### todo, section
