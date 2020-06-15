@@ -245,6 +245,57 @@ Forms and basic are different because forms are made by web devs and basic auth 
 
 ### Authentication and Authorization 2
 
+Authorization is the act of verifying an entity's permission to perform an action on an object.
 
+```
+
+subject --- security server ---- permission granted? -- yes --> object access
+                                          |
+                                         no
+                                         |
+                                         X
+```
+
+-   Discretionary Access Control (DAC)
+    -   Restricts access to object based on identity
+    -   The task of controlling permissions can be granted to anyone
+    -   DACs must Maintain an Access Control List (ACL) for the object that is getting accessed
+        -   When someone attempts to access the object, the ACL is checked to see if they or one of their groups has 
+            permissions to access the object.
+        -   For this to work, the subject (individual) needs to be authenticated by a secure server, and their role
+            membership needs to be evaluated
+            -   That then needs to be compared to the ACL to see if they have access
+
+
+-   Nondiscretionary Access Control (NDAC)
+    -   Also controls authorization
+    -   NDAC is different from DAC because of who can manage the permissions
+        -   Only the admin or a small mgmt body can control permissions to an object
+            -   This control is systemwide and imposed on many subjects and objects
+        -   Can be installed on many OSes or configured in existing DAC
+    -   Offers a high degree of protection, but it restricts autonomy and involves a lot more administration
+
+-   Mandatory Access Control (MAC)
+    -   Is a form of NDAC
+    -   Restricts access based on information sensitivity
+    -   Privileges and formal authorization are still rqeuired to access objects
+    -   A single admin body is required to control access as MAC is born from NDAC
+        -   This body provides priviledge and authorization
+    -   Access is 'multilevel' as information sensitivity is different per classification
+        -   Top Secret data can be viewed by one group, Classified can be viewed by another.
+    -   Information must be PROPERLY CLASSIFIED in order for MAC to be useful as an Access Control scheme
+    -   A common implementation of this is to use Rules to assign the right data to the right classifications
+
+-   Role-based Access Controls (RBAC)
+    -   User 1 -> Role 1 -> Perm 1
+    -   User 1 -> Role 1 -> Perm 1
+    -   User 1 -> Role 1 -> Perm 1
+    -   Focus on the job role/function that a person is in to be able to assign permissions to objects
+    -   The role a person is placed in will determine how much trust you are giving them
+        -   i.e. `User 5 -> Store Manager Role` will grant User 5 all the permissions that the `Store Manager Role` has
+    -   Users -or- services can be given Roles
+    -   Underlying access is granted based on Roles
+        -   RBAC works with the other AC models and simplifies management
+    -   This model (RBAC) can work with DAC, NDAC, and MAC
 
 ### Accounting
