@@ -299,3 +299,15 @@ subject --- security server ---- permission granted? -- yes --> object access
     -   This model (RBAC) can work with DAC, NDAC, and MAC
 
 ### Accounting
+
+### Non-repudiation
+
+## Security Design Principles
+
+## Privacy
+
+## Risk, Governance, and Compliance
+
+## Software Development Methodologies
+
+## Summary (?delete?)
