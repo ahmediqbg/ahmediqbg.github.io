@@ -5,6 +5,10 @@ date:   2020-05-30
 categories: [network, security]
 ---
 
+## TOC
+* This will become a table of contents. Don't touch!
+{:toc}
+
 ## The course
 
 The course this post is based off of is Snort Intrusion Detection, Rule Writing, and PCAP Analysis by Jesse Kurrus.
