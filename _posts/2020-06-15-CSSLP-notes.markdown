@@ -200,8 +200,51 @@ minimal/no impact upon destruction? --> no --> significant impact? --> no --> cr
 
 ### Authentication and Authorization 1
 
+-   Many ways to authenticate
+    -   Anonymous
+        -   Not secure
+        -   No creds
+        -   Avoid using this method if you care about securing something
+        -   Unlinkability
+            -   You cannot tell WHO performed an action
+    -   'Basic'
+        -   Base64 encoded creds sent over HTTP in every request
+        -   Basically plaintext creds (encoding is NOT encryption!!!) ...so...encrypt your traffic...or don't use this method.
+        -   Very widely used unfortunately, and common
+    -   Digest
+        -   Challenge/response
+        -   Only password hashes are transmitted
+    -   Integrated auth
+        -   Uses challenge-response
+        -   NTLM auth is integrated with Windows
+        -   Standalone vs Kerberos v5 auth
+    -   Client certs
+        -   Digital Certs
+        -   Internet/e-commerce
+    -   Forms
+        -   Web apps
+            -   Uname+pw gives the client a auth token to reuse (session token)
+        -   SSL should be used because uname+pw are transmitted over HTTP.
+    -   Token-based auth
+        -   Used with uname+pw
+        -   Once verified, token is issued
+    -   Smart Cards
+        -   Ownership-based auth
+        -   Creds stored on a microchip
+        -   Difficult to compromise
+            -   Needs the password and the smartcard as well
+    -   Biometrics
+        -   Unique physical characteristic of user (fingerprints, retina)
+        -   Can be expensive
+        -   Suffers from errors (rare though)
+            -   Type I (False Negative)
+            -   Type II (False Positive)
+        -   Detection is complex and errors happen
 
+Forms and basic are different because forms are made by web devs and basic auth is handled by the webserver software (sent in HTTP headers).
 
 ### Authentication and Authorization 2
+
+
 
 ### Accounting
