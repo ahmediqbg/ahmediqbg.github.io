@@ -431,10 +431,50 @@ disruption and attacks.
 
 #### Least Privilege
 
+- Fundamental approach
+- Minimal access rights
+  - Minimum amount of time
+- Useful for administering a system
+- Limits harm if something is compromised
+
 This is a fundamental approach to security.
 
-Essentially, grant the MINIMUM amount of privilege to accomplish a task.
+Essentially, grant the MINIMUM amount of privileges to accomplish a task.
 No more is given.
+
+For a person, this means they get the absolute minimum perms and time to do a task.
+
+Example: An admin's only job is to take and maintain backups. They should be able to back up the 
+system, and nothing more.
+
+Least Privilege is a good technique because it minimizes the potential for harm if a person,
+credential, system, or anything else were to be compromised.
+
+Often times, data loss is actually due to user error, not malicious intent. LP minimizes this.
+
+##### Need to Know
+
+- Military sec rule
+- Limits disclosure of info
+- Increased confidentialiy
+- Mitigates Risk
+
+Least Priviledge also means that disclosure of data is only given to people
+who NEED ACCESS to the data.
+
+This is a basic military security rule and it helps to limit the spread of critical info.
+
+- Who NEEDS to work with this data?
+  - versus 'who is ENTITLED to this data', which spreads more info than necessary
+
+This increases confidentiality of the data, which mitigates risk, as LESS PEOPLE 
+have access to the data.
+
+##### Modular programming
+
+Software design can benefit from Least Priviledge.
+
+todo
 
 #### Separation of Duties
 
