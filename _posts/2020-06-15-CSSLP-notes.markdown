@@ -277,7 +277,7 @@ subject --- security server ---- permission granted? -- yes --> object access
 -   Mandatory Access Control (MAC)
     -   Is a form of NDAC
     -   Restricts access based on information sensitivity
-    -   Privileges and formal authorization are still rqeuired to access objects
+    -   Privileges and formal authorization are still required to access objects
     -   A single admin body is required to control access as MAC is born from NDAC
         -   This body provides priviledge and authorization
     -   Access is 'multilevel' as information sensitivity is different per classification
@@ -286,9 +286,6 @@ subject --- security server ---- permission granted? -- yes --> object access
     -   A common implementation of this is to use Rules to assign the right data to the right classifications
 
 -   Role-based Access Controls (RBAC)
-    -   User 1 -> Role 1 -> Perm 1
-    -   User 1 -> Role 1 -> Perm 1 
-    -   User 1 -> Role 1 -> Perm 1
     -   Focus on the job role/function that a person is in to be able to assign permissions to objects
     -   The role a person is placed in will determine how much trust you are giving them
         -   i.e. `User 5 -> Store Manager Role` will grant User 5 all the permissions that the `Store Manager Role` has
@@ -393,7 +390,30 @@ access to data.
 
 ### Security Design Principles
 
-#### todo, section
+These are key components to maximize software security against  
+disruption and attacks
+
+#### Least Priviledge
+
+#### Separation of Duties
+
+#### Defense in Depth
+
+#### Fail-Safe
+
+#### Economy of Mechanism
+
+#### Complete Mediation
+
+#### Open Design
+
+#### Least Common Mechanism
+
+#### Psychological Acceptability
+
+#### Weakest Link
+
+#### Leveraging Existing Components
 
 ### Privacy
 
