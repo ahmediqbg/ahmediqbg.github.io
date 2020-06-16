@@ -7,7 +7,9 @@ categories: [programming, certification, security]
 
 ## TOC
 
-* This will become a table of contents. Don't touch! {:toc}
+* 
+This will become a table of contents. Don't touch!  
+{:toc}
 
 ## Preamble
 
@@ -428,9 +430,14 @@ access to data.
 ### Security Design Principles
 
 These are key components to maximize software security against  
-disruption and attacks
+disruption and attacks.
 
-#### Least Priviledge
+#### Least Privilege
+
+This is a fundamental approach to security.
+
+Essentially, grant the MINIMUM amount of privilege to accomplish a task.
+No more is given.
 
 #### Separation of Duties
 
@@ -481,4 +488,6 @@ disruption and attacks
 ## Software Acceptance, Deployment, Operations, Maintenance, and Disposal
 
 ## Supply Chain and Software Acquisition
+
+[TOC]: #toc
 
