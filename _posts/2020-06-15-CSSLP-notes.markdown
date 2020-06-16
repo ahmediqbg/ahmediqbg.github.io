@@ -96,18 +96,15 @@ minimal/no damage upon change? --> no --> significant damage? --> no --> critica
 
 -   Detects errors or changes made during transit
 -   An extra bit is added to a piece of data
-    -   It is `1` if the data is odd/even, `0` if it's the other choice.
+    -   It is `1` if the sum of `1`s in the data is odd, `0` if it's even.
 -   Fast to calculate, but...
 -   You can still change data to manipulate the parity check to be successful
     -   ...all powers of 2 are even (except 2^0), flipping them doesn't change the parity.
         -   Parity bits are essentially a copy of the last bit AFAICT.
 
 ```
-    1   1   0   0   0   1   1   0
-    ^
-    |
- parity
-   bit
+0   1   0   0   0   1   1   0  [1] <--- 3 is odd, this parity
+                                        bit is 1.
 ```
 
 ##### Cyclic Redundancy Checking (CRC)
