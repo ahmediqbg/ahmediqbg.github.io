@@ -290,7 +290,7 @@ subject --- security server ---- permission granted? -- yes --> object access
 
 -   Role-based Access Controls (RBAC)
     -   User 1 -> Role 1 -> Perm 1
-    -   User 1 -> Role 1 -> Perm 1
+    -   User 1 -> Role 1 -> Perm 1 
     -   User 1 -> Role 1 -> Perm 1
     -   Focus on the job role/function that a person is in to be able to assign permissions to objects
     -   The role a person is placed in will determine how much trust you are giving them
@@ -300,9 +300,99 @@ subject --- security server ---- permission granted? -- yes --> object access
         -   RBAC works with the other AC models and simplifies management
     -   This model (RBAC) can work with DAC, NDAC, and MAC
 
-#### Accounting
+#### Accounting (Auditing)
+
+-   Measure activity that happens on a system
+    -   Who changed what, who accessed what
+    -   Keep historical access records
+    -   Records can be used to detect anomalies
+    -   Records can assist us if we have problems
+
+##### Logging
+
+Audit logs must be stored, and enough resources must be allocated to create, store, and review logs.
+
+-   Resources
+    -   Create
+    -   Store
+    -   View
+
+-   Log files alone do not create security
+-   All critical transactions should be logged
+
+###### Logging requirements
+
+-   Who is performing the action
+-   What action is being performed
+-   Where is this action being performed
+-   When was the action performed
 
 #### Non-repudiation
+
+Non-repudiation is being able to prove that a person IS THE ENTITY that
+performed an action.
+
+i.e. It is impossible for them to 'repudiate' (deny) that they 'took a  
+cookie from jar 28 at 9am on Monday'
+
+If a change happens in an information system, we need to be able to  
+apply corrective action to the right person!
+
+-   Audit logs must capture enough data (who, where, when, what)
+
+##### Identification
+
+The identification mechanism (aka auth mech) needs to be accurate so  
+that someone can't impersonate another user and circumvent  
+non-repudiation.
+
+Uname+pw CAN BE IMPERSONATED if someone gets the password of another  
+user... All we 'know' at that point is that SOMEONE who knows `steveba:p@$$w0rd!`
+logged in at 1am on Friday, not necessarily Steve Ballmer.
+
+Adding something like a retina scanner requires you to physically be in
+posession of the eyeball to authenticate, so you'd need Steve's eye to
+log in, which may be harder than getting his credentials.
+
+The easier it is for someone to bypass an authentication mechanism, the
+easier it is for the OWNER of a potentially compromised account to
+REPUDIATE (deny) any action performed using their account.
+
+"Hey, it wasn't me! My login got stolen"!
+
+versus
+
+"Hey, it wasn't me! My eyeball got stolen"!
+
+- After logon, audit logs must record what actions are performed by who
+- Identification of the user will only be as good as the auth system we
+  are using
+
+##### Requirements
+
+- Accounting requires a lot of extra space and resources
+- Consider security requirements carefully instead of logging to the
+  finest level by default
+  - Security Requirements
+    - Subjects
+    - Objects
+    - Events
+- Complete non-repudiation needs:
+  - Logging all actions, subjects, etc
+  - LARGE amount of data
+  - Likely unnecessary
+    - Should focus on critical data
+
+There may be OTHER EVENTS that you need to log in order to protect
+critical data -- Things that are not directly related to critical
+data.
+
+An example of this is somebody who creates a new user and adds them to a
+new security group, which could allow a nonpriviledged user to gain
+access to critical data by using a different account.
+
+All changes to security groups and users should be logged, as well as
+access to data.
 
 ### Security Design Principles
 
