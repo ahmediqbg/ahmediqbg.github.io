@@ -324,12 +324,16 @@ subject --- security server ---- permission granted? -- yes --> object access
 
 #### todo, section
 
-## Security Design Principles
+### Practice
 
-## Privacy
+## Secure Software Requirements
 
-## Governance, Risk, and Compliance
+## Secure Software Design
 
-## Software Development Methodologies
+## Secure Software Implementation and Coding
 
-## Practice
+## Secure Software Testing
+
+## Software Acceptance, Deployment, Operations, Maintenance, and Disposal
+
+## Supply Chain and Software Acquisition
