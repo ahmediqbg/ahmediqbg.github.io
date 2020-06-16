@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Certified Secure Software Lifecycle Professional (CSSLP) Notes"
-date:   2020-06-15
+title: "Certified Secure Software Lifecycle Professional (CSSLP) Notes"
+date: 2020-06-15
 categories: [programming, certification, security]
 ---
 
@@ -48,7 +48,7 @@ publicly disclosed? --> no --> disclosed by roles? --> no --> [restricted]
 ##### Data protection
 
 - Confidentiality Controls
-  - *Masking*: Deleting parts of data, i.e. removing first 12 digits of
+  - _Masking_: Deleting parts of data, i.e. removing first 12 digits of
     credit card
   - Secret writing
     - Covert (hidden among other data)  
@@ -82,7 +82,7 @@ to have proof that it was made by
 minimal/no damage upon change? --> no --> significant damage? --> no --> critical damage
                 |                                  |                            |
                yes                                yes                         [high]
-                |                                  |                            
+                |                                  |
               [low]                            [medium]
 ```
 
@@ -149,7 +149,7 @@ minimal/no damage upon change? --> no --> significant damage? --> no --> critica
     password hashes if a nation-state wants to target you -- They might
     have 10000 GPUs.
 - Can ensure confidentiality -- Transmitting a password hash only
-  provides the other party *the means to validate a password*, not the
+  provides the other party _the means to validate a password_, not the
   password itself.
   - This is how NTLM (NT Lan Manager) auth works. Very insecure because
     of OTHER reasons though.
@@ -162,18 +162,16 @@ minimal/no damage upon change? --> no --> significant damage? --> no --> critica
   - Example: <http://releases.ubuntu.com/focal/MD5SUMS>
     <http://releases.ubuntu.com/focal/MD5SUMS.gpg>
 
-
 #### Availability
 
 - Making sure data is available to users
 - How valuable is the data?
 
-
 ```
 minimal/no impact upon destruction? --> no --> significant impact? --> no --> critical impact
                 |                                   |                               |
                yes                                 yes                          [critical]
-                |                                   |                            
+                |                                   |
             [support]                          [essential]
 ```
 
@@ -184,7 +182,6 @@ minimal/no impact upon destruction? --> no --> significant impact? --> no --> cr
     depend on that...millions of dollars per minute potentially lost
 - Both data and RELATED systems must be protected
   - A breach in any RELATED system could compromise the data
-
 
 ##### Maximum Tolerable Downtime
 
@@ -205,15 +202,14 @@ minimal/no impact upon destruction? --> no --> significant impact? --> no --> cr
 - If we said RTO=1h, and a disaster happened, we should be back up and
   running within 1 hour.
 
+* Targeted duration for recovery
+* Explicitly state RTO in SLAs
+* Consider this during recovery planning
 
-- Targeted duration for recovery
-- Explicitly state RTO in SLAs
-- Consider this during recovery planning
-
-- Determine the impact of unavailability
+* Determine the impact of unavailability
   - Can't take orders?
-- Measure impact quantitatively and qualitatively
-- The way an org uses data will change over time, so both current and
+* Measure impact quantitatively and qualitatively
+* The way an org uses data will change over time, so both current and
   new data must be considered.
 
 #### Authentication and Authorization 1
@@ -291,8 +287,8 @@ subject --- security server ---- permission granted? -- yes --> object access
       - That then needs to be compared to the ACL to see if they have
         access
 
+* Nondiscretionary Access Control (NDAC)
 
-- Nondiscretionary Access Control (NDAC)
   - Also controls authorization
   - NDAC is different from DAC because of who can manage the permissions
     - Only the admin or a small mgmt body can control permissions to an
@@ -303,7 +299,8 @@ subject --- security server ---- permission granted? -- yes --> object access
   - Offers a high degree of protection, but it restricts autonomy and
     involves a lot more administration
 
-- Mandatory Access Control (MAC)
+* Mandatory Access Control (MAC)
+
   - Is a form of NDAC
   - Restricts access based on information sensitivity
   - Privileges and formal authorization are still required to access
@@ -320,7 +317,7 @@ subject --- security server ---- permission granted? -- yes --> object access
   - A common implementation of this is to use Rules to assign the right
     data to the right classifications
 
-- Role-based Access Controls (RBAC)
+* Role-based Access Controls (RBAC)
   - Focus on the job role/function that a person is in to be able to
     assign permissions to objects
   - The role a person is placed in will determine how much trust you are
@@ -488,6 +485,4 @@ No more is given.
 ## Software Acceptance, Deployment, Operations, Maintenance, and Disposal
 
 ## Supply Chain and Software Acquisition
-
-[TOC]: #toc
 
