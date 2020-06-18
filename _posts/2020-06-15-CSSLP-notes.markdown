@@ -382,7 +382,7 @@ user... All we 'know' at that point is that SOMEONE who knows
 Ballmer.
 
 Adding something like a retina scanner requires you to physically be in
-posession of the eyeball to authenticate, so you'd need Steve's eye to
+possession of the eyeball to authenticate, so you'd need Steve's eye to
 log in, which may be harder than getting his credentials.
 
 The easier it is for someone to bypass an authentication mechanism, the
@@ -472,21 +472,236 @@ have access to the data.
 
 ##### Modular programming
 
-Software design can benefit from Least Priviledge.
+- Software design technique
+- Software is broken into submodules
+- Every module has ONE job/operation
 
-todo
+Software design can benefit from Least Privilege.
+
+Modular programming breaks a program down into submodules.
+
+Each module can have some least privilege applied to it.
+
+Software becomes easier to:
+- Read
+- Reuse
+- Maintain
+- Troubleshoot
+
+##### Non-admin accounts
+
+Using nonadmin accounts, we can implement least privilege.
+
+- Minimal set of rights
+- Avoid a 'sysadmin' account existing (root, SA, admin, etc)
+- Reduces risk
 
 #### Separation of Duties
 
+SoD means we NEED more than 1 person to complete a task.
+
+- No single 1 person can fully abuse a system
+- <https://en.wikipedia.org/wiki/Two-man_rule>
+- Never give 1 person full control over a system
+- Important in critical business areas
+- Checks and balances
+
+##### Software
+
+- Common in software components
+  - Ensure system checks and balances are performed
+- Multiple conditions must be met before an operation can complete
+  - i.e.
+    - Does the user have permissions to invoke an operation?
+    - (if the software is modular) Is the model requesting the operation allow to make that request?
+    - Are the correct security protocols, like encrypted comms, in place?
+- SoD in Software says that these checks and balances must be completed by different parts or modules
+  within software, so each component is fully responsible for its own task
+  - Each module has 1 job and must do it well, which minimizes risk to other components
+- Code must be reviewed and tested to ensure each module performs properly
+  - The code author MUST NOT review their own code. 
+    This could allow them to insert malware into their code easily.
+    - A different set of eyes will reduce bias and mistakes introduced by 1 person.
+
 #### Defense in Depth
 
-#### Fail-Safe
+- One of the oldest security principles.
+- Layering security controls to provide multiple defenses
+- One single vulnerability will not result in a compromise
+- Strong external network and a weak internal network...bad!
+  - One hapless employee with a virus on their laptop can defeat the strong external defenses.
+- Not just 1 strong firewall will protect you.
+- Layers should be DIFFERENT.
+
+##### Diversity
+
+- Security layers should be heterogenous
+- Mix protection
+  - i.e. Input validation AND stored procs
+- Wider range of security
+- Deterrent and mitigation of risks
+  - Effort to breach a system is a great way to make it a PITA to penetrate
+
+#### Fail-Safe, aka Fail-Secure
+
+- Systems should fail to a 'safe state'
+  - A state that will not allow it to be compromised (at all, or further)
+    - Don't do a memory dump!
+    - Reboot > Login as Admin
+  - Vehicle crash detection
+    - Door unlocked
+    - Engine stopped
+  - Suppose a user attempts to log into a system
+    - Bad password:
+      - Error says "Login Failed" and not "Bad Password"
+      <!-- - **It's Just Good InfoSec Bro &tm;**  -->
+      - "Login Failed" is nondescript, IDK if the uname or pw is invalid.
+
+
+- Rapid recovery upon failure
+  - Failover server/module
+    - i.e. <https://success.docker.com/article/dr-failover-strategy>
+- Resiliency
+  - Confidentiality
+  - Integrity
+  - Availability
+
+- Fail-safe is part of the SD^3 initiative
+  - Secure by design
+  - Secure by deployment
+  - Secure by default
+    - \*Should be secured during every point in deployment
+    - \*No default passwords
+    - \*No extra default features
 
 #### Economy of Mechanism
 
+EoM is a phrase used when trying to implement functionality while keeping the implementation as simple as possible, but still trying to maintain the functionality.
+
+- Usability vs Security
+  - Generally opposing forces within an org or software system
+  - Add a lock to a door on a room
+    - Now everyone who needs access has extra steps
+    - Takes time to lock/unlock the door
+    - Admin duties now exist regarding assigning keys or changing the lock
+    - Applying EoM to this example will have us use RFID cards instead of keys as they are
+      easier to manage and are more convenient for users.
+        - We still have the desired effect but the IMPLEMENTATION is different
+
+Sometimes, more features are crappy hacks built on existing systems. This creates a more complex system that could hide security holes.
+
+- Avoid unnecessary complexity
+- KIS,S
+- Operational ease of use with simplicity
+- Fewer inconsistency
+
+##### Requirements Traceability Matrix
+
+EoM can be hard to understand and harder to implement.
+
+A RTM can help you understand it.
+
+- Generated during the requirements gathering phase of a project
+- RTM is a document that tracks the requirements of software and
+  matches it to the implementation components
+  - This lets us compare what is being created and how it covers the requirements of the project
+  - We can use this during the development phase to track and manage software functionality
+  - Prevents inclusion of unnecessary functionality
+
+Example: <http://doliquid.com/wp-content/uploads/2017/12/requirements-traceability-matrix-template-best-business-template-regarding-requirements-traceability-matrix-template.png>
+
 #### Complete Mediation
 
+- Access requests must be verified EVERY TIME someone accesses a system
+  - Lots of systems actually don't do this
+
+1.  Log into website
+2.  Do something
+3.  Must log in again
+  1.  Each request is A&A (authenticated and authorized) individually
+4.  This is a Gigantic PITA Bread
+
+More practical approach is to use a Smart Card for authentication
+
+- User needs to keep card inserted, not type `P@%$$w0rd` 2315 times.
+- Authorization is NEVER circumvented
+- Verify every single request
+- This model enforces systemwide access control
+  - When a user authenticates, the same authentication happens to the same 
+    user account at each stage of the process
+    - This means each component needs to use the same authentication mechanism.
+
+This greatly reduces the possibility of a system exploit as any exploit would be forced to re-auth.
+
+##### Caching
+
+- Using CM is not common
+  - jsessionid, anyone?
+
+
+- Caching greatly speeds up software
+  - Increase to security risk
+    - Auth bypass
+    - juicy session token gets stolen (session hijack)
+    - MiTM
+    - Replay attack
+- The longer creds are cached, the greater this window of opportunity is.
+
 #### Open Design
+
+...AKA 
+
+"security through obscurity S.U.C.K.S. and your crappy custom XOR 'encryption' protocol is a pile of duct tape and cardboard and would be torn to shreds by any hacker who found out it was being used"
+
+Open design is the act of making a system and publicly releasing the source code.
+
+- Depending on the secrecy of your design is a bad idea
+  - Enables backdoors, poor testing, and shallow defenses
+
+This enforces the idea that implementation details should be independent of design
+
+- Looking at you, hardcoded password/server name/connection string/IP address
+  - These would not be included in the design, and thus the shared source code
+
+This permits craploads of people to review the software. And because there are no embedded passwords/ips/etc, the act of reviewing the software will not compromise any defenses.
+- Public bug issues
+  - Faster resolution
+  - HOWEVER, public bugs become PUBLIC KNOWLEDGE immediately
+    - 0days :3
+
+Because of the bug problem, OD is not a universally accepted practice.
+
+##### OD Crypto
+
+Crypto is one of the best examples of OD in practice.
+
+Crypto is Math that cannot have ANY flaws or it will crumble.
+
+There are loads of crypto algs, some have been blown to bits (i.e. DES's keys are too short) but others are good (i.e. AES)
+
+<https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle>
+
+"A cryptosystem must be secure even if everything about the system except the key is known."
+
+or,
+
+"Assume the enemy knows the system".
+
+This is an antithesis to "'security' through obscurity", which has been proven to breed awful \(in\)security.
+
+Example: OD was NOT applied to the Content Scramble System to encode DVDs in the 90s.
+
+<https://www.cs.cmu.edu/~dst/DeCSS/Kesden/>
+
+They relied on a SECRET ALGO that was exploited because it was weak.
+
+##### Moral
+
+Do not rely on the mechanisms that you deploy to be secret.
+
+Secrecy does NOT bring security.
+
+Public scrutiny fixes issues faster than without.
 
 #### Least Common Mechanism
 
