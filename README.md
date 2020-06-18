@@ -3,6 +3,12 @@ Henry Post's professional website
 
 <https://henryfbp.github.io>
 
+## Preamble
+
+I recommend Hugo. Jekyll is dusty AF and a PITA bread to get installed on Windows, and uses old Ruby versions.
+
+Use Hugo instead.
+
 ## Requirements
 
 -   Ruby 2.6.5.1 (works for me on Windows)
