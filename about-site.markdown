@@ -6,7 +6,13 @@ permalink: /about-site/
 
 ## Q: Cool site. Can I have one like this?
 
-A: Yes! Clone <http://github.com/HenryFBP/henryFBP.github.io> and just edit it and reupload it to GitHub!
+A: Yes!
+
+HOWEVER! I recommend Hugo more. Jekyll is dusty AF and a PITA bread to get installed on Windows, and uses old Ruby versions.
+
+Use Hugo instead. I am still using Jekyll because I don't have time to redo this site, and it works 'good enuf'.
+
+Clone <http://github.com/HenryFBP/henryFBP.github.io> and just edit it and reupload it to GitHub!
 
 Alternatively, you can [fork it](https://github.com/HenryFBP/henryfbp.github.io/fork).
 
