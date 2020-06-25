@@ -763,9 +763,38 @@ Outputs must provide understandable errors.
 
 The Weakest Link is the most easily compromised point of a piece of software.
 
-TODO
+The WL (Weakest Link) is how resilient the software is against a hacker.
+
+The hardest part is actually identifying the WL. Many admins who respond to breaches had no idea the hole existed in the first place. They probably don't monitor or audit either.
+
+It's also important to consider what results in the LARGEST vulnerability (a combination of scope of impact once breached PLUS ease of performance of vulnerability)
+
+- What software components could be breached?
+  - Code
+  - Services
+  - Interfaces
+
+A common mistake orgs make is ONLY focusing on user interfaces and ignoring other possible routes of exploit, like backend services or hackers editing code.
+
+ANY type of break in the weakest link means a breach. WL is a component that CANNOT be compromised -- Some can, and don't impact much of other systems.
 
 #### Leveraging Existing Components
+
+Adding new functionality or writing new code can introduce security vulnerabilities.
+
+Existing components should be used/reused to ensure attack surfaces are not increased, assuming the existing components have already been audited for vulnerabilities.
+
+Q: Do we introduce the functionality as a separate component, or as a change to an existing component?
+
+A: We need to balance EoM (Economy of Mechanism), which is about keeping things simple, with adding new functionality as a new component.
+
+If adding new functionality to the system is MORE COMPLEX than modifying an existing component, we should do the simplest thing! And vice versa.
+
+Keep in mind that any changes to an existing component should be audited.
+
+For example, databases should be leveraged instead of rewriting the database system.
+
+As always, changes bring security issues, and pro/con assessments must be made.
 
 ### Privacy
 
