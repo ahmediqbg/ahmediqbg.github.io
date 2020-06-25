@@ -705,23 +705,89 @@ Public scrutiny fixes issues faster than without.
 
 #### Least Common Mechanism
 
+Restricting multiple users from sharing the same "mechanism", i.e. a common component in a system.
+
+If 2 users both access the same app on the same server, then the 2 users have multiple mechanisms in common like:
+
+- Web server
+- Application
+- Network comms
+
+This means one user can accidentally or maliciously access the private data of the other user.
+
+LCM (Least Common Mechanism) refers to separating these environments as much as practically possible to separate data and controls.
+
+- Sharing opens channels to transmit information
+- To implement LCM principle, common mechanisms must not be shared
+- Mechanisms that must be separated:
+  - More than 1 user or process
+  - Different levels of privilege
+
+Example:
+
+1 normal user, 1 manager user.
+
+If we add mgmt functionality to an app that both users use, then the normal user might gain mgmt functions.
+
+If we apply the PoLCM (principle of LCM), then we might want to make 2 different applications.
+
+Session hijacking highlights why the PoLCM is important: It would mitigate it greatly.
+
+- Web server is shared
+- Network is shared
+- Hundreds of users pass a session token back and forth
+- Might be admins/mgrs using the same web server as normal users
+
 #### Psychological Acceptability
 
+Psychological Acceptability is abut recognizing that humans are involved when working with computer security.
+
+This can be hard as all people behave differently.
+
+Ex: Long and complex passwords are more likely to be written down near the computer, and therefore this requirement, while technically secure,
+may effectively decrease password security, and piss off users.
+
+Security mechanisms should not make resources more difficult to access. Each layer of difficulty will only encourage users to circumvent them.
+
+Security mechanisms should be transparent, but are rarely transparent.
+
+Complexity of configuration also may lead to insecure software. The harder it is to configure software, the easier it is to misconfigure.
+- Configuration should be as easy and intuitive as possible.
+
+Outputs must provide understandable errors.
+- No privileged information should be given.
+  - 'incorrect creds' vs 'incorrect password'
+- Properly described incorrect parameters or errors.
+
 #### Weakest Link
+
+The Weakest Link is the most easily compromised point of a piece of software.
+
+TODO
 
 #### Leveraging Existing Components
 
 ### Privacy
 
-#### todo, section
+#### The Privacy Principle
+
+#### Privacy Considerations
 
 ### Risk, Governance, and Compliance
 
-#### todo, section
+#### Regulations and Compliance
+
+#### Legal
+
+#### Standards
+
+#### Risk Mgmt
 
 ### Software Development Methodologies
 
-#### todo, section
+#### Waterfall
+
+#### Agile
 
 ### Summary (?delete?)
 
