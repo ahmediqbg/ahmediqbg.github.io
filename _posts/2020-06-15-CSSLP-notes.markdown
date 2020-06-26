@@ -931,7 +931,177 @@ Data can be transferred from Europe -> US, GIVEN THAT:
 
 #### Regulations and Compliance
 
+##### Federal Information Security Management Act (FISMA)
+
+This act governs the security of Federal Information Systems and ensures that periodic risk assessments are completed.
+
+- Policies and procedures are in place to mitigate assessed risks
+- All subordinate levels (facility access, information systems, etc.) have appropriate security planning
+- Staff are properly trained
+- Policies are periodically tested and evaluated to ensure their correctness
+- Remedial processes are in place to...
+  - Implement, document, and evaluate remedial actions
+- Planning is done
+  - Disaster recovery
+  - Etc
+
+###### Identification
+
+Classifying data is IMPORTANT to apply the right level of security to data.
+
+FISMA asked NIST to determine the standards for classifying data within federal agencies.
+
+- Standards
+- Guidelines that govern what classification is applied to what data
+- Minimum security requirements for each classification
+
+Result of this: NIST made FIPS 199, FIPS 200 publications.
+
+<https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.199.pdf>
+
+<https://csrc.nist.gov/csrc/media/publications/fips/200/final/documents/fips-200-final-march.pdf>
+
+##### Sarbanes-Oxley (SOX)
+
+SOX is an act that governs corporate financial practices in reporting.
+
+- Created in 2002 after a bunch of corporate financial scandals
+- Includes:
+  - Public Company Accounting Oversight Boards
+  - Enhanced Financial Disclosure and Reporting
+  - Corporate and Criminal Fraud Accountability
+  - Corporate Tax Returns
+
+SOX includes requirements for recordkeeping and reporting of financial data.
+
+Any system that maintains this type of data must comply with SOX.
+
+##### Health Insurance Portability and Accountability Act (HIPAA)
+
+- Governs the security and privacy of health information
+
+It also governs any org that collects health information.
+
+- Final Security Rule
+  - Categories:
+    - Protection of transmitted data
+    - Data at rest
+    - Physical protection
+    - Administrative procedures
+  - Standards
+    - Administrative
+    - Technical
+    - Physical safeguards
+- Final Privacy Rule:
+  - An entity (like a healthcare provider) can use any information disclosed to it for its own treatment, payment, and healthcare operations within the organization.
+  - Covers issues like notification to patients, prohibiting sale of PII, passing health info to researchers (and how), etc.
+
+##### PCI Data Security Standard (PCI DSS)/Payment Processing
+
+Payment processing is also regulated, through a standard called the PCI DSS.
+
+This standard is used by the PCI (Visa, Mastercard) for the protection of cardholder data and transaction protection when processing transactions like credit card payments
+
+The PCI DSS is broken down into a lot of areas that govern building and maintaining secure networks.
+- Build and maintain secure networks/systems
+- Protect cardholder data
+- Maintain a vulnerability management program
+  - Antivirus
+- Implement strong access control measures
+- Regularly monitor and test networks
+- Maintain an Information Security Policy
+
+The DSS is applied to all parties involved in processing.
+
+- Merchants
+- Processors
+- Acquirers
+- Card issuers
+- Service providers
+- Anyone else who stores, processes, transmits cardholder data.
+
+Credit card fraud is very common, so these regulations make sense.
+
 #### Legal
+
+##### Patents
+
+A patent is a set of exclusive rights granted by a government to an inventor or assignee.
+
+These rights are granted for a specific period of time and are to protect the inventor's rights, so noone else can claim it was their invention like selling it w/o the patent owner's permission.
+
+Patent law varies between countries and can be complex.
+- What is patentable?
+- How long can it exist?
+
+To get a patent, the owner of the work will need to apply for a patent with the government.
+
+##### Copyrighting
+
+This is another way to protect IP rights.
+
+- Gives a creator of original work the exclusive rights to it.
+- Copyrights are applied to any expressible form of an idea or information that is substantive and discrete.
+  - Covers
+    - Creative
+    - Intellectual
+    - Artistic
+
+Different from a patent because patents usually don't cover ideas, but focus more on inventions.
+
+Copyrights are governed internationally through the Berne convention.
+- Countries that are a part of the convention must recognize each other's copyrights
+
+Depending on the country, copyrights are automatic or must be applied for.
+
+For countries part of the Berne convention, copyrights are automatic. However, you must be able to prove that the work was created by the owner and WHEN it was created.
+
+If an owner of a work thinks their work was copied, in most countries, it is up to the owner to pursue it in court.
+
+##### Trademarks
+
+A trademark is an identifiable quality used to identify products or services from an organization.
+
+This is usually used to protect an org's brand. Logos are usually trademarked.
+
+Trademarks can be made via...
+- Common law
+- Registration
+  - Registration provides the owner a lot more legal protection and the ability to recover more damages if they are incurred
+
+Internationally, trademarks are managed through the World Intellectual Property Organization.
+
+##### Trade Secrets
+
+These protect a secret for a specific amount of time.
+
+- Very tightly controlled
+- Offer a lot of protection
+- Usually food
+  - ...szechuan sauce!!!!
+  - Coca Cola
+
+This is difficult to use in Software though: If another party develops similar software INDEPENDENTLY, it is no longer a trade secret.
+Example: Using a shopping cart on an ecommerce site.
+
+##### Warranty
+
+This is a protection of a consumer that ensures a product or service will work as advertised, or else they are reimbursed in some way.
+
+- Minimum legal protection for consumers
+- Protection:
+  - Quality
+    - No poor quality
+  - Safety
+  - Performance (performs as advertised)
+  - Durability
+  - Defects
+
+Software generally comes with NO warranties...
+
+This means that if you buy software with security holes, there may be no recourse for the consumer to pursue the software retailer for damages...
+
+TODO Finish section
 
 #### Standards
 
