@@ -800,7 +800,132 @@ As always, changes bring security issues, and pro/con assessments must be made.
 
 #### The Privacy Principle
 
-#### Privacy Considerations
+Privacy is about controlling the information about something -- Allowing the user to control how information is shared.
+
+This is an important topic and often controlled by law.
+
+- Who is it shared with?
+- Why?
+- How will it be transferred or used by the 3rd party?
+
+"Traceable sharing" is a way for a user to share information with another party, but it possible to track where the information was divulged.
+
+- ex: Credit card purchase on a site
+- We can also verify it is used correctly
+
+Unfortunately, a lot of the time, we can't know how the third party is using the data -- It isn't traceable. We are just trusting them.
+
+##### Data Disposition
+
+Data Disposition is the long-term use of data.
+
+ex: Credit card purchase.
+- Do we retain their address? CC#?
+  - We are obligated to administer their data according to our policies
+
+If the data that we store is compromised, we will become liable, or lose customers (or piss them off!)
+
+*cough* EquiFax *cough*
+
+Also, using customer data in a test environment is a bad idea:
+- Discloses it to all your devs
+- Duplicates it across an entirely new system, 'doubling risk'
+- Test environments are generally less secure
+- Data should be anonymized first
+  - Name, address, CC# should be replaced with random data.
+
+#### Privacy Considerations/Privacy Policy
+
+A Privacy Policy is a high-level document that details the following about private information:
+
+- Collection
+- Use
+- Transfer
+- Storage
+
+This document is used to identify what information needs to be safeguarded, how, and the details.
+
+It can also be a guide for employees.
+
+Part of a Privacy Policy is to have a Privacy Disclosure Statement, a public version of the privacy policy, so external parties can understand how data is used and protected.
+
+##### Identifiable Information/PII
+
+Identifiable Information (II/PII) is information that could be used to identify a person.
+
+- Name
+- DoB
+- Birthplace
+- Address
+- TIN/SSN/NIN
+- Motor Vehicle/Driver's License
+- Genetic info/face/prints
+- IP Address
+
+It doesn't take a lot of info for data to be considered PII.
+
+###### Protected Health Information
+
+(PHI)
+
+- Demographic data
+- Biometrics
+- Medical History
+- Test data
+
+This area of data is protected by HIPAA/HITECH Acts.
+
+Storing info under this category MUST be protected according to legal mandates.
+
+##### Breaches
+
+Since you are storing PII, you must monitor for breaches.
+
+Lots of companies only take action AFTER a breach is detected, or even worse, never find out a breach occurred because there was so little monitoring.
+
+Security controls must be put in place to:
+
+- Detect a breach
+  - What happened
+  - How did it happen
+  - What data was compromised
+  - Will involve logging and auditing
+
+Data should be encrypted so that data cannot be read w/o decryption, which could take years or more.
+
+Some legislation dictates long term data protection guidelines.
+
+#### Protection Principles
+
+In Europe, the EUDPD, or European Union Data Protection Directive, dictates how data is protected.
+
+- Any data collected can only be used for approved purposes as dictated by the owner of the data
+- Destroyed after a period of time or rendered nonidentifiable
+- Data should not be processed, unless:
+  - Usage is transparent (user gives consent to processing)
+  - Purpose of processing is legitimate
+  - The level of data collected is proportional (appropriate) to its purpose.
+    - Helps stop orgs from collecting unnecessary data
+
+#### Safe Harbor
+
+Due to the EU/US differences in data laws, a set of "Safe Harbor" rules were made.
+
+Data can be transferred from Europe -> US, GIVEN THAT:
+- Notice
+  - Customers must be informed of how their data is collected and used
+- Choice
+  - Customers can opt out of the transfer or sharing if they choose to
+- Onward Transfer
+  - Data can only be transferred to third parties who follow data protection principles
+- Security
+  - Reasonable efforts must be made to protect the data
+- Data Integrity
+  - Only the data that is required is transferred, and it's used for the purpose it was collected for.
+- Access
+  - Customers can access their information and correct/delete it.
+- Enforcement
+  - There's an effective way to enforce these principles
 
 ### Risk, Governance, and Compliance
 
