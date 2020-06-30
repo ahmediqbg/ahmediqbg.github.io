@@ -1101,11 +1101,43 @@ Software generally comes with NO warranties...
 
 This means that if you buy software with security holes, there may be no recourse for the consumer to pursue the software retailer for damages...
 
-TODO Finish section
-
 #### Standards
 
+Standards are not necessarily the most common way of doing something.
+
+Standards are a defined level of activity, usually measured by a third party! A third party must be able to say if you meet a standard or not.
+
+Benefits:
+- Can compare 2 organizations
+- Can promote interoperability
+
+##### International Organization for Standardization (ISO)
+
+- Founded in 1947
+
+ISO develops and publishes international standards that ensure products are safe, quality, and reliable.
+
+There are over 19,500 standards published for tech, food, and health.
+
+##### National Institute of Standards and Technology (NIST)
+
+- US based
+- Develops tech, measurements, and standards that align with the US economy
+- Federal Information Processing Standards (FIPS)
+  - Governs all nonmilitary gov't agencies and gov't contractors when specified as part of their contract
+  - Crypto
+  - Personal ident verification for feds + contractors
+  - NIST SP 800 series
+    - Research and guidelines on securing information systems
+  - SAFECode
+    - Non-profit, not related to NIST
+    - Identify and promote best practices in software dev
+
 #### Risk Mgmt
+
+- Many models exist to model risk
+
+TODO
 
 ### Software Development Methodologies
 
