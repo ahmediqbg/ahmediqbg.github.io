@@ -30,7 +30,7 @@
 
 <!--            new way that loads _data/pages.yml into this HTML :D -->
             <div class="trigger">
-                {%- for item in site.data.pages -%}
+                {%- for item in site.data.header_pages -%}
 <!--                {{item}}-->
                 <a class="page-link" href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>
                 {%- endfor -%}
