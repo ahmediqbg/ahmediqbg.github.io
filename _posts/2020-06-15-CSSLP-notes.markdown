@@ -1136,8 +1136,89 @@ There are over 19,500 standards published for tech, food, and health.
 #### Risk Mgmt
 
 - Many models exist to model risk
+- We'll look at a general model
 
-TODO
+Risk mgmt's goal is to assess and mitigate anything that could cause harm to the project or deliverables.
+
+- Manage risk in general
+- Manage risk through project phases
+
+##### Step 1: Asset Identification
+
+This is where we identify and classify all assets.
+
+- Identify and classify
+  - Assets
+  - Systems
+  - Processes
+
+A common mistake is to only focus on assets we want to protect instead of ALL of our assets. When we do this, we miss protecting "noncritical" assets whose compromise may lead to larger issues later on.
+
+Risks can be weighed by considering:
+- Damage to business
+- Damage to people
+- Financial risks
+- Etc
+
+Scoring each factor helps you objectively determine where your priorities should be.
+
+Then, prioritize assets.
+
+Financial costs (lawsuits included) generally are weighted more.
+
+We also need to evaluate the information criticality of the data. This refers to how critical the data is to the business.
+
+For example, if someone loses access to some data, does the rest of business stop?
+
+##### Step 2: Threat Assessment
+
+- Identify threats
+- Identify vulnerabilities
+  - Exploitable vulns can be used to gain access to all sorts of things, so focus on them.
+  - Vulns can climb 'priority ladders' to gain access to higher priority assets
+    - Risk priorities must reflect this
+- Threat = harm to an asset
+  - 'Threat' includes...
+    - Incorrect data entry
+    - Insider threat
+
+##### Step 3: Impact Determination and Quantification
+
+What's is impact the loss/compromise of an asset would have?
+
+- Determination of loss
+  - Tangible (easier to quantify)
+    - Financial loss
+    - Physical damage
+  - Intangible (harder to quantify, but do it anyways)
+    - Reputation damage
+
+##### Step 4: Control Design and Evaluation
+
+What controls are needed to mitigate the risks and/or reduce the vulnerabilities?
+
+Controls are countermeasures introduced to reduce/eliminate the risks.
+
+- Controls
+  - Actions
+  - Devices
+  - Procedures
+
+They can be additional action that occur, physical/logical devices, or procedures that address specific risks.
+
+For example, a website that lets you buy stuff with your credit card has the risk of credit card fraud.
+
+One countermeasure could be additional security checks to mitigate that risk.
+
+##### Step 5: Residual Risk Management
+
+This step exists because risk cannot be fully eliminated from a system, and we need to accept that fact.
+
+These remaining risks are called 'residual risks'.
+
+We need to understand these risks to identify and introduce controls along the way to reduce these risks.
+
+- Consider multiple controls to reduce risk
 
 ### Software Development Methodologies
 
