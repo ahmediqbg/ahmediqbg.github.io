@@ -1224,6 +1224,68 @@ We need to understand these risks to identify and introduce controls along the w
 
 #### Waterfall
 
+```
+
+Requirements \
+             v
+            Design \
+                   v
+                  Implementation \
+                                 v
+                                Verification \
+                                             v
+                                            Maintenance
+```
+
+This methodology is the first and most common development methodology.
+
+It's based on a sequential set of phases that govern what's done in each phase.
+
+It is the most used because it's the best known (and old AF.)
+
+It came from the manufacturing process and is simple but NOT adaptive, which is a problem for software projects as requirements are known to change a lot.
+
+Because of this, we need to repeat a lot of work to introduce new requirements.
+
+Waterfalls therefore have the highest risk for increased time and cost.
+
+##### Phase 1: Requirements
+
+All of the requirements of the software are determined and presented as a deliverable.
+
+Requirements are either:
+- Functional
+  - Describes the function of the system
+- Nonfunctional
+  - Describes the rest of the requirements that are related but don't fall under the functionality of the system
+  - Restrictions are an example of a nonfunctional requirement
+
+These requirements are passed to the next phase.
+
+##### Phase 2: Design
+
+In this phase, software architects blueprint the design of the software.
+
+The "External Functionality" is how the software interacts with the outside world.
+
+- External Functionality
+  - Input
+  - Output
+  - Constraints
+
+- Internal design
+  - Algorithms
+  - Data structure
+  - Internal Routines
+
+At the end of this phase, you should have clear documentation, which is the blueprint to move to the third phase.
+
+##### Phase 3: Implementation
+
+##### Phase 4: Verification
+
+##### Phase 5: Maintenance
+
 #### Agile
 
 ### Summary (?delete?)
