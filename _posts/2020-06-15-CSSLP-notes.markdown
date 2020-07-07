@@ -1282,11 +1282,46 @@ At the end of this phase, you should have clear documentation, which is the blue
 
 ##### Phase 3: Implementation
 
+Documentation is used in this phase to start making the software. The software should not be difficult to create if the architects have done their job. The architects' documentation must be clear and concise
+
+Unit testing should be introduced here as well, even though it is technically part of Verification.
+
+At the end of this phase, software is done being created.
+
 ##### Phase 4: Verification
+
+- Software is tested for bugs and errors in this phase
+- Devs fix the software
+- This repeats until bugs/errors are minimized
+
+In a waterfall method, devs generally have to introduce A LOT OF CHANGES in this step. You can't go back, and all these changes have to be retested again.
+
+Verification is the cycle that causes the majority of cost and time overruns:
+
+    Step 4 -> A BUG! -> 1 -> 2 -> 3 -> 4 -> here we go again...
+
+At the end of this phase, software is deployed.
 
 ##### Phase 5: Maintenance
 
+The software has been deployed into PROD at this point. Hope that `drop from dbname` test that runs post-update was behind a conditional! ;)
+
+Focus of this phase is to keep software up and running.
+
+- Correct any unresolved or undetected bugs
+- Fix the bugs
+- Routine maintenance (backup, recovery, etc)
+- This phase is active until the software is retired 100%.
+
+This phase is the longest phase and is usually most expensive in terms of time and money.
+
+However, most orgs don't include these numbers as part of the project. This is attributed to the cost of RUNNING the software and not the development, so the Implementation phase is usually recognized as the most costly and time-consuming phase.
+
+The architect and developers should be creating software that is easy to maintain because the last 2 phases are so time and money consuming.
+
 #### Agile
+
+
 
 ### Summary (?delete?)
 
