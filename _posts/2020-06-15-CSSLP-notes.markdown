@@ -1321,7 +1321,9 @@ The architect and developers should be creating software that is easy to maintai
 
 #### Agile
 
+The Agile development methodology is a group of dev methodologies that share 'agility'.
 
+When done right, agile methodologies are much better suited for software projects as they align with the short, iterative TODO
 
 ### Summary (?delete?)
 
