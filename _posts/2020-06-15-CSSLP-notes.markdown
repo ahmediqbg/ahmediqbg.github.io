@@ -1323,13 +1323,61 @@ The architect and developers should be creating software that is easy to maintai
 
 The Agile development methodology is a group of dev methodologies that share 'agility'.
 
-When done right, agile methodologies are much better suited for software projects as they align with the short, iterative TODO
+When done right, agile methodologies are much better suited for software projects as they align with the short, iterative style of agile.
 
-### Summary (?delete?)
+Software dev is always a work in motion and not a static, monolithic piece of work.
 
-#### todo, section
+- Promotes flexible response to changes
+- Adaptive Planning
+- Teamwork
+- Collaboration
+- Adaptability
+- Development
 
-### Practice
+##### Scrum
+
+<https://www.scrum.org/resources/scrum-framework-poster>
+
+Scrum is a popular Agile dev methodology.
+
+Focused on programming, and a 30-day release cycle. Even if the software isn't ready for market, it's maintained in a deliverable-ready state, which helps to test it.
+
+- Simplified change mgmt
+  - This makes Scrum unique.
+  - Scrum focuses on sprints (30day) and scrums (24hr)
+
+Sprints maintain goals over a 30day period, and the daily scrum serves as a way to manage progress per-day, so that everyone has daily goals.
+
+Scrum also has processes to evaluate each sprint and introduce work back into the cycle.
+
+If a bug is detected, it's added to a 'product backlog' and eventually picked up by a sprint to fix.
+
+Scrum is popular because of its simplicity and clear understanding of progress being made during the dev cycle as small changes are tracked.
+
+##### Extreme Programming (XP)
+
+```
+
+      Planning -------------- Iteration
+          \                      /
+           \                    /
+            \                  /
+             \                /
+              \- Acceptance -/
+
+```
+
+This methodology focuses on 'user stories' and is useful for smaller dev teams.
+
+'User stories' are a way of describing a user's interaction with the software as they do a task. This helps provide requirements of software.
+
+These stories are handled by the team to finish the project with small changes.
+
+The iterative model in XP follows a feedback model that allows for feedback and acceptance to repeatedly come back into planning.
+
+In the real world, a lot of orgs lack experience and understanding to properly implement Agile dev methodologies, fail, and return back to waterfall.
+
+Agile has significant advantages over waterfalls, so understanding the methodology is important so that you know if it's being implemented correctly.
 
 ## Secure Software Requirements
 
