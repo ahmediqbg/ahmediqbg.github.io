@@ -1381,6 +1381,14 @@ Agile has significant advantages over waterfalls, so understanding the methodolo
 
 ## Secure Software Requirements
 
+### Policy Decomposition
+
+### Data Classification and Categorization
+
+### Functional Requirements
+
+### Operational Requirements
+
 ## Secure Software Design
 
 ## Secure Software Implementation and Coding
