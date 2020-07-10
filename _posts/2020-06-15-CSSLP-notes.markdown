@@ -1393,10 +1393,84 @@ Security policies are composed of both internal and external requirements.
 
 - Proper protection for audit/data logs
   - Logs contain a lot of important information
+    - Account names
+    - Server names
+    - Names/IDs of processes
+  - Audit and data logs must NOT be tampered with
+    - This is to ensure non-repudiation
+      - We can ensure that one individual performed a specific action
+      - If someone tampers with an audit log, we can no longer ensure that any specific individual performed a specific action
+  - Data loss!
+    - Data loss usually comes from IMPROPER HANDLING, not data loss
+
+Every security policy needs to ensure data is handled properly.
+
+
+- Managing Data Loss Prevention (DLP) elements:
+  - Governance policies
+    - Data is handled properly by the correct people 
+  - Risk assessment
+    - How likely is it for data loss to occur?
+      - What happens when data loss occurs? 
+    - Rank threats, likelihood, and response to a threat occurring
+      - Create appropriate response plan, don't over/under-respond
+  - Compliance
+    - Compliance with DLP means we comply with business/legal requirements with respect to data
+      - i.e. legal req to retain 7 years worth of data...The security policy needs to ensure we meet these legal obligations for the lifetime of the data
+  - Classification
+    - Data is properly identified so we can put the correct security controls around the correct data
+      - i.e. CC# or PII should be more protected than a product catalog
+  - Policies
+    - Governance and compliance are key factors in determining an organization's policies
+    - The high-level policies of an org are generally made up of (or mapped to) a lot of smaller, simpler policies
+    - Policies such as 'who can modify data' can affect the integrity of that data
+  - Discovery
+    - Data within an org gets copied, duplicated, and edited very fast
+    - Discovery allows us to find data in an org that needs to be protected
+  - Remediation
+    - Sooner or later, we will not be compliant with policies
+    - Remediation lets us determine the course of action to take
+    - i.e. if we discover someone gets unauthorized access, we review the audit logs to determine if they actually used that privilege.
+  - Awareness
+    - Everyone enforcing security policies needs to be aware of the policies that they need to comply with
+    - We also must be aware of whether or not we are compliant with the policies
+    - Monitor internal system traffic, and internal controls, etc.
+      - Collect evidence of whether or not we meet the requirements of our policies
+      - What system traffic/controls do we monitor?
 
 #### External Requirements
 
+These address all of the security issues/requirements that are outside of our organization, like external vendors, gov't, and even WFH (Work From Home) employees.
+
+- Protect all external connections
+  - Security controls
+    - Enforce compliance upon connections
+      - i.e. all extern access must be done via VPN
+    - Our security policy must dictate what types of connections are allowed, who is allowed to use what type of connection, and details of security requirements of each connection, like the level of encryption.
+    - Once an external connection is made, access must be restricted only to the services and components that that person has permissions to access.
+  - Authentication
+    - Minimum levels of auth and what protocols we support
+      - This may bar devices from connection, which may or may not be acceptable.
+    - Account policies to protect against things like bruteforce
+
+How do we mitigate web-based threats?
+
+When a client/employee, who SHOULD be listening in that morning meeting, goes to hxxps://www.mycoolguns.ru/, they're downloading HTML/CSS/JS/etc from that site and bringing it to an internal website.
+
+The security policy has to address the requirements to do this safely and within policies.
+
+- Content filtering
+  - Restrict known dangerous sites (blacklist)
+  - Could use a whitelist (can be very restrictive)
+  - Could block specific filetypes (.exe)
+- Proxies 
+  - An external computer (mycoolguns.ru) should never have direct access to an internal computer (Bob's laptop)
+  - Proxies hide a client's connection to a webserver by forwarding requests...mycoolguns.ru only sees the proxy IP and whatever else the proxy chooses to forward/not forward
+  - The external webserver will never have direct contact with the client
+
 ### Data Classification and Categorization
+
+These determine how data w
 
 #### Data Classification Part I
 
