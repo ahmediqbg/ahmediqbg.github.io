@@ -1381,13 +1381,50 @@ Agile has significant advantages over waterfalls, so understanding the methodolo
 
 ## Secure Software Requirements
 
+These integrate security into the software dev lifecycle.
+
 ### Policy Decomposition
+
+Policy decomposition is one of the key components for aligning policy statements.
+
+Security policies are composed of both internal and external requirements.
+
+#### Internal Requirements
+
+- Proper protection for audit/data logs
+  - Logs contain a lot of important information
+
+#### External Requirements
 
 ### Data Classification and Categorization
 
+#### Data Classification Part I
+
+#### Data Classification Part II
+
+#### Data Ownership
+
+#### Labeling
+
+#### Data Types
+
+#### Data Lifecycle
+
 ### Functional Requirements
 
+#### Deployment Environment
+
+#### Objects, Activities, and Actions
+
+#### Sequencing and Timing Requirements
+
 ### Operational Requirements
+
+#### Deployment Requirements
+
+#### Operations Requirements
+
+#### Management Requirements
 
 ## Secure Software Design
 
