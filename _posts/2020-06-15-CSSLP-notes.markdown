@@ -1470,9 +1470,39 @@ The security policy has to address the requirements to do this safely and within
 
 ### Data Classification and Categorization
 
-These determine how data w
+These determine how data will be handled during the development process.
 
 #### Data Classification Part I
+
+One of the most important aspects of building a secure system is how data is classified.
+
+Data is the key asset of an enterprise. All systems around it are there to manage it. Without data, how can money be made, or actions be executed?
+
+- Enterprise data flows throughout an organization
+  - Data flows are complex
+  - Maintenance and management can be difficult
+
+Data flows through enterprise. We need to know how so we can put security measures in the right places.
+
+- How does data come in
+- How is it stored
+- How does it move between internal and external systems
+
+If data enters via a website, the way the CC# is communicated is likely different than how we communicate that info to a bank for authorization, which means the security requirements will be different for those 2 scenarios.
+
+- To help manage complexity of data flows
+  - Data is classified and labeled
+  - Responsibility for management is identified
+
+We must identify data that has the same security requirements: SSN, CC#, etc.
+
+- Data can be classified by its:
+  - State
+  - Use
+    - i.e. CC# needs to be TODO
+  - Risk impact level
+
+TODO
 
 #### Data Classification Part II
 
