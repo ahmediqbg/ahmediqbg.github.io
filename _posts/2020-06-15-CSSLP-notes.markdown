@@ -1702,8 +1702,7 @@ This means we also have to DESTROY it, if we do not need it. We should, too.
     - At EOL, data custodian removes data from ALL sources.
     - Failure to observe this may cause us to forget about the data and cause it to be compromised.
     - It is common for old data to be forgotten about, mishandled, and then compromised, leading to negative effects.
-
-
+    - When disposing of data, ALL SOURCES that contain it must be dealt with, and this includes backups.
 
 ### Functional Requirements
 
