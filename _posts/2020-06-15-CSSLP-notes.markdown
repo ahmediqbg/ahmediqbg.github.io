@@ -1670,6 +1670,41 @@ There are no restrictions or requirements in these media.
 
 #### Data Lifecycle
 
+All data has a lifecycle.
+
+Created, used, stored, destroyed.
+
+All data follows this pattern, and your data (yes, even SSNs and CC#) will go through this cycle.
+
+When data is created, how does confidential data move between a customer and our organization securely? During the time we have the info, we must protect it, and it is also our organization's LIABILITY.
+
+This means we also have to DESTROY it, if we do not need it. We should, too.
+
+- Data lifecycle mgmt is a data owner's responsibility.
+  - Also responsibility to define level of importance and retention that a set of data should have
+  - Retention impacts the data lifecycle 
+    - A policy that requires 7 years retention means we have to be responsible for the data for at least 7 years
+  - It is possible for data to pass from one owner to another in complex scenarios
+
+
+- Data lifecycle can be broken into:
+  - Data generation
+    - Importance lies in persistent data
+    - Classification, protection, and destruction policies are assigned. Very important.
+  - Data retention
+    - Data owner and custodian responsibilities are defined
+    - Protection levels and duration of storage are defined
+    - Stewards and owners are responsible for the data now
+    - Not only logical, but physical measures (backups, etc) should be enforced to keep in compliance with policy
+    - How many different places are our data stored? Backup!!! Also, compliant (maybe encrypted) backups!
+  - Data disposal
+    - Conserves resources
+    - At EOL, data custodian removes data from ALL sources.
+    - Failure to observe this may cause us to forget about the data and cause it to be compromised.
+    - It is common for old data to be forgotten about, mishandled, and then compromised, leading to negative effects.
+
+
+
 ### Functional Requirements
 
 #### Deployment Environment
