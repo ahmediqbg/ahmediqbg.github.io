@@ -1564,7 +1564,35 @@ Data with the same shareability and business needs should be classified together
 
 #### Data Ownership
 
+Who owns the data?
+
+- Data is owned by the organization
+- To assign responsibility, we think that data is 'owned' by specific employees
+- The owner is responsible for the data.
+- Data could be assigned to users who are considered to be stewards of the data
+  - A steward takes care of the data from day-to-day
+- Role determination is dependent on the type of data as it relates to business needs
+
+
+- Data owner
+  - Determines who has access to the data and what level
+    - R/W, change, delete
+  - Defines:
+    - Classification, authorized users, access rules, security controls
+- Data custodian
+  - Directly interacts with data
+    - Responsible for fulfilling the data owner's requirements
+  - Maintains:
+    - Security controls, Access controls, authorized users, data backup; retention; and disposal.
+  - Data custodian has many responsibilities, you will see many organizations separate these responsibilities among multiple custodians.
+    - Custodian A does backup
+    - Custodian B manages authorized users and their perms
+
 #### Labeling
+
+Labeling data is about adding extra data (metadata) to describe the data that we're protecting.
+
+TODO
 
 #### Data Types
 
