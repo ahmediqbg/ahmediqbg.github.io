@@ -1592,9 +1592,81 @@ Who owns the data?
 
 Labeling data is about adding extra data (metadata) to describe the data that we're protecting.
 
-TODO
+Example of the importance of labeling is a file called `README.txt`. What's the file about? What info does it have? Who should have access? Does it contain confidential info? Is it an original or a copy?
+
+- Enterprise data retention can be extensive, depending on policy.
+  - How do we know something must legally be retained?
+- Difficulty is identifying which data must be retained, and by what policy.
+- Appropriate data labeling ensures that proper handling is performed
+- Data sensitivity can be defined by job role and/or business reasons for the data existing
+  - If an employee has a legit business need to use the data, they should be given access
+
+
+- Improperly handled data and its impact organizationally is MORE IMPORTANT than data sensitivity
+- All data should be classified by its impact
+  - High
+  - Medium
+  - Low
+- Delineation determined by impact to...
+  - People
+  - Customers
+  - Financials
+
+Example: Flight data for large airliners is transmitted WIRELESSLY to the flight computers onboard the airplane.
+
+Any improper handling of this wirelessly-transmitted data could compromise the flight systems onboard the airplane.
+
+The impact could be ~80 dead people, so pretty high. You'd also lose a lot of customers and lots of money.
+
+This data is High, and must always be protected, never mishandled.
 
 #### Data Types
+
+##### Structured
+
+Examples:
+
+Charts:
+
+<https://www.bls.gov/cps/employment-situation-covid19-faq-june-2020.pdf>
+
+MS Access databases:
+
+<https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases>
+
+The data fields are separated by special delimiters:
+
+| id | fname | lname | address         | phone        |
+|----|-------|-------|-----------------|--------------|
+| 0  | henry | post  | 123 example ave | 123-456-7890 |
+
+...etc...
+
+Data is also restricted in some way, i.e. the `id` field can only accept numbers, maybe the `phone` field can only accept hypenated numbers, etc.
+
+<a href="/feed.xml">Structured data could also be XML files.</a>
+
+
+This one looks like:
+
+```
+<feed>
+  <entry>CONTENT...</entry>
+  <entry>CONTENT...</entry>
+  <entry>CONTENT...</entry>
+  ...
+</feed>
+```
+
+##### Unstructured
+
+This data is (probably) data you're the most familiar with.
+
+<a href="/interests/">Click this for an example of unstructured data.</a>
+
+Emails, word documents, reports, essays, letters, ...paintings, etc. are all unstructured data. That machines do not know how to process. You can write whatever you want in an email or essay, especially a word document, ESPECIALLY a powerpoint.
+
+There are no restrictions or requirements in these media.
 
 #### Data Lifecycle
 
