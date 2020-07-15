@@ -1706,6 +1706,10 @@ This means we also have to DESTROY it, if we do not need it. We should, too.
 
 ### Functional Requirements
 
+Functional Requirements define how software is expected to operate.
+
+TODO
+
 #### Deployment Environment
 
 #### Objects, Activities, and Actions
