@@ -1740,6 +1740,28 @@ This way, the right people get access to the right functions.
 
 #### Deployment Environment
 
+- We need to consider other things that are maintained to create software, such as the development environment, test environment, and deployment environment.
+
+Deployment env can be complex as software generally communicates with one or more other systems, and relies on core components.
+
+This env is not straightforward.
+
+The software dev lifecycle should follow the SD Cubed principles, or SD3.
+
+- Secure by design
+- Secure by default
+- Secure by deployment
+  - Software that's the first 2, but not secure by deployment, can be compromised DURING deployment. Pbllllt.
+
+Software deployment in the environment relies on conforming to:
+- Maintainability
+- Data access
+- Access to essential services
+
+TODO
+
+
+
 #### Objects, Activities, and Actions
 
 #### Sequencing and Timing Requirements
