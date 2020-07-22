@@ -1708,7 +1708,35 @@ This means we also have to DESTROY it, if we do not need it. We should, too.
 
 Functional Requirements define how software is expected to operate.
 
-TODO
+#### Role and User Definitions
+
+- Review roles and user definitions, and how they relate to functional requirements
+
+When making software, one of the first criteria is:
+
+- Functional software 
+  - (it works)
+  - Meets all of the functional requirements
+
+- Functional requirements define the expectation of software functionality
+  - They are driven by business requirements
+
+- We may be building software that multiple business units use, and therefore they may have different requirements. Might conflict, even.
+
+However, all organizational requirements are ultimately used to create the functional requirements our software needs.
+
+Once we know what our software will do, we can then understand the roles and users that are allowed to use those functions.
+
+This way, the right people get access to the right functions.
+
+- Role and user definitions will outline who does what
+  - What group can use a system
+  - Job roles further define specific functions
+  - It's common to see role definitions line up with org job definitions
+- A comprehensive listing of users and their functions outline part of a 'use-case' definition
+  - Use cases are part of the UML standards
+  - It's a diagram that helps define each function within a system and who (users aka actors) can interact with those functions
+- Users are called 'subjects' in comp sci terms (subject-object matrix)
 
 #### Deployment Environment
 
