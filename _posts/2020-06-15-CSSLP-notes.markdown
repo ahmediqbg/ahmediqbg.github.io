@@ -1757,14 +1757,113 @@ Software deployment in the environment relies on conforming to:
 - Maintainability
 - Data access
 - Access to essential services
+  - Auth like active directory
 
-TODO
+- Functional requirements for system deployment must be detailed
+- Defining, understanding, and conforming to all infrastructure requirements allow for:
+  - Seamless interconnectivity between disparate systems
+- Example of infrastructure requirement is that our org uses IPv4. Any comms must use IPv4 and comply with this infra requirement.
 
+##### Requirements Traceability Matrix (RTM)
 
+![](/static/images/2020-06-15-CSSLP-notes/requirements-tracebility-matrix-example.png)
+
+An RTM is used to track and manage all functional requirements as well as implementation details.
+
+It also lists validation criteria, which are important b/c they let us ensure we're meeting those requirements.
+
+RTM is really a documentation tool to help manage a list of requirements that helps us ensure every requirement is met, and prove that they are met.
 
 #### Objects, Activities, and Actions
 
+Objects are anything a SUBJECT can interact with when operating a system:
+- File
+- Database record
+- Program element
+- The system itself
+
+We need to understand these objects because we must determine and control who has access to them, what functions objects allow, and who can access the function.
+
+- Object access is controlled by implementing access control lists (ACLs)
+
+Example: We have at a file. We need to control who has access to the file. Reading it, editing it, etc, need to be controlled.
+
+Disk drives are also examples of objects. Perhaps a disk drive has a 'format' action that a user can access, even though they cannot access files INSIDE the disk drive.
+
+Another example of an object is a user account. Some people need to CRUD user accounts. You can also reset passwords and add accounts to permission groups
+
+Because of this, it is important to define all of the objects and their functions so we can control and secure a system.
+
+One way to do this is to use a subject-object-activity matrix. This document outlines who has access to what objects and the activity they are allowed to invoke.
+
+##### Activities and Actions
+
+When we list all objects in a system, we must understand the actions and activities that a SUBJECT could do to each object.
+
+- Activities and actions are allowable events that a subject can do to an object
+- Specific activities are defined by the OBJECT, i.e.
+  - File: access, modify, delete
+  - DB record: create, read, update, delete
+  - Disk drive: mount, unmount, format
+- All activities and actions should be defined and documented
+  - This is to ensure that these activities/actions are PROTECTED PROPERLY.
+  - *any undocumented or overlooked functionality could be used to compromise a system*
+
 #### Sequencing and Timing Requirements
+
+Sequencing and timing can definitely affect applications, especially now.
+
+- Disparate systems can attempt SIMULTANEOUS interaction with an object
+  - Esp. servlets or web requests
+- Also, different systems can try to access the same OBJECT simultaneously.
+
+A number of problems could arise from this simultaneous access.
+
+Events can also occur out of order due to thread timing differences if two programs are running.
+
+When a triggering event happens, if TWO threads react to it, they may do the same thing with DIFFERENT timings.
+
+If there is a dependency between two threads, i.e. Thread A needs Thread B to do Action X, say, to prepare data, before Thread A can do Action Y, to use the data, then these threads MUST work together and have a mechanism to do this.
+
+This is important so that actions do not happen prematurely.
+
+Issues that can arise:
+- Race conditions and infinite loops
+  - This impacts data activity design and implementation
+
+##### Race conditions
+
+- Software flaw
+- Difficult to predict and find
+- Can cause complex logic loops (no, using `Thread.sleep(2000)` will not mitigate this!!! STOP USING DELAYS! AAAAAAARRRGHHH!!!)
+- Mitigated via Mutex locks
+  - TBH, any locking mechanism will mitigate race conditions
+
+These occur when 2 processes need to access the same object.  
+
+Mutex is essentially a way to allow one thread to lock an object for ITS EXCLUSIVE USE and DENY any other thread access to the object.
+
+If mutex is not properly handled, it is a software bug and may return an error or crash. Or do other horrible things. If this is the case, errors only happen during a small time window and therefore are very hard to actually encounter reliably.
+
+If the two processes are separated by a lot of time, the error PROBABLY will not happen, so it APPEARS that the system works. But it will fail from time to time.
+
+This failure frequency can depend on:
+
+- Length of a time a process accesses an object exclusively,
+- How frequently an object is accessed
+  - By extension, the load on a system
+
+Databases are full of locking mechanisms. ACID! Thread 1 marks a DB as 'in use', and Thread 2  waits. 
+
+##### Infinite loops
+
+- Occur with complex logic when loop controls fail
+- Application can become unresponsive
+- Mitigated via proper loop controls
+
+To avoid this, the LOOP CONTROL must be implemented properly.
+
+For complex conditionals, like `((if A ) or ((if B) and (if C) xx ...))`, developers must take into consideration ALL POSSIBLE STATES, not just common or expected ones.
 
 ### Operational Requirements
 
