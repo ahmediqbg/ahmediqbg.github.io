@@ -1985,6 +1985,17 @@ Also, the testing must occur AFTER the patch/SP is applied.
 
 ### Design Processes
 
+If we do our job well making software blueprints, then we'll have a beautiful piece of software at the end.
+
+When we make software with security in mind, the goal is to include features that make our software more secure into the initial design. The end result is a well-designed AND SECURE application.
+
+During the design phase:
+- Evaluate software requirements
+  - From a security standpoint
+  - From a functionality standpoint
+
+- Objective is not to make a product, but a SECURE PRODUCT.
+
 #### Attack Surface Evaluation
 
 #### Threat Modeling and Documentation
