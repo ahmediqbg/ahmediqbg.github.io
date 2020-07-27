@@ -1983,6 +1983,70 @@ Also, the testing must occur AFTER the patch/SP is applied.
 
 ## Secure Software Design
 
+### Design Processes
+
+#### Attack Surface Evaluation
+
+#### Threat Modeling and Documentation
+
+#### Control Identification and Prioritization
+
+#### Design and Architecture Technical Review
+
+#### Risk Assessment for Code Reuse
+
+### Design Considerations
+
+#### Applicable Methods to Address Core Security Concepts
+
+#### Security Design Principles
+
+#### Interconnectivity
+
+#### Interfaces
+
+### Securing Commonly Used Architecture
+
+#### Distributed Computing
+
+#### Service-oriented Architecture
+
+#### Rich Internet Applications
+
+#### Pervasive and Ubiquitous Computing
+
+#### Integrating with Existing Architectures
+
+#### Cloud Architectures
+
+#### Mobile Applications
+
+### Technologies
+
+#### Authentication and Identity Management
+
+#### Credentail Management
+
+#### Flow Control
+
+#### Logging
+
+#### Data Loss Prevention
+
+#### Virtualization
+
+#### Digital Rights Management
+
+#### Trusted Computing
+
+#### Database Security
+
+#### Programming Language Environment
+
+#### Operating Systems
+
+#### Embedded Systems
+
 ## Secure Software Implementation and Coding
 
 ## Secure Software Testing
