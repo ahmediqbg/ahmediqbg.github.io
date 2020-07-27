@@ -1736,6 +1736,7 @@ This way, the right people get access to the right functions.
 - A comprehensive listing of users and their functions outline part of a 'use-case' definition
   - Use cases are part of the UML standards
   - It's a diagram that helps define each function within a system and who (users aka actors) can interact with those functions
+    - It also describes the details of a function and what it does
 - Users are called 'subjects' in comp sci terms (subject-object matrix)
 
 #### Deployment Environment
@@ -1869,9 +1870,116 @@ For complex conditionals, like `((if A ) or ((if B) and (if C) xx ...))`, develo
 
 #### Deployment Requirements
 
+Software is usually connected to other programs, and rarely runs on its own.
+
+When outlining deployment environments that are necessary to install and configure a software, we need to outline all activities and tasks that need to be done by different people during the deployment.
+
+Deployment requirements outline activities and tasks to be done by the software:
+- Acquirer
+  - Purchases the software
+- Supplier
+  - Supplies the software
+- Developer
+  - May customize software during deployment
+- Or any combination of roles
+
+All of these deployment requirements must be outlines in a plan that not only details who does what, but also when each task needs to be completed.
+
+- Plan is executed by fulfilling the requirements based on SOP outlined by the organization
+
+The best way to test the Dep Reqs is to repeat these activities in the TEST environment, and is also a good way to reset the test env to the beginning by redeploying over and over.
+
+- The deployment plan should indicate a method (problem reporting) to capture real-time performance data for:
+  - Process mgmt
+  - Process improvement
+
+One important part of a deployment is being able to identify when things DO NOT go as planned.
+
+When something goes wrong, how do we know about it?
+
+Every deployment plan must have a way to identify if a problem is occurring.
+
+Ideally data is captured realtime, and issues are identified as they are occurring, so that potential compromise windows are as small as possible.
+
 #### Operations Requirements
 
+Once software is deployed, we need to understand and docuemnt the operatioal requirements in order to run it day to day.
+
+- Make sure the product is effective in its intended environment
+- We must know if the software is running effectively or not
+- We need to involve many different people in our organizations
+  - End users
+  - Admins
+  - Etc
+
+- Overall goal is to define and incorporate an established set of activities and tasks to:
+  - Ensure proper system operation
+  - Ensure proper software product operation
+  - Ensure proper software service operation
+
+
+There should be a schedule for all of these operations tasks and when they should be executed.
+
+- Established set of activies and tasks are performed daily across the organization to:
+  - Monitor the operation of software/systems
+    - SLA
+  - Identify and escalate all abnormal incidents
+  - Document and track all user problems
+  - Escalate unresolved problems via a resolution process
+    - All problems should be escalated UNTIL they are resolved
+  - Initiate accepted stakeholder problem resolution
+    - Once accepted, they must be implemented
+  - Verify and validate accepted product change
+    - We must ensure that the change WORKS/fixes the problem.
+
 #### Management Requirements
+
+Mgmt Reqs =/= Ops Reqs. 
+
+Ops Reqs is focused on DAY TO DAY, while Mgmt Reqs are focused on ensuring the software+env are properly maintained.
+
+##### Managing incidents
+
+- Managing Incidents
+  - an Incident is any event that interrupts the TYPICAL FUNCTION of a system/software.
+    - i.e. my banking site is down, or I can't view my balance, etc.
+    - OR, "my work laptop doesn't turn on!"
+- Involves:
+  - Monitoring incidents
+  - Analyze incidents that do occur
+  - Appropriate response is made
+
+The docuemtnation and process are the most imortant parts.
+
+If we had an incident and the admin fixes it w/o documenting it, did it happen at all? How can we prove it? (if a tree falls...) How do we know what was done to fix it? How do we know if it was the right way to fix it? How can it be fixed when that admin gets hit by a trolley or retires or quits?
+
+Having a formal process and documenting it is really improtant.
+
+- Problem mgmt
+  - It must first be determined if a problem exists
+    - Can the issue be replicated?
+    - Is there a known, approved fix?
+
+##### Change mgmt
+
+- Change Mgmt
+  - Primary goal is to mitigate organizational risk due to changes to systems and software
+- Change process can be initiated through ANYTHING that implements change:
+  - Patching to fix bugs and vulns
+    - Hotfixes and service packs
+
+
+- Very important to determine if a patch or service pack (or any change) is even required
+  - Also pay close attention to vendors so we are aware of patches/SPs.
+
+- Initiate patch regression testing if possible
+  - i.e. test it in a TEST ENV and NOT on production first (if possible)
+
+(Regression testing is testing on non-prod systems and slowly rolling out changes to more prod-like envs as you go.)
+
+It is important that the TEST env REPLICATES the DEV environment EXACTLY.
+
+Also, the testing must occur AFTER the patch/SP is applied.
 
 ## Secure Software Design
 
