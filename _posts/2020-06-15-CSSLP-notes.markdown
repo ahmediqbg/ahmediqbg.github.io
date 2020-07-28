@@ -2118,6 +2118,58 @@ Maintaining good documentation is at the core of doing a good job at threat mode
 
 #### Control Identification and Prioritization
 
+- Security is managed and implemented using Security Controls
+  - Primary way of impl'ing security
+  - Backbone of mitigating threats
+  - Can be thought of as a **Mitigation Package** as controls often resolve more than one security threat
+
+Security controls are safeguards/countermeasures that are used to counteract/minimize security risk. ex:
+
+- Enterprise Auth Mechanism
+  - Active Directory
+- Security protocols
+  - IPsec
+
+
+- Things to think about with Enterprise Controls
+  - ACLs
+    - Consider using a model that the enterprise has already implemented rather than making a new model
+  - Efficiency and Operability
+    - These controls will be used by many users and must work with other systems
+  - Must consider the env you work in when deciding what controls to implement
+
+##### Priority
+
+When deciding on what controls to implement, we need to ensure that any decision we make meets our requirements. Ususally there are many solutions that work.
+
+- Look at existing security controls
+  - If these meet our requirements, they have priority over adding new security controls.
+    - This reduces duplicate work
+- Security controls should align controls that are common across the software
+  - Access Control Lists
+  - User Auth
+  - Security Mechanisms
+  - *This should be done because it reduces duplicating security controls
+    - This reduces the security workload by 'aligning'
+
+##### Design Process
+
+A good approach for designing a secure system is to use the SD3 approach:
+
+- Secure by/in...
+  - Design
+  - Default
+  - Deployment
+
+There is more to consider than just the software. We need to consider all of the aspects of our software that need to be secured so we can leverage the right controls to implement.
+
+- Security provision protocols (low-effort implementation)
+  - IPsec
+  - HTTPS
+  - SSH
+
+Reducing the duplication of security controls is always a good thing. It reduces workload AND reduces risk. If we have 2 different controls that serve the same purpose, and if 1 is compromised, we're at risk. Having 2 systems doubles the risk.
+
 #### Design and Architecture Technical Review
 
 #### Risk Assessment for Code Reuse
