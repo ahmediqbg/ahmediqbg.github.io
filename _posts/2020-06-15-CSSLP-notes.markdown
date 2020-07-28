@@ -2057,6 +2057,65 @@ Once we understand the vulns, we can start reducing the attack surface.
 
 #### Threat Modeling and Documentation
 
+Threat modeling is about identifying and documenting threats.
+
+The process can be hard as it involves trying to identify many unknowns that may pose a security risk.
+
+We may not be aware a vuln exists, and miss adding it to a list of threats.
+
+All of this info about threats modeled must be communicated to development. This lets them design defenses to mitigate threats.
+
+This documentation must be continuously maintained throughout the product, so it is essentially a living document. We could find a new threat at ANY TIME and need to make sure it's properly documented.
+
+Threat modeling should be started early in the design process. This makes it easy to mitigate any threats with DESIGN CHANGES, not code changes, i.e. waiting until the development phase.
+
+Threat Modeling is everyone's responsibility, and involves many different roles.
+
+Ex: One threat gives us fraudulent data, which makes this example occur at the business-case level.
+
+Ex 2: Another threat occurs at low-level access to software components, which is at the technical level.
+
+Everyone on the team has to be wary of potential threats and assist in the modeling efforts.
+
+##### Threat Model Development
+
+Phases of threat modeling:
+
+1.  Identify security objectives
+  - Collect all of the requirements and objectives for our software
+    - Legal
+    - Security
+    - Privacy
+    - Data storage
+    - *This list can come from many sources and needs to be listed and properly detailed
+2.  System Decomposition
+  - By breaking our system down, we can understand points of access and how data we must protect is moved through the system
+3.  Threat Identification
+  - Be thorough and ensure that all possible threats are realized
+  - Missing a threat likely introduces a security hole
+4.  Mitigation Analysis
+  - This step has us review each of our threats and address the risk each poses to our software.
+5.  Threat Model Validation
+  - We review our list of threats and planned mitigation strategy to ensure...
+    - The threat is a valid threat
+    - It is mitigated appropriately
+
+##### Documentation
+
+Maintaining good documentation is at the core of doing a good job at threat modeling.
+
+- Provides a roadmap on security related information
+- Centralized place for information
+- Give info to the development team
+  - All team members will be on the same page with respect to the plan
+
+
+- Objectives
+  - Enumerate all threats
+  - Record all info about each vulnerability and its risk
+  - Record planned mitigation strategy for each vulnerability
+  - List any dependencies that different components have on eachother
+
 #### Control Identification and Prioritization
 
 #### Design and Architecture Technical Review
