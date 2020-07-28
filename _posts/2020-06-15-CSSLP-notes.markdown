@@ -2198,9 +2198,34 @@ The review process ensures we pay the proper amount of attention to security.
 
 It also ensures we are progressing enough in the activities that a DaATR covers, like implementing security controls, so we know those activities are being completed at appropriate levels. "Is everything we're concerned about being completed as expected?"
 
-
-
 #### Risk Assessment for Code Reuse
+
+When we reuse code, we need to see if it meets our security criteria.
+
+Start by assessing risk by:
+- Examine potential security issues
+  - Part of this process is reviewing legacy code for vulnerabilities
+    - "Legacy code" means any code we are intending to reuse as it must comply with our security requirement
+
+Legacy code will probably have crap documentation, so you'll probably have to do a full risk assessment on it.
+
+If it has good documentation, then you'll probably just have to review it.
+
+- Include the use of legacy code in threat modelling and attack surface minimization efforts
+- If legacy code has already gone through this process and was deemed as "SAFE", then it is A MISTAKE to continue to treat it as "SAFE".
+  - This is a mistake because there can be a lot of issues/differences when the legacy code is implemented again in a new environment, that can introduce new vulnerabilities.
+  - There might also be new vulns discovered that were just never found
+- The old code will likely be running in a new environment instead of what it was intended for. This can introduce new vulns or cause problems.
+
+##### Code Reuse
+
+Even though we have to assess legacy code, reusing code still has benefits and is a very common practice.
+
+- Saves time
+- Consistency with other apps
+- Reduces work
+- Software libraries are a great example of code reuse
+  - A software lib is a group of legacy code that has a common relationship
 
 ### Design Considerations
 
