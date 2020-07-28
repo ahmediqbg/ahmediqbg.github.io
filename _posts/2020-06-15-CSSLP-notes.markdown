@@ -2172,6 +2172,34 @@ Reducing the duplication of security controls is always a good thing. It reduces
 
 #### Design and Architecture Technical Review
 
+The DaATR is something we must do AFTER the attack surface and threat modeling documentation is finished.
+
+We will use the documentation to review the existing design and architecture to ensure that any changes (like adding sec controls) have been properly integrated into the design.
+
+This improves the current development and ensures we get the best design and architecture to meet functional requirements, and that we meet all security goals.
+
+- Periodic reviews done during development process
+  - Security progress review
+    - How is the project meeting sec goals
+  - Code walkthroughs/Design reviews
+    - Revisit these reviews during Code/Design reviews
+  - Attack surface examination
+  - Documentation on threat modeling
+
+- Review is both technical and process-focused.
+  - It's easy to get sidetracked and change the process when making technical changes
+  - Stay as true to the planned process as possible
+- Security review
+  - Done by dev team during dev process
+  - Security cannot be added after
+    - Much better to build proper security controls into the software to begin with
+
+The review process ensures we pay the proper amount of attention to security.
+
+It also ensures we are progressing enough in the activities that a DaATR covers, like implementing security controls, so we know those activities are being completed at appropriate levels. "Is everything we're concerned about being completed as expected?"
+
+
+
 #### Risk Assessment for Code Reuse
 
 ### Design Considerations
