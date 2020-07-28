@@ -1998,6 +1998,63 @@ During the design phase:
 
 #### Attack Surface Evaluation
 
+Attack Surface is "Any area of your code accessed by unauthorized parties".
+
+This includes any areas that ask for creds by users who will later be authorized (i.e. me logging in to my work computer).
+
+So, if you have webpages that any user can request, and that page asks for credentials to allow only authorized users, those webpages are part of the attack surface as users can still interact with it despite not being authorized yet.
+
+The attack surface is a way of measuring items that MAY be exposed to an attack.
+
+- Measuring attackable components
+  - More components = greater risk
+
+Example: Webpage. If it has more text boxes for people to fill in, the risk is higher, because the likelihood of any one of those inputs being vulnerable is higher because there are more inputs.
+
+Complexity generally makes attack surfaces larger.
+
+- Disable functions when not in use!
+
+Reducing attack surface -> Reducing exposed elements -> Reducing risk
+
+##### Attack Surface Measurement
+
+Attack surface of an application depends on understanding the different types of threats and vulns within the app.
+
+
+To make one:
+- Add up all the ways that unauthorized people can access the app
+  - The hard part is understanding the different ways...
+
+Remember: If an unauth'd user tries to access the app, and gets prompted to auth, that's part of the attack surface.
+
+Elements associated to an attack surface:
+  - Services
+  - Guest accounts
+  - Weak ACLs
+
+Also, more on building attack surface lists:
+- Historical vulns
+- Don't just focus on GUIs.
+- 'Could this happen to us?'
+- All software is different, vulns can vary between products.
+
+##### Attack Surface Minimization
+
+Once we understand the vulns, we can start reducing the attack surface.
+
+- Goal is to reduce attack surface
+  - You must reduce exposed items
+    - Disable services
+    - Lower privileges
+  - Anything implemented to reduce the attack surface needs to be well-documented
+  - Attack surface needs to be calculated during THE DEVELOPMENT PROCESS as any new code or features can introduce new vulns
+  - We may allow an admin to dynamically enable/disable features that increase/decrease attack surface
+    - This means they must be well-informed about security implications depending on the features they select
+      - i.e. this PRINTINATOR feature opens port 42069 and has some horrifying TELNET printing system that is amazingly insecure, why does this exist oh my god, no sane person will ever use this.
+  - Attack surface should be minimized DURING THE DESIGN PHASE so that our software is designed with a SMALL attack surface, and **SECURITY IS NOT AN AFTERTHOUGHT**.
+    - This reduces the overall cost as less code is changed in later phases
+
 #### Threat Modeling and Documentation
 
 #### Control Identification and Prioritization
