@@ -2231,6 +2231,75 @@ Even though we have to assess legacy code, reusing code still has benefits and i
 
 #### Applicable Methods to Address Core Security Concepts
 
+When developing software, security must not be an afterthought.
+
+We need to consider the following during the development of the software like the methods to address core security concepts.
+
+Secure comms between different components is important.
+
+##### Confidentiality
+
+- Prevents disclosure to unauthorized parties
+- Secure secret information
+- Identify elements during design phase
+- Use encryption
+
+##### Integrity
+
+- Protects data from unauthorized changes
+- Can use access control mechanisms
+- Can use hashing to verify integrity
+  - Also can use digital signatures
+- The challenge is deciding how to implement integrity as there are many ways to do it
+
+##### Availability
+
+- About ensuring the system is available
+- Common threat is DoS attack
+- Other threats exist though, not just DoS attacks.
+  - Hardware failures
+- Must review threat model -- Not all threats are made by hackers. 
+  - Hardware/software failure, etc.
+  - System failure
+  - Errors
+- Backups
+- Data replication
+- Failover
+  - Clustering
+
+##### Authentication
+
+- Can verify someone's identity
+- Can be authenticating a person, process, system, or hardware device
+- Compromising authentication is extremely valuable to hackers
+  - Either getting creds or bypassing the mechanism
+- 2FA is very good.
+  - 2 ways of verifying the user is the right person
+  - i.e. uname+pw and send a nonce to email/cell.
+    - They have creds
+    - They have access to email/cell
+
+##### Authorization
+
+- We allow an authenticated user to access functionality of a system that they are allowed to access
+- Can be  complex to implement
+  - Large number of users
+  - Large number of securable assets
+- Many systems have built-in authorization mechanisms to control access control lists
+  - Active Directory
+  - As long as these work, use them. Reduces code and uses common mechanisms.
+- If built-in mechanisms DON'T meet our requirements, we must make CUSTOM authorization mechanisms to provide the security
+
+##### Accounting
+
+- Often overlooked.
+- About measuring activity in the system
+  - Usually by logging
+- Must decide WHAT to log, we can't log everything.
+  - This is done during Design Phase.
+- Must protect (encrypt) data in logs.
+- Must ensure data in logs cannot be tampered with.
+
 #### Security Design Principles
 
 #### Interconnectivity
