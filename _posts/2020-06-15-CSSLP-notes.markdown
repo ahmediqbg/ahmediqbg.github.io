@@ -2447,7 +2447,57 @@ These are 2 styles of providing an interface.
 
 ### Securing Commonly Used Architecture
 
+Consider infrastructure and env when developing an application.
+
+- Consider type of architecture
+- Different architectures we want to leverage
+
 #### Distributed Computing
+
+Client-server and p2p distributed computing models.
+
+- Message queeueueuing
+
+##### Client Server
+
+- Servers
+  - Process requests and store data
+  - Serve numerous users simultaneously, thousands.
+- Clients
+  - Single user's work
+  - Thin (low local processing) or fat (high local processing)
+
+Client-server can be extended into an n-tier model where there are multiple layers.
+
+- Can be thought of a series of client-server comms in sequence
+
+    Client -> Server 1; Server 1 -> Server 2
+
+Server 1 can be thought of as a client.
+
+A good example of this architecure are web browsers and webservers.
+
+
+##### P2P
+
+- A set of machines work TOGETHER to process a workload
+- Each machine is equal and distributes work equally
+- File sharing is a common use of p2p architecture.
+
+##### Message Queuing
+
+- Often overlooked architecture
+- Provides a messaging system between two systems
+- Kind of like email for applications where 1 application can message another one
+- Requires an intermediate server to handle delivery of the messages
+  - This server mediates transfer of info
+  - Resolves data transfer issues
+- Guarantee:
+  - Delivery of messages
+  - Logging
+  - Security
+
+The real advantage of MQ - They allow for one component to be unavailable but still have messages sent to it.
 
 #### Service-oriented Architecture
 
