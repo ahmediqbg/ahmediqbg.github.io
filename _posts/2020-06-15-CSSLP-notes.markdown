@@ -2302,9 +2302,148 @@ Secure comms between different components is important.
 
 #### Security Design Principles
 
+This section covers the secure design principles that need to be applied in a development project.
+
+- Review information
+  - Attack surface analysis
+  - Threat model
+- Create appropriate controls
+  - Ensure CIA
+
+- "Good Enough Security"
+  - A line between too little and too much security
+    - Too little=insecure
+    - Too much=time, money costs, and we hamper processes with unnecessary steps
+      - Users do too much work to get thru security
+  - Use risk to govern our response
+
+- "Least Priviledge"
+  - Users are only granted enough privilege to do their assigned tasks and NOTHING MORE.
+
+- Defense in depth
+  - Using multiple, overlapping defenses
+
+- Separation of duties
+  - Use multiple people or contrls to complete a task
+  - Reduces fraud/error chances and impact
+
+- Failsafe
+  - When (NOT IF) a system fails, it does so securely.
+
+- Complete mediation
+  - We reverify someone's authentication when they try to complete a task, and verify at every step of the step
+    - We can verify if it is STILL the correct user
+
+- Open design
+  - We openly review the design of the system
+    - This lets us fix faults easier
+  - Hiding designs do NOT improve security
+
+- Economy of Mechanism
+  - Simpler systems are easier to secure
+  - We should strive for a simple design
+  - Complexity generally increases error chances
+
+- Least Common Mechanism
+  - Reducing the amount of shared components between users or processes
+  - The shared component cannot be leveraged to gain access from one user's data to another, or between processes
+
+- Psychological Acceptability
+  - Building security controls into a system that are acceptable to users
+  - Hard to use controls will be ignored or bypassed by users
+
+- Leverage existing components
+
+- Weakest link
+
+- Single Point of Failure
+  - Any single component that brings the system down
+  - Redundancy fixes this
+
 #### Interconnectivity
 
+Considerations to take when designing components that manage interconnectivity between software and/or users.
+
+##### Session Mgmt
+
+This is the ongoing comms btwn users and software.
+
+We want a trusted space for comms to occur, and must prevent hijacking
+
+This safe env must be provided PER CONVERSATION so compromized sessions' scope is limited.
+
+- Encrypt comms
+  - Web comms usually take place over SSL
+
+
+##### Exception mgmt
+
+We need to properly handle errors that COULD happen.
+
+- Identify potential failures
+- Anticipate failures
+- Diagnose and correct failures
+  - Failure should be recorded
+- IF it canNOT be fixed, it must be logged and NOT send it to the user.
+  - Info leak
+- This improves usability and security
+
+##### Configuration Mgmt
+
+- Config is stored in files generally
+- This manages functional connectivity
+- Config:
+  - Paths
+  - keys
+  - Connection strings
+  - Init params
+- Just imagine if a hacker could modify this data...
+- This config data mgmt must be considered during the design phase
+
 #### Interfaces
+
+Interfaces and best practices.
+
+- Generally we think of user interfaces
+- But, this can also refer to components
+
+- Remember that some data is handled by components that are external to our system
+- We might need to make an interface in order to safely use external components
+  - i.e. If we use an OS Auth mechanism, we need an interface to it.
+  - We can make one or use an existing interface.
+
+- An interface provides access to data.
+  - ACLs
+  - Data logs
+- Mgmt consoles provide access to this data
+- We want to combine techniques to provide access to mgmt interfaces.
+
+##### In-band and Out of band
+
+These are 2 styles of providing an interface.
+
+- In-band
+  - Provide access to mgmt data as part of our regular communication channel
+  - Easiest to implement
+  - Dangerous as mgmt data is on the same channel as normal comms
+    - Security issues
+    - DoS concern
+
+- Out of band
+  - Separate channel for mgmt data
+  - You can manage while under attack
+  - However, it is more complex to create.
+  - This is common to see in many systems
+
+##### Separate Mgmt Iface
+
+- Best presentation (focused) of mgmt data and provides clear presentation of mgmt functions
+- Always good to group similar functionality
+- Can isolate information better
+
+- Advantages
+  - Familiarity
+  - Cross-correlation of data to different operational data
 
 ### Securing Commonly Used Architecture
 
