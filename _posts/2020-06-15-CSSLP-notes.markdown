@@ -2501,6 +2501,71 @@ The real advantage of MQ - They allow for one component to be unavailable but st
 
 #### Service-oriented Architecture
 
+SOA is a distributed architecture that relies on having a shared service that other components can consume.
+
+SOA can be impl'd with different technologies, but they share a lot of common characteristics.
+
+Characteristics of SOA:
+
+- Discoverable
+  - So client components can find them
+- Platform Neutral
+  - Client components do not need to be running on a specific platform
+- Reusability
+  - More than 1 client component can use it
+- Provides abstracted business functionality
+  - Contract-based interfaces
+    - Contract details comms standard b/w client and SOA component
+- Interoperability
+  - Should work with many other types of components
+
+##### Implementation
+
+- Common Object Model (COM)
+- Common Object request Broker Architecture (CORBA)
+- Web Services (WS) using XML
+
+##### Services
+
+- SOA can provide any service you can think of
+- These are the core units of functionality
+- 1 service performs a specific action
+- Services are Self-contained
+- We use SOAP (Simple Object Access Protocol) when using WS
+  - SOAP packages components b/w client and service
+  - XML does the same job
+    - ...b/c SOAP is an XML implementation
+- REST (REpresentational State Transfer)
+  - Another way to make requests b/w clients and services
+  - Data focued
+
+##### Enterprise Service Bus
+
+- Larger scale version of SOA
+- Intended to be a single place where all the comms b/w data producers and consumers are handled
+  - By doing this we can monitor and control routing of messages and send data to multiple clients simultaneously
+- Convert protocols
+- Handle defined events
+- Typically supports many protocols
+  - Message queueing
+  - XML
+  - EDI
+  - WSDL
+  - REST
+  - DCOM
+  - CORBA
+
+
+##### Web Services
+
+- Allow communication b/w elements (like client/service)
+- XML is used for comms
+- WSDL (web services desc lang) (wizz-dil) is a description of comms standards that the web service supports
+- WS can be impl'd with either SOAP or REST.
+  - REST is more data focused
+  - SOAP only uses XML but has security advantages
+
+
 #### Rich Internet Applications
 
 #### Pervasive and Ubiquitous Computing
