@@ -2565,16 +2565,199 @@ Characteristics of SOA:
   - REST is more data focused
   - SOAP only uses XML but has security advantages
 
-
 #### Rich Internet Applications
+
+- RIAs are apps that are being trasnferred and communicated via the web b/w web server and web client
+- Client does more processing than just showing a webpage
+  - How 'rich' the app is depends on how much processing the client does
+- Benefit of this is that client doing processes reduces communication b/w client and server
+  - More speed on client
+- Frameworks
+  - Flash
+  - Java
+  - Silverlight
+
+Because we're running code within a framework, security is important.
+
+##### Client-side Exploits or Threats
+
+Don't assume that clients will use validation code given to them!
+
+Don't rely on client-side validation! The client can send WHATEVER byte stream (and yes, EVERYTHING is a stream of bytes) to your server/component that they feel like!!!
+
+- Hackers can corrupt/compromise data given to them/sent to the server.
+
+- Serverside validation is a must.
+
+- Client cannot be trusted
+- Client can be running malware or misconfigured
+
+##### Remote Code Execution
+
+RCE is when 1 machine causes another to execute code.
+
+- Common vuln in RIAs
+- Very serious threat
+- Can cause user to gain control of server
+- Code and data must remain SEPARATE
 
 #### Pervasive and Ubiquitous Computing
 
+- Devices are powerful and varied
+- People run apps on anything, anywhere, in any format.
+- Phones, tablets, watches
+
+##### Wireless
+
+Many of these devices rely on wireless networks. No cables.
+
+- 802.11/802.15
+- BT
+- WiMax
+- LTE
+
+These networks can be unsecure and must not be trusted.
+
+##### Location-based
+
+Location services can be used to 'know' where a device is geographically.
+
+- Marketing use
+
+You can restrict functionality depending on locale, although users can forge location info.
+
+- A person's location can be considered sensitive, and may need to be treated as PII.
+
+##### RFI
+
+Non-contact comms method that requires a transmitter and receiver.
+
+Transmitter broadcasts short range freq, and ANY receivers close enoguh can read it.
+
+RFI tags in products in stores are an example.
+
+RF device frequencies are regulated by countries.
+
+###### NFC
+
+Near-field comms.
+
+- Protocol that uses RFI over short distances (few inches).
+- Payment: 'tap to pay'
+- Easy to compromise: Read over long distances and also needs no authentication.
+  - Can steal credit cards
+  - Can siphon data from CC
+
+##### Sensor networks
+
+- Autonomous sensors that measure things
+- i.e. automatic weather stations
+  - Rainfall
+  - Weather
+  - Communication efficiency
+- Each station is a 'node'
+- The node can be physically compromised as they are usually in remote locations
+
 #### Integrating with Existing Architectures
 
-#### Cloud Architectures
+- Dealing with the interaction between the software we're making and the components from the existing architecture
+- We must evaluate if all components (including existing ones) meet requirements of our app not only from functionality but also a security standpoint
+
+- Cross-integration
+  - This means the integration goes both ways
+  - Our app can also provide functionality back to the enterprise, like data
+  - Benefit: Enterprise architecture has more functionality.
+    - But adds work. Is it worth it for the future?
+
+- IwEA considerations
+  - Cost
+    - Is the time+money+effort worth the functionality later?
+    - Usually short-term and long-term payoff
+
+#### Cloud Architectures (Deployment Models)
+
+"Cloud" is a phrase used to describe an architecture that is scalable and automatically provisioned based on demand.
+
+- Private cloud
+  - An organization provides a cloud env internally
+  - Infra cost can be high
+- Public cloud
+  - 3rd party companies provide cloud architectures to more than 1 customer
+  - Customers are isolated from oneanother
+- Community cloud
+  - Cloud services focused on supporting a group of people
+  - Services may be specialized and focused on 1 group of people
+- Hybrid cloud
+  - Coupling internal and external services
+  - Does not necessarily mean 2 cloud structures that are both internal+external
+  - More commonly, internal non-cloud services work with external cloud-based services.
+
+##### Software as a Service (SaaS) 
+
+- Software runs in the cloud
+  - FB, Gmail
+- Client-browser based
+- Benefits
+  - No contact distribution (no deploying to machines)
+  - Instant updates
+  - Software is restricted by virtue of running in a browser
+  - '0 footprint' on client
+- Data security
+  - Data is stored internally to the SaaS, in the cloud
+
+##### Platform as a Service (PaaS)
+
+- Step above SaaS
+- Offers a complete platform -- not just 1 piece of software like SaaS
+- PaaS requires client subscription for the services
+- Client does not manage infrastructure
+  - Network
+  - Servers
+  - OS
+  - Storage
+- Ex:
+  - Email
+  - Web services
+  - Data services
+- Can offer significant savings because of the economy of scale
+
+##### Infrastructure as a Service (IaaS)
+
+- Completerer platform
+- Clients can manage infrastructure
+  - Networking
+  - Provision storage
+  - Deploy software
+- IaaS fills the gap between SaaS to PaaS
+  - Gives more control over service config
+  - answers "What if PaaS doesn't offer the platform service we need"
+- Downside is extra config and managing the environment
 
 #### Mobile Applications
+
+Mobile apps are very common and new.
+
+- Phones
+- Tablets
+- Anything handheld
+- Comes with mobile OS
+
+##### Mobile apps
+
+- Designed for mobile devices
+  - Limited processing
+  - Limited mem and I/O
+
+- Your app might thrash or freeze
+  - Encryption may do this
+
+- App stores offer authorized apps
+  - Apps can be private
+  - Commercial apps can be downloaded by anyone
+
+- Every mobile vendor has a different platform
+  - What does this mean for security?
+    - Different OSes? Disabled features? (i.e. no ios secure enclave)
 
 ### Technologies
 
