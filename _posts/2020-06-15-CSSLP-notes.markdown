@@ -2761,9 +2761,125 @@ Mobile apps are very common and new.
 
 ### Technologies
 
+One challenge today in developing software is how many different technologies your solution will be based on.
+
+Understanding as much as you can about technologies in and around the solution is crucial.
+
 #### Authentication and Identity Management
 
-#### Credentail Management
+Steps:
+- Identify user
+  - i.e. uname
+- Authenticate user
+  - i.e. password with username upon login
+- Authorize user
+  - Based on user identity, determine
+
+Authentication is challenging because different verification methods can be circumvented: Passwords can be stolen or guessed!
+
+Identifiers:
+- Password
+- Digital Certificate
+- Biometrics
+
+##### Authentication Factors
+
+- Something you know
+  - Password
+  - PIN
+- Something you have
+  - Token
+  - CC
+- Something you are
+  - Biometrics
+  - Voice
+  - Retina
+
+Consider:
+
+- How easy is it for one of these factors to be stolen/impersonated?
+  - Steal a phone
+  - Steal a credit card #
+  - Can't steal an eyeball easily...
+
+##### 2FA
+
+Two-factor auth.
+
+Using two auth factors increases confidence in the authenticity of the entity attempting to authenticate. This is because it is less likely that both factors are compromised, when compared to 1 factor.
+
+Pros:
+- Reduce theft and fraud
+- Greater assurance of valid authentication
+Cons:
+- Can be compromised by malware (record creds or requests)
+- Can be compromised by MiTM or fake login systems
+
+##### Federated Identity Mgmt
+
+- Directory Services
+  - Central storage for credentials and users
+  - Active Directory aka LDAP
+    - There are likely multiple sources of info about users
+    - It can be hard to sync this info with the central repository
+  - Some systems may need to keep local DB copies
+  - Problems may occur with stateful systems
+  - May be a lack of consistent policies
+
+To help manage these issues, User Provisioning is likely to be automated.
+
+- User Provisioning
+  - May be slow
+  - May be inconsistent
+
+#### Credential Management
+
+- Creds are used for auth
+- Cred Mgmt refers to how creds are protected
+
+Can have:
+- Passwords (weak)
+- Tokens
+- Biometrics
+- Certificates (strong)
+
+##### X.509
+
+- Int'l standard for PKI (public key infrastructure) and PMI (Privilege Mgmt Infrastructure)
+
+- Standards for certs and cert handling
+
+- PKI is asymm encryption
+
+- Cert fields:
+  - Version and serial #
+  - Signature algo
+  - Issuer and validity
+  - Subject
+  - Public key
+  - Usage of cert
+  - Any other extensions
+
+X.509 is a standard, introduced by the International Telecommunication Union in the late 80s.
+
+The Internet Engineering Task Force (IETF) established the working group for X.509 standards and established the RFC 3280 standards, and the RFC 5280 standards (v3 of certs).
+
+These standards established the PKI by providing a framework for cryptographically signed certs.
+
+- Prevents altering of cert.
+- Provides structure to verify the source (or all parent certs and other sources) when you have a cert chain.
+
+Certs are based on cert authorities.
+
+##### Single Sign-On (SSO)
+
+- Certs and PKI are very involved in SSO
+
+- SSO lets users sign in once and REUSE credentials.
+  - From user's perspective, they are only prompted to authenticate once. Great for them!
+- This is accomplished by STORING THE CREDENTIALS outside the app, generally in a directory service.
+
+
 
 #### Flow Control
 
