@@ -3307,6 +3307,63 @@ Firmware is a way to program a device.
 
 ## Secure Software Implementation and Coding
 
+### Declarative vs Programmatic Security
+
+#### Declarative Security
+
+#### Programmatic Security
+
+### Vulnerability Databases and Lists
+
+#### OWASP Top 10
+
+#### CWE
+
+### Defense Coding Practices and Controls
+
+#### Concurrency
+
+#### Configuration
+
+#### Cryptology
+
+#### Output Sanitization
+
+#### Error Handling
+
+#### Input Validation
+
+#### Logging and Auditing
+
+#### Session Mgmt
+
+#### Exception Mgmt
+
+#### Safe Apis
+
+#### Type Safety
+
+#### Memory Mgmt
+
+#### Configuration Parameter Mgmt
+
+#### Tokenizing
+
+#### Sandboxing
+
+### Secure Coding Practices
+
+#### Source code and Versioning
+
+#### Build Environment
+
+#### Peer-based Code Review
+
+#### Code Analysis
+
+#### Anti-tampering Techniques
+
+
 ## Secure Software Testing
 
 ## Software Acceptance, Deployment, Operations, Maintenance, and Disposal
