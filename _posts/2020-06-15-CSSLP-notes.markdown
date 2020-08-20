@@ -2879,27 +2879,431 @@ Certs are based on cert authorities.
   - From user's perspective, they are only prompted to authenticate once. Great for them!
 - This is accomplished by STORING THE CREDENTIALS outside the app, generally in a directory service.
 
-
+- Kerberos
+  - Auth protocol that uses PKI to establish auth
+  - Allows SSO using 'tickets'
+    - tickets can verify user identity to use services
+- Security Assertion Markup Language (SAML)
+  - Claims-based auth mech
+  - Used to implement SSO
+  - Used for the web
+  - Allows a user to create a SAML-based claim that is digitally signed by the author
+  - Claims are similar to passports and can be used to authenticate into different systems without needing to reauth.
+- OpenID protocol
+  - Similar to SAML
+  - Allows for authentication to happen over the web
+  - THE most popular authentication mech on the web, used by many 'big names'
+  - Allows a user to use a single cred to auth for multiple resources
 
 #### Flow Control
 
+Controlling flow of info from 1 system to another is important when securing systems.
+
+##### Firewalls
+
+- Policy enforcement device that controls the flow of info b/w 2 networks by allowing or blocking
+- Can impl many rules
+- Fundamental
+- "Next Generation" firewalls
+  - Allow for more control over network traffic
+- Generally just do STATELESS packet analysis and inspection (wireshark with a gun)
+- Next gen firewalls are STATEFUL:
+  - "Did this comm b/w Alice and Bob __START__ from _inside_ the network? IF SO, let the incoming traffic in.
+  - This "thorough (stateful!) packet inspection makes 'next gen' firewalls very useful and 'smart' tool.
+- Firewalls can act with Intrusion Detection Systems (IDS) that monitor intrusion patterns (i.e. repeated pinging, login, etc.)
+  - When necessary IDS can tell firewall to block that intrusion attempt dynamically
+
+##### Proxies
+
+- Control (redirect or modify) traffic flow
+- Middleman that protects internal device
+- `squishy_mysql_db <=====> proxy <=====> internet <====> evil_spikey_hacker`
+- `employee_pc <=====> proxy <=====> internet <====> hxxps://coolguns.ru/`
+- Internal devices are  not DIRECTLY contacted by external systems
+- Proxies also use a set of rules, just like firewalls
+  - Can be simple or complex
+- Benefit: Caching. 2 users go to a website. Proxy caches response (images! JS!) and doesn't need to ask coolguns.ru for double the pictures.
+
+##### Application Firewalls
+
+- Type of firewall/gateway that governs ONE application.
+- Allows controlled access to just that application
+- Can monitor traffic in either direction
+- Block traffic
+  - Based on rules
+  - Or to stop misbehaving applications
+
+##### Queueing technology
+
+- Like email for systems
+
+- Message transport
+  - Synchronously
+  - Asynchronously (preferred)
+    - Alleviate congestion
+    - Stop traffic loss
+
+- Reduces congestion by reducing send/receive messages b/w systems
+  - When network is congested, W/O queuing, it only gets worse: Systems just retry sending messages.
+  - With queueing, it doesn't matter how backed up MQ is: Systems send it and continue their tasks.
+  
+- Vendors
+  - Microsoft Message Queues
+  - IBM MQ Series
+  - Oracle
+
 #### Logging
+
+- Record actions taken by a user in a system
+- Protects against repudiation
+
+- Record...
+  - What action was taken
+  - By who
+  - Where was the action taken (What system)
+
+- Logging requirements
+  - HIPAA
+  - SOX
+  - PCI
+  - DSS
+  - EOC
+
+
+##### Logging criteria
+
+What information do we record?
+- Cause of the issue
+  - Events before issues
+  - Challenge is to balance 'too much' and 'not enough'.
+- What impact does logging have on resources?
+  - Processing
+  - Storage (more important)
+- Local logging
+  - Simplest solution
+  - MUST be secure and integrated later into an enterprise solution
+- Third party logging tools
+  - Security information and event mgmt solution (SIEM) can do this
+
+##### Syslog
+
+The "System Log" for a system.
+
+- Records system actions
+  - User logs on to OS
+  - Built for UNIX and used in both UNIX and Linux
+
+- Approved by the IETF
+- Uses UDP and TLS to communicate log entries to other servers, like a central server.
+- Microsoft has no equivalent (take that!)
 
 #### Data Loss Prevention
 
+Data is critically valuable.
+
+- DLP
+  - Reduce risk
+  - Protect data
+  - This is our last line of defense
+
+DLP is not just about maintaining good backups.
+
+Some software uses 'profiles' to detect data access and potential loss
+- Size of transfer
+- Destination
+- Data type
+
+##### Reduce Risk
+
+Protect data...
+- in motion
+  - Encrypt data when moving it
+  - Protect at the packet level
+  - Limit the types of channels data is transmitted over
+    - Block certain email, encrypt others
+- at rest
+  - Protect network shares
+  - Protect databases
+- in use
+  - Network endpoint monitoring
+  - Device (i.e. usb key) monitoring
+  - Monitor where data exits (preventing usb key copying)
+
 #### Virtualization
 
-#### Digital Rights Management
+- Layer b/w OS and hardware
+- Separates real hardware and OS inside virtual OS
+- Can run multiple OSes
+- Allows for flexibility in upgrades and scaling
+- Security advantages
+  - Can contain malware
+  - VMs are logically isolated from hardware and other software
+
+- Vendors
+  - VMWare
+  - Microsoft
+  - Xen
+
+##### Benefits
+
+- Cost savings
+  - Less hardware
+- Efficiency
+  - (-) add overhead
+  - Less administration in many aspects
+- Isolation
+  - Applications
+  - Data
+  - Platforms
+  - Storage
+  - Memory
+- Scalability
+  - Cloud computing
+  - Provisioning VMs
+
+#### Digital Rights Management (DRM)
+
+- Content can be COPIED even within our own environment
+- "Data wants to be free"
+- Restricting content outside our env
+- Protect intellectual property
+- Copy protection
+  - Limit usage rights
+  - Guarantee authenticity
+  - Guarantee integrity
+
+##### Rights Expression Language (REL) 
+
+Defines license and perms/restrictions on content.
+
+- Machine readable
+- Many formats, XML, JSON, etc
+- also...
+  - ccREL
+  - ODRL
+  - MPEG-21
+  - XrML
 
 #### Trusted Computing
 
+##### Trusted Computing Base (TCB)
+
+TCB is all of the hardware, software, and firmware components that are CRITICAL to securing a system. If a component's compromise would compromise the entire system, it is part of the TCB.
+
+TCB is really about privilege escalation.
+
+##### Trusted Platform Module (TPM)
+
+- Hardware solution for crypto
+- Usually a chip on the mobo
+
+- Purpose is to be a totally isolated device that handles crypto instead of OS doing it in software
+  - This isolation secures the crypto
+  - Can handle encryption keys in an isolated environment
+
+- Controversial: TPM chips can be used to LIMIT the software that runs on a device
+
+- Features:
+  - Hash gen
+  - RSA gen
+  - Enc/decryption
+
+##### Malware
+
+- Malicious software.
+  - Viruses
+  - Worms
+  - Trojans
+
+- Very complex threat
+
+##### Code Signing
+
+- One of the best ways to protect code
+
+- Using digital signatures to sign code
+  - Executables
+  - Scripts
+- Provides info
+  - Author of software
+  - Integrity level
+  - The expected hash of the code
+
 #### Database Security
+
+Databases are the primary locations for data in most enterprises.
+
+##### Encryption
+
+- Protects data at rest
+- Encryption Mgmt
+  - Database Management System itself provides encryption
+  - External crypto resources
+- The keys are the most valuable asset
+
+Consider:
+- Level of risk of the data
+  - What if it gets compromised?
+- Usage pattern
+  - How is it transmitted?
+- Sensitivity of the data
+- Encryption handling
+- Encryption options
+
+##### Triggers
+
+Allows a database to react to a specific activity.
+
+- i.e. 'add 1 to this column when you see "potato" in this row'
+- Can record useful info
+  - Changes
+  - Additions
+  - Execution of routines or commands
+- Can prevent a command from executing based on logic
+- Can be used for custom DB logging
+
+##### Views
+
+Another way to help protect data in a database.
+
+- Shows dynamic 'views' of data in one or more tables
+- Views are LIKE tables, but don't contain any original data, just data extracted from tables.
+- Tables
+  - Contain all the data
+  - Records
+    - Addresses
+    - CC#
+    - SSN
+    - Names
+- Views can be used to restrict what data is available (i.e. remove CC# and SSN) without providing the entire record in the table
+- Can be used to combine data from 2 tables
+
+##### Privilege Mgmt
+
+- Main way that security in DBs is configured
+- Internal access control
+  - Similar to ACL-based controls
+- Can be integrated with system security
 
 #### Programming Language Environment
 
+The env in which a dev creates and edits the code.
+
+- Source code turned into binary/machine code
+  - Compilers
+  - Interpreters
+  - Both
+
+##### Common Language Runtime (CLR)
+
+- CLR used in MS .NET langs
+- Provides an env for 'managed code' to run in
+  - Managed code: code intended to run in the CLR
+
+1.  Dev makes managed code
+2.  Compiled into a Common Intermediary Language (CIL) (called MSIL)
+3.  MSIL compiled into machine code, using JIT compiling managed by the CLR
+4.  CLR executes MSIL code
+
+CLR provides:
+
+- Traps
+- Index checking
+- Sandboxing
+- Gargabe collection
+
+##### Java Virtual Machine (JVM)
+
+- Similar to CLR
+- Java compiles to java bytecode (not machine code)
+- Java bytecode must be executed in the JRE
+- JRE JIT compiles bytecode to machine code
+
+##### Compiler Switches
+
+- They control program construction
+  - Memory
+  - Exception handling
+  - Stack protection
+- /GS flag tries to prevent buffer overflows
+- /SAFESEH flag restricts the program to only call valid exceptions
+- ...more
+
+##### Sandboxing 
+
+A sandbox isolates the executing code away from system resources or other code.
+
+- Useful for executing untrusted code
+- Mediates access to...
+  - Memory
+  - Network
+  - Filesystem
+
 #### Operating Systems
 
+OS is software that manages the hardware and controls the environment that software is executed in.
+
+- MS Windows
+- UNIX
+- Linux
+
+- Mainframes
+- Desktops
+- Laptops
+- Mobile devices
+
+- OS provides a functional interface to the hardware.
+
+- Different types
+  - Multi user
+    - Must isolate interuser processes and data
+    - Needs more resources
+    - Restrict access to resources on a per-user basis
+  - Realtime (RTOS)
+    - Specialized OS
+    - Processing of data is most important
+      - Must occur as efficiently as possible
+
 #### Embedded Systems
+
+Dedicated systems designed to perform a specific task.
+
+- OS must be streamlined as devices are generally small
+- Time-sensitive constraints
+  - i.e. Streaming video to security feed
+- Want to use minimum amount of hardware generally
+
+ex:
+- Vehicle nav
+- Factories
+- Music players
+
+##### Control Systems
+
+Specialized systems that allow automated control over hardware.
+
+- Paired with motors/actuators
+- May use a Programmable Logic Controller (PLC)
+- Or a Remote Terminal Unit (RTU)
+  - That sends data to a Supervisory Control and Data Acquisition System (SCADA)
+
+CSs are used in oil and gas monitoring or environment monitoring systems.
+
+##### Firmware
+
+Firmware is a way to program a device.
+
+- Software code is deployed via physical wire onto device memory, or make it impossible to alter
+- Used when we do NOT want the software to change
+
+- Stored on...
+  - NVRAM
+  - ROM
+  - EPROM
+  - Flash
+
+- BIOS chip is an example of firmware.
+  - Can be updated but not commonly.
 
 ## Secure Software Implementation and Coding
 
