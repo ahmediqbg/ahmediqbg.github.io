@@ -3309,27 +3309,194 @@ Firmware is a way to program a device.
 
 ### Declarative vs Programmatic Security
 
+Testing, analysis, and reviews are important when coding.
+
 #### Declarative Security
+
+- Security can be represented in two ways in code
+  - Declarative (part of app/container)
+  - Imperative (in code)
+
+- DS defines security relations with respect to the container
+  - Security rules are stored in a config file
+  - These files store authentication and authorization settings for an app/container
+
+Example: ASP.NET Web.config file with authentication and authorization sections. ONE file has those security config settings.
+
+A benefit of this is that DS is flexible. It's easy to modify rules after code is compiled.
+
+- Security rules are defined as part of DEPLOYMENT, NOT AS PART OF THE CODE.
+
+- In DS, security is managed by the operational personnel, NOT the dev team.
 
 #### Programmatic Security
 
+AKA Imperative security.
+
+- Security is written into the application code (aka container).
+- NOT stored in a config file.
+- Less flexible.
+- Offers very granular security (fine control)
+- Enables enforcement of very complex rules
+  - You cannot do this with declarative security.
+- Can make code less reusable
+
+
+- Design considerations:
+  - Decide whether to use Declarative, programmatic, or a MIX.
+  - Make this choice early in the design process as it is a foundation
+- Then, start building the app
+- The job role with PS is of the developer and not deployment team.
+
 ### Vulnerability Databases and Lists
 
-#### OWASP Top 10
+#### OWASP (Open Web Application Security Project) Top 10
 
-#### CWE
+- Open source community intended to improve web app security
+- <https://owasp.org/>
+- OWASP Top Ten is a list of common security flaws
+  - Come with a description of the risk
+  - Examples,
+  - And how to avoid that risk.
+
+1.  Injection is the #1!
+  - SQLi, LDAP
+2.  Broken auth and session mgmt
+  - Allowing attackers to compromise passwords, keys, security tokens
+3.  XSS
+4.  Insecure Direct Object References
+  - Exposing internal object references to attackers
+    - i.e. "give me a filepath, my webserver will just give it to you"
+    - Allowing attackers to provide primary keys directly
+5.  Security Misconfiguration
+  - Default security settings
+6.  Sensitive Data Exposure
+  - Leaving IDs, passwords, SSNs exposed
+7.  Missing Function Level Access Control
+  - Not checking if users are authorized to execute functions
+8.  CSRF
+  - Causing victim's browser to forge HTTP requests
+9.  Using Components with Known Vulnerabilities
+10. Unvalidated Redirects and Forwards
+
+#### Common Weakness Enumeration (CWE)
+
+- Dictionary of common software weaknesses
+- Meant to help devs and orgs ensure their apps aren't vulnerable due to software weaknesses
+- <https://cwe.mitre.org/data/published/cwe_v2.8.pdf> (old btw, 2014-07-31)
+- <https://cwe.mitre.org/data/published/cwe_v4.2.pdf> (2020-08-20)
+
+- Breaks down common weaknesses by type and environment:
+
+```
+CWE-5: J2EE Misconfiguration: Data Transmission Without Encryption
+CWE-6: J2EE Misconfiguration: Insufficient Session-ID Length
+CWE-7: J2EE Misconfiguration: Missing Custom Error Page
+CWE-8: J2EE Misconfiguration: Entity Bean Declared Remote
+CWE-9: J2EE Misconfiguration: Weak Access Permissions for EJB Methods
+CWE-11: ASP.NET Misconfiguration: Creating Debug Binary
+CWE-12: ASP.NET Misconfiguration: Missing Custom Error Page
+CWE-13: ASP.NET Misconfiguration: Password in Configuration File
+CWE-14: Compiler Removal of Code to Clear Buffers
+CWE-15: External Control of System or Configuration Setting
+CWE-20: Improper Input Validation
+CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+CWE-23: Relative Path Traversal
+...
+```
+
+- Give you an example of the weakness
+- Give you a mitigation for the weakness
+- Give you references about how to fix or exploit the weakness
+- Very cool document. Useful.
 
 ### Defense Coding Practices and Controls
 
+Ensure software will continue to operate despite changes or attacks.
+
 #### Concurrency
+
+Already know this. Readers, use Google.
 
 #### Configuration
 
+- When installing an app to a system (i.e. OS), the system itself could be misconfigured.
+- Other apps can also be vectors for exploits
+- Good example is web apps.
+  - Wapps are installed on web servers.
+  - Wapps access data on a DB server.
+  - Any of these systems and/or OTHER software installed on them are vectors themselves.
+- OS PLUS software can be vulnerable to attack.
+
+##### Preventing configuration attacks
+
+- Establish a process to harden the OS
+  - Remove extra software, patch the system, add firewalls
+- Modify default configs of an app AND system
+  - Default accounts/shitty passwords
+  - Authentication methods
+  - Folder locations
+  - Review all default settings
+  - Use config files for your application settings (conn strs and enc keys)
+
 #### Cryptology
+
+The use of crypto fns within your app.
+- Hashing
+- Encryption
+
+- Vulns in crypto logic are pretty serious.
+  - You should make careful decisions when impl'ing crypto.
+
+- Some flaws:
+  - Not encrypting sensitive data (i.e. config files or a db)
+  - Not securing crypto keys
+  - Using old crypto APIs
+
+##### Mitigation
+
+- Encrypt any sensitive data at rest
+- Don't allow sensitive data to cross trust boundaries
+  - Military segregates secret vs classified vs unclassified networks
+- ***Don't roll your own shitty crypto!*** It will suck! It won't last long! Math nerds ARE SMARTER THAN YOU on the topic of crypto!
+- Don't use old APIs
+- Ensure software is ready to accept new hashing/crypto algos
 
 #### Output Sanitization
 
+Sanitization: Converting info from a harmful form to a non-harmful form
+- ...whatever 'harmful' means
+- *In my intepretation: Don't mix code and data. Encoding IS THE BEST FORM OF sanitization, if it is possible to encode in the current context
+
+- Two types:
+  - Input - Performed on data before it is brought into a system
+  - Output - Performed on data before it is presented into the user
+    - Generally by encoding, ex. `<` as an HTML entity becomes `&lt;`
+
+- Ensure that the integrity of the data is maintained
+
+##### Methods
+
+- Stripping (blacklist... :( )
+- Substitution (blacklist... :( )
+- Literalization (probably encoding? Never heard of this.)
+
+** NOTE The training I am taking is WRONG. This is bad advice. Don't use blacklists. Encode or use whitelists. **
+
 #### Error Handling
+
+- Validate input!
+- Perform output error handling.
+  - Make sure that error messages do not divulge sensitive information.
+    - "Keep SQLi blind" so to speak.
+
+##### Best Practices
+
+- Use non-verbose messages for users
+  - No stack traces.
+  - Don't say "uname wrong" or "pw wrong", say "invalid creds" or "login failed".
+
+TODO: finish
 
 #### Input Validation
 
