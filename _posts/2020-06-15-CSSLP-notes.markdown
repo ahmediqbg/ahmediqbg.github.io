@@ -3495,28 +3495,158 @@ Sanitization: Converting info from a harmful form to a non-harmful form
 - Use non-verbose messages for users
   - No stack traces.
   - Don't say "uname wrong" or "pw wrong", say "invalid creds" or "login failed".
-
-TODO: finish
+- Always have the software fail to a secure state
+  - ex: User gives wrong uname+pw, we can tolerate a minimum amount of attempts, and then lock the account.
+- Limit the number of user errors before an action is taken and a security event is recorded
+  - Fail to login 3 times
+- "Clipping level" is the number of errors before action is taken.
 
 #### Input Validation
 
+- All data input should be considered malicious
+- All data input must be validated before being processed
+  - Check the type
+  - Check the range (number or date)
+  - Check for illegal characters
+  - Verify minimum and maximum lengths of data
+
+
+- Can use regex
+- Can use a whitelist or (NOT!!!) a blacklist
+
+- Can validate at either client or server, or both (*NOTE: This is bull. Don't rely on client-side validation! Clients can lie!)
+
 #### Logging and Auditing
+
+It is important to be able to log and audit actions within the application.
+- "Who performed this action at this time on this system?"
+
+Forms of auditing (order of importance):
+- Error logging - to a file
+- User action logging - to a file or db
+- Administration logging - to a file or db
+- Database logging - feature of the db
+
+* Create an area in the app that allows for logging and auditing to be configured
 
 #### Session Mgmt
 
+Users should authenticate to the app before they gain access.
+
+Once the user is authenticated, they are given a session ID.
+
+The session ID is essentially a token that gives users access, so obtaining a session ID gives access.
+
+- MiTM attack
+
+Once the hacker impersonates the user by stealing the session ID, how does the app know what requests are actually coming from the user?
+
+- A security token (CSRF token, anti-forgery token, nonce, etc.) can be used with the session ID to ensure that a stolen session ID is useless.
+
 #### Exception Mgmt
 
-#### Safe Apis
+- I know what exceptions are
+- Basically, unexpected actions/state within an application occur/take place.
+
+
+- Use try-catch
+- Filter exceptions
+- Exceptions contain sensitive info, useful to attackers.
+- Be consistent with exception handling
+- Keep error messages vague
+
+#### Safe APIs
+
+- API example: WMI or Crypto lib.
+- NOT just web apis. Can be any application programming interface.
+
+- Old APIs may be insecure.
+  - Org must assess how old they are and update if need be
+  - ex: Old SSL APIs are full of holes. Heartbleed bug example. Also, old crypto APIs suck bigly. They may be DES or 3DES, etc.
+
+- API security considerations:
+  - Don't use old or banned APIs
+  - Replace old APIs with similar, secure APIs
+  - If your company is creating an API as an interface to your app logic:
+    - Authenticate the request
+    - Audit access to the system and the API calls
+    - Encrypt sensitive data
 
 #### Type Safety
 
+TS is a feature of langs that prevents data type errors (aka casting errors)
+
+Ex: Storing float in an int, or multiplying a string by an int.
+
+- Methods of impl'ing TS:
+  - Static: Types are assigned at compiletime. Compiler catches type error during compilation. Java and C do this.
+  - Dynamic: Types are assigned at runtime. Compiler does not catch errors at compiletime.
+
 #### Memory Mgmt
+
+MM is the concept of bieng able to manage memory resources and freeing memory when not needed. It is generally complex.
+
+MM and allocation are shared responsibilities b/w OS and apps.
+
+- Managed code: Excels at memory mgmt (C#, Python, Java)
+  - Sandboxed. Runtime engine controls memory.
+
+- Unmanaged code: Wieldy and complex (C, C++)
+  - Devs control GC, thread pooling, buffer overflows, etc.
+
+##### Type Safety
+
+- Linked to memory safety
+  - An application can ONLY access memory that has been allocated to it
+- Prevents errors in programs with different datatypes
+- Type-safe code always stays within allocated memory range
+
+##### Locality
+
+- Defines predicatability of memory references
+  - Future memory accesses are close to previous references
+  - NOP sled
+- Memory attacks leverage locality
+  - Buffer overflows
+- Address Space Layout Randomization (ASLR) helps defend against locality attacks
 
 #### Configuration Parameter Mgmt
 
+Settings stored in a config file in the app, designed to be alterable.
+- Startup vars, conn strings, cryptographic info.
+
+- Startup vars
+  - Malware can attack a bootstrap process (phase that inits env vars)
+  - Startup vars must be protected from change outside the app
+  - Config files must be secured
+
+- Encrypt sensitive data using a secure algo and large enough block size.
+
+- Cryptographic agility
+  - Don't hard-code the cipher
+  - Allow for algos to be changed
+
 #### Tokenizing
 
+- Some industries prevent storage of sensitive info after a txn (like cc#)
+  - Tokenization is the act of replacing sensitive data with unique symbols in order to retain the information
+
+
+EX: Instead of storing a CC#,
+- Generate a random value (token) based off of the txn info and last 4 digits of CC#.
+- Because the token is not based on the actual CC#, it cannot be used elsewhere.
+
 #### Sandboxing
+
+Sandboxing is executing code in isolation from the host OS.
+
+- Used to let untrusted/unverified code run
+- Can allow for various system interactions across:
+  - Memory
+  - Network
+  - Programs
+  - Devices
+  - Filesystems
 
 ### Secure Coding Practices
 
