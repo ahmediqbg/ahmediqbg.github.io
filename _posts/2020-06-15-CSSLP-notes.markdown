@@ -3652,14 +3652,154 @@ Sandboxing is executing code in isolation from the host OS.
 
 #### Source code and Versioning
 
+`V a.b.ccc.ddd`
+
+- a = Major Version Number
+  - Major change in functionality
+- b = Minor Version Number
+  - Minor features or fixes
+- c = Build Version Number
+  - Current build or compilation of application
+- d = Revision Number
+
+Versioning ensures devs can label versions, and roll back code. Also lets you track changes to code.
+
+Also prevents "Regenerative Bugs" -- Fixed bugs that occur because the wrong version of the code is being used.
+
+Versioning impl'd by managing changes with version control and VC numbers.
+- VC# uniquely identifies each release
+
+VC is extremely important for large apps.
+
+Security concern: VC software should have a 'checkout' feature.
+- Stop other devs from changing code I am trying to modify
+
+- Automated systems are good
+  - VSS, CVS, TFS
+  - Mitigates human error
+  - Increase efficiency
+
 #### Build Environment
+
+Best practices.
+
+- Software build is a multistep process.
+  - Compilation - Compile source code.
+  - Linking - Refs to deps
+  - Testing
+  - Sign/package
+  - Distributed - Install app.
+
+Build Env integrity MUST be ensured.
+
+- System in secure state, ACLs, VC software to ensure correct version of software is built
+
+
+- Various tools exist for compile-link-test-sign/package-distribute.
+  - Tools must be configured correctly to mitigate issues with problematic code
+
+- Automated tools in IDE help eliminate errors
+  - Static and dynamic checks
 
 #### Peer-based Code Review
 
+Dev team sits down an reviews each other's code.
+- Fresh eyes offer valuable insight
+- Can take time and analysis effort.
+  - Maybe use automated tool. HOWEVER. Not a replacement for sit-downs w/ buddies.
+
+Purpose of PbCR:
+- Locate code weaknesses
+- Locate code vulns
+- Assist devs with development
+  - Create succinct code
+  - Share 'best way' to do XYZ
+  - Clean up code
+
+Procedure of PbCR:
+- Code author explains code line-by-line
+- Team members draw from their experience to identify potential issues
+- Goal is to identify inefficient or insecure code
+
+Result:
+- Clean and secure code
+- Wider group understanding of code
+- Prevents unwanted code from being included
+  - Easter eggs, dev crap they left in, logic bombs, backdoors
+- Educates junior team members
+
+PbCR can uncover:
+- Inefficient code
+- SANS/OWASP lists of errors
+- Exception handling
+- Injection flaws
+- Crypto calls
+- Deprecated functions
+- Privilege levels
+- Logging
+- Poor key/pwd mgmt practices
+
 #### Code Analysis
+
+Static vs dynamic code analysis.
+
+Code analysis is the inspection of code to identify vulns.
+- Static,
+- Or dynamic.
+
+Static: Inpsect code w/o executing.
+Dynamic: Inspect code WITH execution.
+
+##### Static Analysis
+
+- Performed on source OR compiled code
+- Performed by humans or tools
+  - Humans perform code review, limited to high-level langs
+  - Tools can be used for any codebase
+- Usually performed by source code analyzers and binary analyzers
+  - Typically used to identify vulns by comparing against common vuln patterns
+    - Abstract syntax graph
+    - Taint analysis
+  - Identify issues that human analysis can miss
+
+
+##### Dynamic Analysis
+- Performed on target or sim system
+- Important for embedded systems
+- Requires specialized automation for specific testing
+- Commonly performed with tools
+  - Dynamic test suites
+    - Confirm:
+      - Parallel functions
+      - Thread mgmt
+    - Detect:
+      - Race conditions
+      - Memory errors
 
 #### Anti-tampering Techniques
 
+Prevent unauth'd modification of code/data.
+
+- Obfuscation: Obscure source code W/O altering function.
+- Anti-reverse-engineering: Remove symbolic info from software.
+  - Class name
+  - Member name
+  - Global vars
+- Code signing: Generate hash of code and encrypt with private key.
+
+- Code signing ensures authenticity
+  - Uses PKI
+  - Does NOT ensure code is error free or functions
+  - Should be used for ALL software distr.
+    - Esp over internet
+
+How to sign code:
+- Code author makes digest of code (hash)
+- Signer's priv key used to encrypt digest
+- Code and signed digest is sent to User
+- User hashes code using same hash fn as author
+- User decrypts signed digest with their pub key and compares their computed hash with the decrypted hash
+- If they match, code integrity is verified.
 
 ## Secure Software Testing
 
