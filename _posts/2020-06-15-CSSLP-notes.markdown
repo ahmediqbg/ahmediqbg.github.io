@@ -3803,6 +3803,50 @@ How to sign code:
 
 ## Secure Software Testing
 
+### Testing for Security and Quality Assurance
+
+#### Testing Artifacts
+
+#### Functional Testing
+
+#### Nonfunctional Testing
+
+#### Security Testing
+
+#### Environment
+
+#### Bug Tracking
+
+#### Attack Surface Validation
+
+#### Standards
+
+### Testing Types
+
+#### Penetration
+
+#### Fuzzing
+
+#### Scanning
+
+#### Simulation Testing
+
+#### Failure Testing
+
+#### Cryptographic Validation
+
+#### Regression Testing
+
+#### Continuous Testing
+
+### Working with Test Results
+
+#### Impact Assessment
+
+#### Corrective Action
+
+#### Test Data Lifecycle Management
+
 ## Software Acceptance, Deployment, Operations, Maintenance, and Disposal
 
 ## Supply Chain and Software Acquisition
