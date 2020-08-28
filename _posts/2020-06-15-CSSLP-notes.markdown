@@ -3807,19 +3807,200 @@ How to sign code:
 
 #### Testing Artifacts
 
+Testing should occur throughout the dev process by software testers, also known as the 'QA' team.
+
+- Artifacts are created during the dev process:
+  - Use case
+  - Class diagram
+  - UML diagram
+- Software testing requires its own artifacts:
+  - Test plan
+    - 1. Test requirements
+    - 2. Methods performed during testing
+    - 3. Test coverage
+    - Huge artifact. Identifies objectives of the test itself.
+  - Traceability matrix
+    - Responsible for correlating the design documents to the test documents
+  - Test case
+    - Responsible for testing reqs from test plan, and converting those reqs into individual test cases to actually test the app
+  - Test script
+    - Procedures that replicate how a user interacts with an application.
+  - Test suite
+    - Group of test cases that are logically grouped together
+  - Test data
+    - Set of values used to test the functionality of the application.
+  - Test harness
+
+- Testing group should work CLOSELY with development group, to ensure comprehensive testing coverage.
+- Create and monitor tests for each level of integration
+  - This ensures relevant properties are monitored at appropriate intervals
+
 #### Functional Testing
+
+- Performed to ensure software functionality aligns with end user expectations
+- Determines reqs compliance with:
+  - Reliability: Functions as expected at all times
+  - Logic: Step-by-step debugging
+  - Integration: Test all components together
+  - Regression: Verify code changes do not break other code
+  - Resiliency: Software performance under attack
+
+
+Typical functional testing steps:
+1.  Identify the functions software is supposed to perform
+  - Look at the requirements document
+2.  Create "input tests" to test data that will be given to the program
+3.  Determine the expected output test results
+4.  Execute test cases corresponding to the functional requirements
+5.  Determine functional compliance
+  - Compare the actual and expected outputs
 
 #### Nonfunctional Testing
 
+NT will test aspects of the application that are not direct functions that it performs.
+
+Not "I can enter a user's phone number".
+
+Like:
+- Reliability
+- Availability (app is available at all times)
+- Performance
+- Scalability
+- Security
+
 #### Security Testing
 
-#### Environment
+- White-box
+  - Tester has full system knowledge 
+    - Working components
+    - Complete documentation
+    - Source code
+    - Configuration parameters
+  - Generally done early in dev cycle
+  - Advantage is that tester has full knowledge of system
+
+
+- Grey-box
+  - Partial combination of B+W box testing
+  - e.g. "Here's some environment info. No source code though."
+  - Rare outside of internal testing env
+
+
+- Black-box
+  - Tester has no knowledge of software being tested (just like an outside attacker)
+  - Common in advanced system testing
+    - Pentesting
+  - Focuses on behavioral characteristics of the app itself
+
+#### Environment Testing
+
+- Apps operate in specific environments
+  - Environments also need to be tested
+- Test data movement across environmental boundaries
+  - End to end of the application
+
+- Across trust boundaries and b/w modules, be aware of:
+  - Security credentials
+  - Permissions
+  - Access Tokens
 
 #### Bug Tracking
 
+Bugs are a part of dev't.
+
+Can come from:
+- Design issues
+- Coding
+- Deployment issues
+  - i.e. config
+
+Issues are managed via remed with 3 states:
+- Fix defect (mitigate risk)
+- Defer functionality of software to later version (transfer risk)
+- Replace software (avoid risk)
+
+Defect removal is NOT ALWAYS POSSIBLE.
+- App functionality may be lost
+- May be too costly (time and/or money) to fix
+
+Defects can be tracked systematically to capture:
+- Where it occurred
+- The part of code it happened in
+- Build number
+- Who dev'd or discovered it
+- If it is exploitable
+
+Bugs/Errors:
+- Errors can be located through many methods
+  - Manual reviews
+  - Automatic tools
+  - Automatic pentesting
+- Errors can range in severity and impact
+- All errors should be tracked regardless of perceived risk
+- Error collection and feed back to devs can:
+  - Reduce errors over time
+  - Teach devs
+
+Vulnerabilities:
+- Can be exploited for malicious intent
+- Range in severity and can be quantified by impact on system
+  - Can use LOW/MED/HIGH
+  - Rating it is important
+- Typically identified thru pentesting
+- Errors that result in vulns are often very damaging
+
 #### Attack Surface Validation
 
+ASV identifies application risks that exist in software.
+
+- This attack surface must be documented throughout the dev process
+- ASV identifies:
+  - Parts of app/system that need to be tested for vulns
+  - Identify high risk code
+  - Identify changes so threat assessment can be performed on changed code
+- Testing elements and updating the attack surface will:
+  - Provide feedback to dev team
+  - Ensure attack surface objectives are met
+- To ensure attack surface objectives are met, test:
+  - Level of code untrusted users can access
+  - Quantity of elevated privilege code
+
 #### Standards
+
+Standards to impl't proper sec testing.
+
+- Int'l standards are critical for proper QA for app design and appsec.
+- Quality is suitable for use as defined by specific requirements (defined inside standards themselves)
+- Standards define establishment of:
+  - Quality
+  - Sec testing
+  - Process improvement
+
+International Organization for Standardization (ISO) has a lot of different standards.
+
+ISO 9126:
+- Defines best practices for software product quality
+- Testing methodology focuses on:
+  - Functionality: Accuracy, security
+  - Reliability: Fault Tolerance
+  - Usability: Learnability
+  - Efficiency: Resource Utilization
+  - Maintainability: Changeability, testability
+  - Portability: Ease of installation to another system
+  - NOTE: ISO 9126 has been replaced by ISO 25010:2011
+
+Open Source Security Testing Methodology Manual (OSSTMM)
+- Peer-reviewed system
+- Provides a methodology for assessing operational security in 5 areas:
+  - Data networks
+  - Telecommunications
+  - Wireless
+  - Physical Security
+  - Human
+
+Software Engineering Institute of Carnegie Mellon University (SEI)
+- Developed to improve the overall software dev process
+- Ensure that software is dev'd in a secure way throughout the entire software dev process
 
 ### Testing Types
 
