@@ -3830,6 +3830,7 @@ Testing should occur throughout the dev process by software testers, also known 
   - Test data
     - Set of values used to test the functionality of the application.
   - Test harness
+    - The global term for the software, data, and the config
 
 - Testing group should work CLOSELY with development group, to ensure comprehensive testing coverage.
 - Create and monitor tests for each level of integration
@@ -4006,19 +4007,192 @@ Software Engineering Institute of Carnegie Mellon University (SEI)
 
 #### Penetration
 
+Pentesting is active testing that involves the tester performing actions that a hacker would
+
+- Actively trying to compromise the security of the system
+- Different from most other testing that is passive
+- Pentests are used to identify weaknesses within a system and PROVE that they are a threat
+- Testers attack systems using:
+  - Info obtained from the system
+    - Recon, w/ tools
+    - Perform a scan (`nmap`)
+    - Normal usage
+  - Knowledge of weaknesses of the system
+- Test should replicate what an attacker would do IRL
+- This locates vulns before a real attacker would
+
+
+- Pentesting can detect vulns that are overlooked during dev't process
+- Pentest can be white/blackbox testing
+- General pentest steps:
+  - Reconnaissance
+  - Attack and exploitation
+  - Removal of evidence
+  - Create a report
+    - Actions took
+    - Success?
+
+
+- Pentesting begins with specific objectives to explore
+  - Input validation vulns
+  - Configuration vulns
+  - Host platform vulns during deployment
+
+
+- Pentesting is slow and methodical
+  - Most time spent planning and analyzing
+- Errors and responses must be clearly recorded
+  - Info obtained should:
+    - Identify root causes
+    - Lead to corrective actions
+
 #### Fuzzing
+
+Fuzzing is brute-force testing to test input validation issues.
+
+- Injecting data to detect:
+  - Which cause faults
+  - Which are vulnerable to exploits
+
+- Can be applied to all data exchange areas to ensure proper input validation:
+  - Network, file, and web protocols can all be fuzzed
+
+- Numerous web browser errors are identified by fuzzing
+
+- Fuzz testing works well in all box testing methods
+
+- Fuzzing is the best method to detect:
+  - XSS
+  - Injection
+
+- Types of fuzzing:
+  - Mutation fuzzing (dumb fuzzing)
+    - Use known-good traffic and mutates it to create new input streams
+  - Generation-based fuzzing (Intelligent fuzzing)
+    - Uses input streams to determine the data streams for testing
 
 #### Scanning
 
+- Scanning is an automated form of detecting specific characteristics across:
+  - Systems: OSes - OS fingerprinting
+  - Applications: Weaknesses and vulnerability
+  - Networks: Available Network devices
+- Security scans are passive processes
+  - It only collects information about the system, it does not attack systems
+- Scanners can search for numerous specific conditions and compliance
+  - OWASP/SANS top lists
+  - PCI/Sarbanes-Oxley compliance (periodic security scans)
+
+- Vulnerability scans
+  - Goal is to detect weaknesses in software
+  - Banner grabs (ask port 22 or 80 for banner)
+  - Generates a report
+    - And how to fix issues
+  - Should be performed regularly
+
 #### Simulation Testing
+
+Idea that you want to create a mockup of the production environment where the app is going to be deployed once it is developed and completed.
+
+Some issues we generally see are disparities between test/prod environments which can create problems in prod environments.
+
+Simulation testing fixes this problem.
+
+- Simulation testing used a mirrored production environment to test user applications for:
+  - Config issues
+  - Data issues
+
+- Simulation testing is useful in locating issues before prod envs roll out.
+  - Generally the last testing procedure prior to deployment
+
+- Load testing is also performed to determine:
+  - Acceptable availability
+  - Performance
 
 #### Failure Testing
 
+FT is a form of test where the tester inputs incorrect values into the app to create conditions that will cause errors.
+
+- Conditions resulting in incorrect values should be tested for:
+  - Whether or not they cause errors
+
+- Load testing is a common failure condition to test
+  - Stress testing, break testing, fault injection
+  - Lots of users connecting
+  - Lots of data being sent to app
+  - ...both?
+
+- Determining how software functions under heavy load can:
+  - Identify memory issues
+  - Identify scalability issues
+    - Can app handle growth of 10k to 100k users?
+    - Load balancing solution
+
+- Load testing is best performed early in the dev process
+
 #### Cryptographic Validation
+
+- Secure crypto is achieved by using:
+  - Approved algos
+  - Secure and correct impl't
+- Crypto issues arise with:
+  - Protecting keys and seeds
+  - Proper operational conditions
+  - Proper RNG
+  - Key transmission
+
+- RNG is best done through crypto libs
+  - Don't make your own RNG
+
+- Trusted crypto libs usually include a crypto RNG
+- Key mgmt:
+  - Don't hardcode keys within code
+  - Keys should be generated and passed by reference
+  - Key storage in memory should be noncontiguous
 
 #### Regression Testing
 
-#### Continuous Testing
+- Regression testing validates for adverse impacts on software when changed by:
+  - Configuration
+  - Patching
+  - New modules
+  - Code changes
+
+- As software progresses through multiple versions, regression testing becomes more tedious
+- Software patch RT is very time consuming
+  - Rerun previous test to ensure change has no negative impact
+  - Create test for new functionality added
+
+- RT approach should be tailored to the nature of change required:
+  - Appropriate level
+  - Appropriate breadth
+  - Appropriate scope
+
+- Specialized reports can assist in RT:
+  - Delta analysis
+  - Historical Trending
+
+#### Continuous Testing/Continuous Test Driven Development (CTTD)
+
+Continuous Test Driven Development (CTTD) is automatic execution of software testing.
+
+- For apps under dev't, CT offers:
+  - Realtime assessment of business risks
+
+- CT allows for more informed decisions with respect to:
+  - Release scope
+  - Time
+  - Quality
+
+- CT provides:
+  - Automatic, QUANTITATIVE assessment of risk
+  - Actionable tasks to help mitigate risks
+
+- Type of CT is Synthetic Transaction Monitoring.
+  - A monitoring tool that emulates a visitor's visit to a site (via scripts). The STM monitors the transaction for performance and reliability.
+- Constant application availability and performance
+- Advanced app degredation warnings
+  - You know before end users experience performance degradation
 
 ### Working with Test Results
 
