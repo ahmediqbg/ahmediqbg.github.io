@@ -4198,9 +4198,46 @@ Continuous Test Driven Development (CTTD) is automatic execution of software tes
 
 #### Impact Assessment
 
+Identifying bugs that have been discovered and then assessing bugs based on the impact they will have with application security.
+
+Ex:
+P1 - Critical
+P2 - High
+P3 - Medium
+P4 - Low
+
+- After bugs ident'd, they are recorded in a bug tracking system.
+  - Which bug gets fixed next
+  - When the bug gets fixed
+
 #### Corrective Action
 
+- Ideally all bugs would be fixed
+  - Via the bug clearing process
+  - At all stages of development
+
+- Some bugs are too hard/expensive to fix
+  - Effort/cost to fix outweighs potential risk
+  - May decide to postpone bugfix to next app release
+
+- A bug resulting in major redesign can be costly
+  - If it is critical to the success of the system, it must be resolved
+
+- Not all bugs are exploitable
+  - If they are inconsequential, resolving it can wait until a future update
+
 #### Test Data Lifecycle Management
+
+- Testing can require specific data to perform certain tests:
+  - Input test data and output test data
+  - Testing for error conditions (error and exception handling)
+  - Testing for correct referential integrity
+
+- Test data must be created to duplicate:
+  - Actual production data
+  - Specific process conditions
+    - i.e. data that fully activates all the logic of your process
+- Real production data that's been anonymized can be used
 
 ## Software Acceptance, Deployment, Operations, Maintenance, and Disposal
 
