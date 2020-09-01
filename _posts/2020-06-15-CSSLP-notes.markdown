@@ -4241,5 +4241,104 @@ P4 - Low
 
 ## Software Acceptance, Deployment, Operations, Maintenance, and Disposal
 
+### Software Acceptance Pre-release Activities
+
+#### Pre-release Testing Process
+
+#### Completion Criteria
+
+#### Risk Acceptance
+
+### Software Acceptance Post-release Activities
+
+#### Post-Release Plan
+
+#### Validation and Verification
+
+#### Independent Testing
+
+### Installation and Deployment
+
+#### Bootstrapping
+
+#### Configuration Management Roles and Plan
+
+#### Configuration Management Process
+
+#### Release Management
+
+### Operations and Maintenance
+
+#### Monitoring
+
+#### Incident Management
+
+#### Problem Management
+
+#### Change Management
+
+#### Backup, Recovery and Archiving
+
+### Software Disposal
+
+#### Software Disposal Planning
+
+#### Software Disposal Execution
+
 ## Supply Chain and Software Acquisition
 
+### Supplier Risk Assessment
+
+#### Risk Assessment for Code Reuse
+
+#### Code Reuse Plan Best Practices
+
+#### Intellectual Property
+
+#### Legal Compliance
+
+#### Supplier Prequalification
+
+### Supplier Sourcing
+
+#### Supplier Sourcing Challenges
+
+#### Contractual Integrity Controls
+
+#### Vendor Technical Integrity Controls
+
+#### Managed Services Controls
+
+#### Service-level Agreements
+
+### Software Development and Testing
+
+#### Technical Controls
+
+#### Code Testing and Validation
+
+#### Security Testing Controls
+
+#### Software Requirements Verification and Validation
+
+### Software Delivery, Operations, and Maintenance
+
+#### Chain of Custody
+
+#### Publishing and Dissemination Controls
+
+#### System-of-Systems Integration
+
+#### Software Authenticity and Integrity
+
+#### Product Deployment and Sustainment Controls
+
+#### Monitoring and Incident Management
+
+#### Vulnerability Management, Tracking Resolution
+
+### Supplier Transitioning
+
+#### Code Escrow and Data Exports
+
+#### Contracts
