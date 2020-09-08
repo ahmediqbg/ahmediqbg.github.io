@@ -4245,9 +4245,138 @@ P4 - Low
 
 #### Pre-release Testing Process
 
+Pre-release testing is a process that should be defined in the early stages of planning.
+
+PrT is a process that has activities that encompass:
+- Access
+- Analysis
+- Evaluation
+- Review
+- Inspection
+- Testing
+...of the app before it goes to production
+
+- These activities should be performed in parallel
+
+
+PrT objetive is to assess product:
+- Accuracy
+  - Does app do what it should do?
+- Completeness
+  - Is the app complete and performs all functions in full?
+- Consistency
+- Testability
+
+
+PrT ensures product aligns with intended purpose within the target environment
+
+- PrT:
+  - Should be a continuous procedure
+  - Is a key measure for software acceptance
+    - Must be performed before software is presented to user base
+
+PrT process consists of:
+- Defining what is to be tested
+  - Refer to requirement docs and design specifications
+- Identify high risk characteristics in an app
+- Identify testing priorities within application
+  - What parts of app/types of testing are more important
+- Determine scope and limitations of testing, approach, and methods
+  - Black box? WB? GB? How will you test? What parts will you test?
+- Determine testing env reqmnts
+  - Hardware, software, and comms required to run app and test it
+  - Comm devices/protocols needed on platform
+
+
+PrT process consists of: 
+- Defining testware
+  - TW is software that can record and play back actions; this is used in the testing process, and in problem/bug tracking tools and coverage analyzers
+- Test plan and specific test case creation and approval
+  - Test case document - the expectation of a predictable response
+- Testing result evaluation and reporting
+  - Issues get tracked and fixes are recommended
+- Retest as needed until bugs are fixed
+
 #### Completion Criteria
 
+CC:
+- Defined by a project's contract
+- Define a measurable outcome that can be objectively evaluated
+
+- CC can be specific to a project
+
+- Generic CC are available
+  - Defined by ISO 9126
+
+
+ISO 9126:
+- Outlines 6 generic product completion criteria
+  - Used to assess the product suitability after an app has been dev'd
+
+- Functionality
+  - Requirement suitability and output accuracy
+  - Interoperability and functional compliance
+  - Security
+
+- Reliability
+  - Maturity of product
+  - Fault tolerance
+  - Failure frequency
+  - Ability to recover
+
+- Usability
+  - Ease of use
+  - Comprehensibility
+
+- Efficiency
+  - Time and resource behavior
+  - Processing and throughput
+
+- Maintainability
+  - How easy is it to make changes to the program?
+  - Efficiency in addressing change requests
+  - Product stability
+
+- Portability
+  - Product adaptability and extensibility
+
 #### Risk Acceptance
+
+- Risk properties to consider:
+  - Safety and security requirements
+    - Explicit and implicit (declarations vs assumptions)
+  - Software complexity
+    - To what degree is it complex
+  - Performance and reliability factors
+
+
+- Important to document risk identification and prioritization process
+
+
+Ex: App is vulnerable to SQLi. It's a web app. The likelihood is high for that risk (sqli attack) and the impact is also likely very high.
+
+RA addresses 2 questions:
+- What is the likelihood of the risk occurring?
+- What is the impact of the risk, should it occur?
+
+- Responses to these two questions help identify acceptable and unacceptable risks
+  - What has the highest probability of occurring
+  - What will cause the most damage
+
+- RA assessment should:
+  - Use accepted and repeatable data collection methods
+  - Produce accurate, independently verifiable evidence of the risks
+
+
+- RA should be succinct with a defined scope and targeted on a specific threat
+  - Utilizing an accurate threat model
+
+- RA assessments:
+  - Are a continuous process
+  - Should maintain awareness of three critical assessment factors:
+    - Interrelationships b/w all system assets
+    - Specific threats to all assets
+    - Specific technological and business risks of all vulnerabilities
 
 ### Software Acceptance Post-release Activities
 
