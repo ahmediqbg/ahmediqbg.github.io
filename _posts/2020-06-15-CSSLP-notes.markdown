@@ -4382,7 +4382,48 @@ RA addresses 2 questions:
 
 #### Post-Release Plan
 
+The goal of the PRP is the placement of the completed, tested application into a working environment.
+
+Post-release activities:
+- Performed by a separate (non-dev) deployment team
+- Include a full audit of the installed configuration
+  - This ensures software is installed and functioning appropriately
+- Include capturing anomaly reports/change requests in the post-release plan
+
+PRP outlines procedures for post-release process administration.
+
+- Components of PRP can include:
+  - Administration details of PRP process like:
+    - PRP structure
+    - Information flow
+    - Mechanisms for adjusting app environment
+    - Deviation policy (what?????)
+    - Timing of reports
+    - Problem resolution
+      - If there is a deployment problem, there must be a process in place for handling those problems
+
+
+Additional PRP components:
+- Procedures for configuration auditing
+- Baselining
+- Problem reporting
+  - Operation and mgmt aspects
+- Mgmt plan revisions
+  - Configuration and baseline changes
+
+More PRP components:
+- Anomaly evaluation process
+  - To detect problems occurring within environment
+- Change assessment process
+  - Also a method of implementing change
+- Level of status reporting
+- Config mgmt processes for administering the environment
+- Appropriate policies and procedures in place to determine what standards/convention should be followed with the implementation of the app itself
+
 #### Validation and Verification
+
+Validation: The software is meeting user-defined requirements
+TODO
 
 #### Independent Testing
 
