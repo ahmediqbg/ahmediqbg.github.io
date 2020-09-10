@@ -4423,9 +4423,88 @@ More PRP components:
 #### Validation and Verification
 
 Validation: The software is meeting user-defined requirements
-TODO
+- Defines that the software is constructed properly
+
+- Validation and verification activities are relevant to all stages of the software 
+  - Activities performed are defined in the software validation and verification plan (SVVP)
+
+- Validation and verification effort should be actively assessed
+  - Determine if SVVP remains relevant
+
+- The SVVP should define requirements for:
+  - Resolution and reporting requirements for anomalies
+  - Exception policy
+  - Control procedures for baseline configuration and configuration mgmt
+  - Guidance reqs for standards and conventions that should be used in the app environment
+  - Reqs for documentation:
+    - Plans, prodecures, results
+
+- Validation and verification methods can typically be either:
+  - Management -- Assess project suitability
+    - Corrective actions, resource allocation, project scoping
+    - Aim to uncover any deviation from agreed upon plans or procedures
+    - Scheduled as part of initial project planning
+
+  - Technical -- Verify software product itself
+    - Does software product conform to specs, regulation, standard and plan adherence, accurate implementation?
+    - Aim to uncover defects in software under modification or build
+    - Scheduled as part of initial project planning
+
+
+- Management V+V test may suggest corrective action and involve mgmt roles like:
+  - Decision maker
+  - Review leader and recorder
+  - Technical and mgmt staff
+  - Customer representative
+
+- Mgmt reviews are scheduled as part of initial project plan
+  - Also connected with project milestones
+
+- Technical V+V
+  - Completed my technical mgmt personnel and may involve managerial roles such as:
+    - Decision maker
+    - Review leader and recorder
+    - Technical managers/staff
+    - Customer technical staff
+  - Evaluation of anomaly or defect impact
 
 #### Independent Testing
+
+Independent testing is similar to validation and verification, except that independent testing is performed by an independent, objective third party.
+
+- Can also be called Independent Validation and Verification (IV&V)
+- Ensures confidence, integrity, and trust in the product
+
+- Third party requires flexibility to test and audit
+  - Tests are based on the goals of the testing contract
+- IV&V is credible when ownership of the product have no influence on the testers
+
+- Regular audits should be performed
+  - Auditing helps ensure conformance to regulations/standards
+
+- Typical project audit targets:
+  - Plans, procedures, contracts, reports, source code, and all deliberables
+
+Once an audit is completed, all collected evidence is compiled into an audit report which includes:
+- Initial conclusions
+- Issues experienced
+- Recommendations for correction and improvement
+
+Once issues with the app are fixed, auditors will follow up on the implemented resolutions
+- This ensures the reworked solution is completed properly
+
+- Acceptance of the resolution results in the final audit report is required, and it outlines:
+  - Who was audited: Organization
+  - What was audited: Software
+  - Why the audit occurred - Its purpose and scope
+
+
+The final audit report, which includes acceptance of resolutions results, should outline:
+- All relevant regulations and standards
+- Evaluation criteria
+- Anomaly classification
+  - Minor or major
+- Post-audit activity scheduling
 
 ### Installation and Deployment
 
