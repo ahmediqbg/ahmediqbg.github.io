@@ -4483,7 +4483,7 @@ Independent testing is similar to validation and verification, except that indep
   - Auditing helps ensure conformance to regulations/standards
 
 - Typical project audit targets:
-  - Plans, procedures, contracts, reports, source code, and all deliberables
+  - Plans, procedures, contracts, reports, source code, and all deliverables
 
 Once an audit is completed, all collected evidence is compiled into an audit report which includes:
 - Initial conclusions
@@ -4535,11 +4535,130 @@ Within the context of product/process deployment:
 
 #### Configuration Management Roles and Plan
 
+- Typical installation and deployment config mgmt roles include:
+  - Configuration manager
+  - Baseline manager
+  - Verification manager
 
+
+- Config mgr
+  - Ensures all change mgmt requirements are fulfilled
+  - Documents software change requests
+  - Manages software change authorizations
+  - Verifies authorized changes are complete
+
+- Baseline mgr
+  - Creates and maintains a Baseline Mgmt Ledger (BML)
+    - Includes all software config within a baseline
+    - Pertinent devs can help
+  - Responsible for all BML entries
+
+- Verification mgr
+  - Assures product integrity throughout the change mgmt process
+  - Verify BML entries conform with identification scheme and changes have been completed
+  - Perform milestone reviews and maintain review documentation
+  - Must guarantee that the BML represents the current status of a product
+
+- The Configuration Mgmt Plan should identify roles for:
+  - Change mgmt
+  - Baseline mgmt
+  - Verification mgmt
+
+- Should also specify the product identification number (PIN) and how it is set up.
+- The Configuration Mgmt Plan (CMP) must be adhered to throughout the product lifecycle
+
+- The CMP must also:
+  - Specify/maintain a PIN
+  - Define and assign roles for the configuration control boards
+  - Establish mechanisms for timely information flow to managers
+  - Outline method of change verification and validation
+  - Itemize library maintenance rules
+    - Dynamic libraries
+    - Static libraries
+    - Controlled libraries
 
 #### Configuration Management Process
 
+- Software products, systems, services, are made up of baseline config items.
+- Each item is:
+  - Identified
+  - Defined
+  - Formulated
+
+The config mgmt process creates the foundational identification scheme for config mgmt. This involves each element in the system having its own unique identifying number.
+- A big part of the config mgmt process is identifying the scheme for the number that represents these software elements
+
+
+- The config mgmt process is made up of 6 process activities:
+  - Process implementation
+  - Configuration identification
+  - Configuration control
+  - Configuration status accounting
+  - Configuration evaluation
+  - Release mgmt and delivery
+
+
+- Process Implementation
+  - Major organizational activity
+  - Requires formal strategic planning
+    - Outlines activities, procedures, and schedule
+  - Output of this activity is the 
+    "strategic configuration management process lifecycle plan"
+    - Comprehensive,
+    - Accurate,
+    - Well documented plan.
+
+
+- Configuration Identification
+  - This establishes the identification scheme to be used by all the software items within the baseline
+    - Software items and baseline versions
+  - Compiles formal documentation
+    - For every item and associated version
+
+
+- Configuration Control
+  - Manages change -- Receives all product repair/change requests
+  - Change requests are reviewed by a config control board
+  - Audit trail is established
+    - Why change occurred, who authorized the change
+
+
+- Configuration Status Accounting
+  - Tracks status and history of controlled software and baselines
+  - Reporting covers project changes, software versions, and release attributes
+
+
+- Configuration Evaluation
+  - Evaluates to determine and certify product accuracy and functionality, based off of Statement of Work (SOW)
+
+
+- Release Mgmt and Delivery
+  - Formally controlled via library function
+  - Code and documentation master copies maintained for life of product
+  - Safety and security related materials follow organizational policies
+    - As far as the handling storage, packaging and delivery
+
 #### Release Management
+
+Release Mgmt ensures:
+- Accuracy of software products and updates
+- The integrity of a software base config (baseline)
+
+- Securely maintained via current baseline repository
+  - Controlled check-out/check/in of baselines
+
+- Baseline repos assist in VCS maintenance
+  - Software deployments are associated with specific configurations
+  - Releases are identified clearly to mitigate end user confusion
+
+- Product baselines reside in specific repositories
+  - Controlled repo: Contains official "live" version of each baseline
+    - Access to these baselines requires authorization
+  - Dynamic repo: For developer testing, to help fix/identify config anomalies, fixes, etc
+  - Archive repo: houses latest baseline version
+    - Strictly controlled access
+
+
 
 ### Operations and Maintenance
 
