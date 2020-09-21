@@ -4,6 +4,8 @@ title: Interests
 permalink: /interests/
 ---
 
+<!--<script src="/static/js/bandcamp.js"> JK, CORS prevents me from working. ;_;_-->
+
 ## Recreation
 
 I like to run and swim in my free time, and (rarely) will scuba dive.
