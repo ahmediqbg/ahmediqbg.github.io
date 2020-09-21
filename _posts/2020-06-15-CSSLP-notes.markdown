@@ -4510,7 +4510,32 @@ The final audit report, which includes acceptance of resolutions results, should
 
 #### Bootstrapping
 
+Within the context of product/process deployment:
+- Bootstrapping refers to operational correctness in both form and function
+
+- Ensures a product will:
+  - Launch properly
+  - Function appropriately
+  - Maintain expected accuracy
+
+- This applies to any operationally self-sustaining function
+
+- In software deployment, BS ensures accuracy of the initial config
+  - This includes the app's default settings
+  - Applies appropriate defaults
+  - Sets proper execution parameters
+  - Ensures accuracy of security features
+
+
+- Within the context of product use, bootstrapping ensures continuous, effective operation by defining and deploying:
+  - Rules
+  - Policies -- Internal reviews
+  - Practices -- Inspections
+  - Measuring errors and correctness
+
 #### Configuration Management Roles and Plan
+
+
 
 #### Configuration Management Process
 
