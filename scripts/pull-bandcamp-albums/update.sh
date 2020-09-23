@@ -4,3 +4,6 @@
 
 pipenv run python pull-bandcamp-purchased-albums-to-data.py
 pipenv run python pull-bandcamp-wishlisted-albums-to-data.py
+
+git add -A
+git commit -m '[AUTO] update bandcamp albums'
