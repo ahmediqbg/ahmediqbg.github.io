@@ -9,11 +9,12 @@ import bandcampUtils
 def get_output_filepath():
     return Path.joinpath(bandcampUtils.get_data_folder(), "bandcamp_purchased_albums.yml")
 
-print("Outputting to {0}".format(get_output_filepath()))
 
-responseJSON = bandcampUtils.get_top_purchased_albums_json(50)
+if __name__ == '__main__':
+    print("Outputting to {0}".format(get_output_filepath()))
 
-with open(get_output_filepath(), 'w') as f:
+    responseJSON = bandcampUtils.get_top_purchased_albums_json(50)
+
     yaml_list = []
 
     for albumJSON in responseJSON:
@@ -25,5 +26,6 @@ with open(get_output_filepath(), 'w') as f:
             'title': albumJSON['album_title'],
         })
 
-    yaml.dump(yaml_list, f)
     pprint(yaml_list[0:5])
+
+    bandcampUtils.save_json_object_to_yaml(yaml_list, get_output_filepath())
