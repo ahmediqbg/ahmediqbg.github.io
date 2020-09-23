@@ -1,6 +1,7 @@
 import html
 import json
 import time
+from pathlib import Path
 from typing import Dict
 
 import requests
@@ -9,6 +10,14 @@ import requests
 FAN_ID = 149531 #HenryFBP
 COLLECTION_URL = 'https://bandcamp.com/api/fancollection/1/collection_items'
 WISHLIST_URL = 'https://bandcamp.com/api/fancollection/1/wishlist_items'
+
+
+def get_data_folder():
+    output_dir = Path("../../_data/").resolve()
+    file_folder = Path(__file__).parent
+    return Path.joinpath(file_folder, output_dir)
+
+print(get_data_folder())
 
 def gen_iframe_html(albumid, albumurl, albumname):
     albumid = html.escape(str(albumid))

@@ -7,14 +7,9 @@ import bandcampUtils
 
 
 def get_output_filepath():
-    output_dir = Path("../../_data/bandcamp_purchased_albums.yml").resolve()
-    file_folder = Path(__file__).parent
-    return Path.joinpath(file_folder, output_dir)
+    return Path.joinpath(bandcampUtils.get_data_folder(), "bandcamp_purchased_albums.yml")
 
-
-output_dir = get_output_filepath()
-
-print("Outputting to {0}".format(output_dir))
+print("Outputting to {0}".format(get_output_filepath()))
 
 responseJSON = bandcampUtils.get_top_purchased_albums_json(50)
 
