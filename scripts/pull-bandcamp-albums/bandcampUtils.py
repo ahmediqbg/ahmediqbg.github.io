@@ -11,6 +11,7 @@ import yaml
 FAN_ID = 149531  # HenryFBP
 COLLECTION_URL = 'https://bandcamp.com/api/fancollection/1/collection_items'
 WISHLIST_URL = 'https://bandcamp.com/api/fancollection/1/wishlist_items'
+ITEM_NUM=10
 
 
 def get_data_folder():
@@ -39,7 +40,7 @@ def get_older_than_token():
     return "{}:{}:a::".format(lpar, rpar)
 
 
-def get_top_wishlisted_albums_json(count, fan_id=FAN_ID, older_than_token=get_older_than_token()) -> Dict:
+def get_top_wishlisted_albums_json(count=ITEM_NUM, fan_id=FAN_ID, older_than_token=get_older_than_token()) -> Dict:
     data = {"fan_id": fan_id,
             "older_than_token": older_than_token,
             "count": count}
@@ -49,7 +50,7 @@ def get_top_wishlisted_albums_json(count, fan_id=FAN_ID, older_than_token=get_ol
     return r.json()['items']
 
 
-def get_top_purchased_albums_json(count, fan_id=FAN_ID, older_than_token=get_older_than_token()) -> Dict:
+def get_top_purchased_albums_json(count=ITEM_NUM, fan_id=FAN_ID, older_than_token=get_older_than_token()) -> Dict:
     data = {"fan_id": fan_id,
             "older_than_token": older_than_token,
             "count": count}

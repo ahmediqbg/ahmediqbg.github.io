@@ -27,7 +27,7 @@ Nature is something I love, and camping is super relaxing for me.
 - Spongebob Squarewave
 - **Hundreds** of other artists -- see <https://bandcamp.com/henryfbp>.
 
-### 50 Recently Wishlisted Bandcamp Albums
+### Recently Wishlisted Bandcamp Albums
 
 <div style="height: 50vh; overflow: auto;">
 
@@ -40,7 +40,7 @@ Nature is something I love, and camping is super relaxing for me.
 </div>
 
 
-### 50 Recently Purchased Bandcamp Albums
+### Recently Purchased Bandcamp Albums
 
 <div style="height: 50vh; overflow: auto;">
 

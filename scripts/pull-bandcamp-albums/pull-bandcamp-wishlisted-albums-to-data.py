@@ -11,7 +11,7 @@ def get_output_filepath():
 if __name__ == '__main__':
     print("Outputting to {0}".format(get_output_filepath()))
 
-    responseJSON = bandcampUtils.get_top_wishlisted_albums_json(50)
+    responseJSON = bandcampUtils.get_top_wishlisted_albums_json()
 
     yaml_list = []
 
