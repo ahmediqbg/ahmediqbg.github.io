@@ -1,15 +1,15 @@
-import json
 import html
+import json
+import time
+from pathlib import Path
 from pprint import pprint
 
 import requests
-import os
-from pathlib import Path
-import time
 import yaml
 
 FAN_ID = 149531
-NUM_ALBUMS = 10
+NUM_ALBUMS = 50
+
 
 def get_output_filepath():
     output_dir = Path("../../_data/bandcamp_urls.yml").resolve()
@@ -17,9 +17,10 @@ def get_output_filepath():
     output_dir = Path.joinpath(file_folder, output_dir)
     return output_dir
 
+
 def gen_iframe_html(albumid, albumurl, albumname):
     albumid = html.escape(str(albumid))
-    albumurl =html.escape(albumurl)
+    albumurl = html.escape(albumurl)
     albumname = html.escape(albumname)
 
     return f'''<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album={albumid}/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="{albumurl}">{albumname}</a></iframe>'''
@@ -54,21 +55,21 @@ responseJSON = (r.json())['items']
 # responseJSONsorted = sorted(responseJSON, key=lambda d: d['token'], reverse=True)
 # Not necessary as it's already sorted
 
-with open(get_output_filepath(),'w') as f:
-
-    yaml_data= {'albums':[]}
+with open(get_output_filepath(), 'w') as f:
+    yaml_data = {'albums': []}
 
     for albumJSON in responseJSON:
         # html = gen_iframe_html(albumJSON['album_id'], albumJSON['item_url'], albumJSON['album_title'])
-        print(html)
+        # print(html)
         yaml_data['albums'].append({
             "album": {
                 "id": albumJSON['album_id'],
-                'item_url':albumJSON['item_url'],
-                'title':albumJSON['album_title'],
-              }
+                'item_url': albumJSON['item_url'],
+                'title': albumJSON['album_title'],
+            }
         })
 
-    yaml.dump(yaml_data,f)
+    yaml.dump(yaml_data, f)
+    pprint(yaml_data)
 
 exit(0)
