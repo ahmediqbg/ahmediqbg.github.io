@@ -30,7 +30,7 @@ Nature is something I love, and camping is super relaxing for me.
 ### 50 Recently bought Bandcamp Albums
 
 <!-- asdf -->
-<div style="height: 200px; overflow: auto;">
+<div style="height: 50vh; overflow: auto;">
 
 {%- for album in site.data.bandcamp_purchased_albums -%}
     
