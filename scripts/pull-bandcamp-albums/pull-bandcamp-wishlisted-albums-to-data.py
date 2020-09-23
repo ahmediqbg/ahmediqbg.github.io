@@ -5,13 +5,13 @@ import bandcampUtils
 
 
 def get_output_filepath():
-    return Path.joinpath(bandcampUtils.get_data_folder(), "bandcamp_purchased_albums.yml")
+    return Path.joinpath(bandcampUtils.get_data_folder(), "bandcamp_wishlisted_albums.yml")
 
 
 if __name__ == '__main__':
     print("Outputting to {0}".format(get_output_filepath()))
 
-    responseJSON = bandcampUtils.get_top_purchased_albums_json(50)
+    responseJSON = bandcampUtils.get_top_wishlisted_albums_json(50)
 
     yaml_list = []
 
