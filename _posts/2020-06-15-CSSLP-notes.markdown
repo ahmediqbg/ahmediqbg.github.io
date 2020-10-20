@@ -4658,13 +4658,74 @@ Release Mgmt ensures:
   - Archive repo: houses latest baseline version
     - Strictly controlled access
 
-
-
 ### Operations and Maintenance
 
 #### Monitoring
 
+Monitoring's primary responsibility is to monitor the app within the target environment and ensure the app is functioning properly and performing well, and responding to incidents that occur that get picked up by monitoring tools.
+
+- Ensures system security
+- Optimal performance
+  - In accordance with app plan
+  - And review processes that are executed
+
+We strive to have the application within operational assurance, this is why we monitor it.
+- Needs to function, execute, and perform, as expected.
+
+Effective operational assurance requires:
+- That daily monitoring and reporting are part of overall assurance
+- An enforcement policy that ensures the agreed monitoring and reporting methods for the app are being followed
+- A formal problem resolution process
+
+- Monitoring requirements require explicit identification during the requirements process
+  - Service Level Agreement (SLA) or auditing requirements will define these:
+    - What is logged - What data needs to be captured
+    - Frequency of logging - How often logging will occur
+    - How logs will be used - Data metrics
+
+Effective mgmt needs measurement -- We need the data to see how the app is performing, and then make decisions based on that.
+
 #### Incident Management
+
+IM is monitoring and incident identification of incidents in the app env.
+- Collection of objective, understandable data that can be actioned
+- Timely incident analysis
+
+Effective incident id'n assists in distinguishing:
+- Code vulns
+- Software exploit'n attempts
+- User errors
+
+
+Reporting and Control is a major component of incident mgmt.
+- Incident reports should document all relevant aspects of an event
+  - Event type
+  - Potential impact of the event
+
+ex: Password recovery attempts should be recorded, what was the impact?
+
+- Incident reports should include all severity of events
+  - Minor: Perceived insignificant/routine code defects
+  - Major: Embedded trojans, backdoors
+
+- Regardless of the incident, the appropriate, agreed-upon response must be initiated.
+  - Typically involves incident response team
+    - They respond to/evaluate the incident and determine what actions need to be taken after that.
+
+- Anticipating incidents
+  - Incidents are typically either:
+    - Potential - Defects, unexpected flaws, without a present threat
+    - Active - exploitation of unknown software flaws
+  - Once vulns are understood, measures can be deployed
+    - Patch or procedural changes
+
+- Responding to active incidents
+  - Appropriate rectification measures require immediate deployment
+    - Handled by incident response teams to:
+      - Mitigate damage
+      - Monitor system modification/patch deployment to ensure fix works
+
+
 
 #### Problem Management
 
