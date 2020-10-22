@@ -54,6 +54,20 @@ May 2016 - Jul 2016, 3 months
 -   Managing workload between multiple co-workers and prioritizing work items
 -   Creating, disseminating, and maintaining documentation
 
+### Private Tutor, Wyzant
+-   Online and in Chicago, Oct 2017 - May 2019, 19 months 
+-   <http://wyzant.com/Tutors/HenryFBP>
+-   Teaching tutees online and in-person about various programming languages, technologies, and concepts.
+-   Mainly done in Python, Java, HTML, CSS, and JavaScript.
+-   Drawing diagrams
+-   Scheduling online or in-person tutoring lessons
+-   Pair programming
+-   Creating lesson plans and exercises
+-   Creating interactive programming challenges
+-   Aiding in test/exam preparation
+-   Creating pieces of example code to illustrate a point
+-   Demonstrating underlying programming concepts
+
 ### CS and ITM Tutor
 -   Illinois Institute of Technology, February 2017 - September 2017, 6 months
 -   Tutored C, C++, Java, Python, digital circuitry (mux, demux, adders, LED grids, selectors)
@@ -72,20 +86,6 @@ May 2016 - Jul 2016, 3 months
 -   The reason that my employment length at this job is so short is twofold.
   - I had my Sophomore year of college after.
   - My mom was terminally ill.
-
-### Private Tutor, Wyzant
--   Online and in Chicago, Oct 2017 - May 2019, 19 months 
--   <http://wyzant.com/Tutors/HenryFBP>
--   Teaching tutees online and in-person about various programming languages, technologies, and concepts.
--   Mainly done in Python, Java, HTML, CSS, and JavaScript.
--   Drawing diagrams
--   Scheduling online or in-person tutoring lessons
--   Pair programming
--   Creating lesson plans and exercises
--   Creating interactive programming challenges
--   Aiding in test/exam preparation
--   Creating pieces of example code to illustrate a point
--   Demonstrating underlying programming concepts
 
 ### Librarian/IT Contractor, Oak Bluffs Public Library
 -   July 2018
