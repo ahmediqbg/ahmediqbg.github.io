@@ -33,8 +33,7 @@ May 2016 - Jul 2016
 ### Illinois Institute of Technology
 
 -   Chicago, IL
--   Currently attending, Junior Semester.
--   Will graduate in 2020, majoring in Information Technology Management (ITM)
+-   Graduated in 2020, Bachelor's in Information Technology Management (ITM)
 -   Made the dean's list in Freshman and Senior semesters
 -   Current GPA is 3.4
 
@@ -49,7 +48,7 @@ May 2016 - Jul 2016
 ## Work
 
 ### Security Analyst
--   U.S. Bank, May 2019 - Current
+-   U.S. Bank, May 2019 - October 2020, 17 months
 -   Analyzing C\#, Java, ASP.NET, PHP, and JS source code
 -   Discussing implementation and security vulnerabilities with developers
 -   Managing workload between multiple co-workers and prioritizing work items
@@ -71,7 +70,7 @@ May 2016 - Jul 2016
 -   Malware removal, software installation and configuration.
 -   Working with small electronics and laptops in-depth, part lookups by product ID numbers, troubleshooting.
 -   The reason that my employment length at this job is so short is twofold.
-  - I had my Sophomore year of college after, and
+  - I had my Sophomore year of college after.
   - My mom was terminally ill.
 
 ### Private Tutor, Wyzant
