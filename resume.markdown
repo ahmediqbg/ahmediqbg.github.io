@@ -11,22 +11,22 @@ Henry Post
 ## Summary of employment
 
 ### Security Analyst, U.S. Bank
-May 2019 - Current
+May 2019 - October 2020 (Current), 17 months
 
 ### Private Tutor, Wyzant
-Oct 2017 - May 2019
+Oct 2017 - May 2019, 19 months
 
 ### Librarian/IT Contractor, Martha's Vineyard, Massachusetts
-July 2018 - August 2018
+July 2018
 
 ### Computer Science and ITM Tutor, Illinois Institute of Technology
-Feb 2017 - Sep 2017
+Feb 2017 - Sep 2017, 6 months
 
 ### Technician, uBreakiFix
-May 2016 - Jul 2016
+May 2016 - Jul 2016, 3 months
 
 ### Junior Engineer, Northside College Preparatory High School
-2012 - 2015
+2012 - 2015, 3 years
 
 ## Education
 
@@ -48,7 +48,7 @@ May 2016 - Jul 2016
 ## Work
 
 ### Security Analyst
--   U.S. Bank, May 2019 - October 2020, 17 months
+-   U.S. Bank, May 2019 - October 2020 (Current), 17 months
 -   Analyzing C\#, Java, ASP.NET, PHP, and JS source code
 -   Discussing implementation and security vulnerabilities with developers
 -   Managing workload between multiple co-workers and prioritizing work items
@@ -74,8 +74,7 @@ May 2016 - Jul 2016
   - My mom was terminally ill.
 
 ### Private Tutor, Wyzant
--   Online and in Chicago
--   Oct 2017 - Current
+-   Online and in Chicago, Oct 2017 - May 2019, 19 months 
 -   <http://wyzant.com/Tutors/HenryFBP>
 -   Teaching tutees online and in-person about various programming languages, technologies, and concepts.
 -   Mainly done in Python, Java, HTML, CSS, and JavaScript.
@@ -89,7 +88,7 @@ May 2016 - Jul 2016
 -   Demonstrating underlying programming concepts
 
 ### Librarian/IT Contractor, Oak Bluffs Public Library
--   July 2018 - August 2018
+-   July 2018
 -   After working for Oak Bluffs Public Library and replacing many of their old reference computers for a very low cost, I was commissioned by Falmouth Public Library to replicate this for FPL's aging reference computers.
 -   This solution was to use the micro-computer known as the Raspberry Pi as a reference computer and configure it with a restricted desktop environment as well as strict web browsing settings, costing about $40 per unit and saving hundreds of dollars of the costs of buying an entire desktop.
 -   In addition to cost savings, using a custom site blacklist meant absolute control over what sites patrons were allowed to visit (or not visit).
