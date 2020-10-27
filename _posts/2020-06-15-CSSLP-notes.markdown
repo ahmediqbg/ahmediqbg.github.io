@@ -4725,11 +4725,66 @@ ex: Password recovery attempts should be recorded, what was the impact?
       - Mitigate damage
       - Monitor system modification/patch deployment to ensure fix works
 
+- Establishing a structured incident response plan needs...
+  - Preparation
+    - Specific to organization
+    - How to address passive and active incidents?
+  - An organizational manual to guide incident response
+    - Using standard practices
+    - Include relevant terms and concepts
+    - What role does each incident response team member have?
+      - Very important point -- all members must understand what their job role actually is when an incident occurs and how they should respond.
+  
+- Ensure enough resources exist to handle the incidents
+  - Resources allocated should be appropriate based on known incidents
+  - Strike a balance between appropriate response and over-resourcing
+  - Effective incident response policy will help identify the appropriate measured response
 
+- Manage the incident response team properly
+  - Team must be able to respond to all incidents without deploying unnecessary personnel
+  - Team includes:
+    - Manager, expert analysts, programmers, cybersec, computer crime specialists, legal, government experts
 
 #### Problem Management
 
+- Step 1: Determine if a problem actually exists
+  - Can determine if it is a problem through replication and verification
+
+- Step 2: Once a problem is identified, rectify the problem
+  - Impact on all relevant items is assessed
+  - Resources required to address the issue are estimated
+
+- Step 3: Collect relevant details into a report
+  - Analysis results
+  - Implementation options
+
+- Step 4: Report is escalated to a configuration control board
+  - Approve or deny recommended modifications
+- Upon approval, modification Statement of Work (SOW) is developed and communicated to interested parties
+
+- Step 5: Modification implementation
+  - A change manager ensures modification follows appropriate monitoring, control, and reporting procedures
+  - Due care is required to avoid modifying any unaffected areas of the system
+
+- Step 6: Review the system
+  - Ensure system integrity is preserved
+  - SOW was fulfilled
+
+Finally: Once the modification is deemed correct, system reintegration can occur. This is putting the system back into its live environment.
+
+Once we reintegrate, we verify it (make sure everything is operational) and final sign-off occurs
+
 #### Change Management
+
+All software modifications should occur under a change management process
+- Upgrades, bug fixes, patches.
+
+- Change management mitigates organizational risk when modifying systems
+
+- Software modifications frequently occur through vendors:
+  - Patches
+  - Hotfixes
+  - Quick fix engineering (QFE)
 
 #### Backup, Recovery and Archiving
 
