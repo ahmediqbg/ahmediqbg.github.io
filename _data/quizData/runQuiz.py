@@ -5,11 +5,6 @@ from enum import Enum
 from typing import Dict, List, Union
 
 
-class Question():
-    def __init__(self, data):
-        self.data = data
-
-
 class QuestionType(Enum):
     FREE_RESPONSE = 0
     MULTIPLE_CHOICE = 1
@@ -17,13 +12,42 @@ class QuestionType(Enum):
     UNKNOWN = 3
 
 
-@staticmethod
-def questionTypeFromName(s: str):
-    pass
+QuestionTypeDict = {
+    'FREE RESPONSE': QuestionType.FREE_RESPONSE,
+    'MATCHING': QuestionType.MATCHING,
+    'MULTIPLE CHOICE': QuestionType.MULTIPLE_CHOICE,
+}
+
+QuestionTypeDictReversed = {v: k for k, v in QuestionTypeDict.items()}
 
 
-def getQuestionKey(question: Dict[str, Union[str, List, Dict]]) -> str:
-    return list(question.keys())[0]
+class Question:
+    def __init__(self, data):
+        self.data = data
+
+    def __str__(self):
+        return f"""{self.getTitle()}
+Type: {self.getQuestionType().name}"""
+
+    def getTitle(self) -> str:
+        return self.data['title']
+
+    def getQuestionTypeRaw(self) -> str:
+        return self.data['type']
+
+    def getQuestionType(self) -> QuestionType:
+        if self.getQuestionTypeRaw().upper() in QuestionTypeDict:
+            return QuestionTypeDict[self.getQuestionTypeRaw().upper()]
+
+        return QuestionType.UNKNOWN
+
+
+class QuestionBank():
+    def __init__(self, questions: List[Question] = []):
+        self.questions = questions
+
+    def add_question(self, question: Question):
+        self.questions.append(question)
 
 
 # Initialize parser
@@ -37,14 +61,14 @@ args = parser.parse_args()
 
 print("Using quiz file " + args.file)
 
-
 with open(args.file) as f:
-    quizYaml = yaml.load(f, Loader=yaml.SafeLoader)
+    quizYaml = yaml.load(f, Loader=yaml.UnsafeLoader)
+
+questionBank = QuestionBank()
 
 for qnum in quizYaml['questions']:
-    question = quizYaml['questions'][qnum]
-    # pprint(question)
+    question = Question( data= quizYaml['questions'][qnum])
+    questionBank.add_question(question)
     print(question)
-    qname = getQuestionKey(question)
 
-    print()
+exit(0)
