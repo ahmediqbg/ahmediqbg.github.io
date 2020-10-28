@@ -4779,14 +4779,51 @@ Once we reintegrate, we verify it (make sure everything is operational) and fina
 All software modifications should occur under a change management process
 - Upgrades, bug fixes, patches.
 
-- Change management mitigates organizational risk when modifying systems
+- Change management mitigates an organization's risk when modifying systems
 
 - Software modifications frequently occur through vendors:
   - Patches
   - Hotfixes
   - Quick fix engineering (QFE)
 
+- Patches can be regularly released OR on an emergency basis
+  - Time depends on the fix
+- Can occur as a single file or bundled into a 'service pack'
+
+- Regression testing should occur for ALL patches and hotfixes
+  - This ensures that the fix doesn't create new issues
+
+- Organizational patch management integration with change mgmt is crucial for:
+  - Controlled release/roll-out
+  - Stability
+  - Completeness
+
 #### Backup, Recovery and Archiving
+
+Backups are an important security measure when upgrading to a new production environment.
+
+If something goes wrong with the upgrade process, you can restore to the original state.
+
+- Software and data backup process involves a lot of effort and planning
+
+- Must maintain archives of:
+  - Early release versions
+  - Associated datasets
+
+- Important to consider security of archived backups
+  - Encrypt it!
+
+- Be aware of program and data retention cycles
+  - A retention cycle is comprised of a complete set of backups to fully restore data
+    - Full backup
+    - Full plus incrementals
+    - Be aware of incremental backups
+
+- Retention cycles are stored as a group for a defined retention period
+
+- Determining and managing retention cycles and periods need to be considered
+  - Org specific
+  - Legal, governance, compliance requirements
 
 ### Software Disposal
 
