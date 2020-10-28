@@ -1,0 +1,35 @@
+title: "Example quiz"
+
+questions:
+    1:
+        question: What is the Python source code file extension?
+        type: Free Response
+        answers:
+            - py
+            - .py
+
+    2:
+        question: Match the animals to their sounds.
+        type: Matching
+        answers:
+            - cat: meow
+            - dog: bark
+            - snake: hiss
+
+    3:
+        question: What's 2+2?
+        type: Multiple choice
+        answers:
+            - 2: True
+            - 1
+            - -1
+            - "(2+0)": True
+
+    4:
+        question: What color is the sky?
+        type: Multiple choice
+        answers:
+            - Blue: True
+            - Red
+            - IDK
+            - Pink
