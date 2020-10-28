@@ -4,11 +4,10 @@ import argparse
 from enum import Enum
 from typing import Dict, List, Union
 
+
 class Question():
     def __init__(self, data):
-        self.data=data
-
-
+        self.data = data
 
 
 class QuestionType(Enum):
@@ -17,13 +16,15 @@ class QuestionType(Enum):
     MATCHING = 2
     UNKNOWN = 3
 
+
 @staticmethod
-def questionTypeFromName(s:str):
+def questionTypeFromName(s: str):
     pass
 
 
 def getQuestionKey(question: Dict[str, Union[str, List, Dict]]) -> str:
     return list(question.keys())[0]
+
 
 # Initialize parser
 parser = argparse.ArgumentParser()
@@ -41,7 +42,7 @@ with open(args.file) as f:
     quizYaml = yaml.load(f, Loader=yaml.SafeLoader)
 
 for qnum in quizYaml['questions']:
-    question=quizYaml['questions'][qnum]
+    question = quizYaml['questions'][qnum]
     # pprint(question)
     print(question)
     qname = getQuestionKey(question)
