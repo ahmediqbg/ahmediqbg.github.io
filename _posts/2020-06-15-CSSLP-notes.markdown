@@ -4829,7 +4829,59 @@ If something goes wrong with the upgrade process, you can restore to the origina
 
 #### Software Disposal Planning
 
+Software disposal is the removal of software after it is no longer needed by the org.
+
+Can need removal because:
+- License expiration
+- Software is old
+- Software is vulnerable
+
+The software disposal plan should outline:
+- Schedule of removal
+- Actions that need to be taken
+- Resources needed
+
+With relevance to:
+- Software services delivery termination
+- Transformation of related systems
+- Privacy and security health and safety in relevance to disposal actions
+
+- Disposal strategy should be defined including:
+  - Disposal constraints
+  - Disposal activities
+  - Transition periods
+    - Need to make software replacement exists
+
+- The software disposal plan should outline:
+  - When and how support for the product will be withdrawn
+    - This is very important
+  - How all relevant product components will be archived
+    - Make sure to do a complete backup of the software and its data
+  - Responsibility for support issues
+  - Transition details to replacement product
+  - Accessibility to archived materials
+
 #### Software Disposal Execution
+
+SDE facilitates a smooth product retirement.
+
+After you make your SD Plan, you want to put the plan in place to ensure software is retired in a smooth manner.
+
+- End users require ample notice of product retirement plans and activities. This is important. They need:
+  - Details of the replacement product
+  - When it will be available
+  - Why the product is being retired
+  - Alternative support options
+
+- User training is required to facilitate a smooth transition to the new product.
+
+- Retirement notifications (with date) should be sent to all relevant users
+
+- All relevant documentation should be archived
+  - Logs or code
+
+- All relevant data needs to remain accessible in the event of audit procedures
+  - Data should be accessible
 
 ## Supply Chain and Software Acquisition
 
