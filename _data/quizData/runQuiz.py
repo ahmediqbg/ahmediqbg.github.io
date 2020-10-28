@@ -24,6 +24,27 @@ QuestionTypeDictReversed = {v: k for k, v in QuestionTypeDict.items()}
 class Question:
     def __init__(self, data):
         self.data = data
+        self.answered = False
+        self.answer = None
+        self.correct = False
+
+    def ask(self):
+        """Ask an answer to stdin and store results in myself."""
+        if self.getQuestionType() == QuestionType.FREE_RESPONSE:
+            print("Todo implement asking user to answer FREE_RESPONSE question")
+            x = input(" > ")
+
+            print('u said ' + x)
+
+        if self.getQuestionType() == QuestionType.MATCHING:
+            print("Todo implement asking user to answer MATCHING question")
+
+        if self.getQuestionType() == QuestionType.MULTIPLE_CHOICE:
+            print("Todo implement asking user to answer MULTIPLE_CHOICE question")
+
+        if self.getQuestionType() == QuestionType.UNKNOWN:
+            print("lol you need to fix this question:")
+            print(self)
 
     def __str__(self):
         return f"""{self.getTitle()}
@@ -49,6 +70,11 @@ class QuestionBank():
     def add_question(self, question: Question):
         self.questions.append(question)
 
+    def run_quiz(self):
+        for question in self.questions:
+            if not question.answered:
+                question.ask()
+
 
 # Initialize parser
 parser = argparse.ArgumentParser()
@@ -67,8 +93,11 @@ with open(args.file) as f:
 questionBank = QuestionBank()
 
 for qnum in quizYaml['questions']:
-    question = Question( data= quizYaml['questions'][qnum])
+    questionData = quizYaml['questions'][qnum]
+    question = Question(data=questionData)
     questionBank.add_question(question)
-    print(question)
+    # print(question)
+
+questionBank.run_quiz()
 
 exit(0)
