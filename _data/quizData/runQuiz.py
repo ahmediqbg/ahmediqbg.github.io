@@ -257,7 +257,7 @@ class Question:
                             len(missed_correct_answers.keys()),numQuestions
                         ))
 
-                        print("These were your wrong answers")
+                        print("These were your wrong answers:")
                         for key in missed_correct_answers:
                             print("{} matched with '{}' but should have been matched with '{}'.".format(key,self.answer[key], missed_correct_answers[key]))
 
@@ -360,6 +360,9 @@ class QuestionBank():
     def add_question(self, question: Question):
         self.questions.append(question)
 
+    def randomize_question_order(self):
+        random.shuffle(self.questions)
+
     def run_quiz(self):
         for question in self.questions:
             if not question.answered:
@@ -401,6 +404,7 @@ if __name__ == '__main__':
         questionBank.add_question(question)
         # print(question)
 
+    questionBank.randomize_question_order()
     questionBank.run_quiz()
 
     exit(0)
