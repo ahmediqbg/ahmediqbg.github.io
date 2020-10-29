@@ -212,6 +212,7 @@ class Question:
                 if (matchingResponse[0] >= numQuestions) or \
                         (matchingResponse[1] >= numQuestions):
                     print("Letter/number too high/low. Please try again.")
+                    print(f"Highest letter/number: {numericToAlpha(numQuestions)}/{numQuestions}")
                 else:
                     break
 
