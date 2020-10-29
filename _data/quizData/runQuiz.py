@@ -21,6 +21,17 @@ QuestionTypeDict = {
 QuestionTypeDictReversed = {v: k for k, v in QuestionTypeDict.items()}
 
 
+def promptYN() -> bool:
+    """Get y/n from a user."""
+    while True:
+        answer = input('[Yy]es/[Nn]o \n > ')
+
+        if answer[0].capitalize() == 'Y':
+            return True
+        if answer[0].capitalize() == 'N':
+            return False
+
+
 class Question:
     def __init__(self, data):
         self.data = data
@@ -28,23 +39,65 @@ class Question:
         self.answer = None
         self.correct = False
 
+    def validate_free_response(self, proposed_answer: str) -> bool:
+        answers_uppercase = [x.upper() for x in self.getAnswers()]
+        proposed_answer_u = proposed_answer.upper()
+
+        if proposed_answer_u in answers_uppercase:
+            return True
+
+        return False
+
+    def printQuestionHeader(self):
+        print('-' * 30)
+        print(f"Type:       {self.getQuestionTypePretty()}")
+        print(f"Question:   {self.getTitle()}")
+
+    def printAnswersAsList(self):
+        for s in self.getAnswers():
+            print(f"- {s}")
+
+    def askFreeResponse(self):
+        """Ask a free response answer to stdin and store results in myself."""
+        user_input = input(" > ")
+
+        if self.validate_free_response(user_input):
+            self.correct = True
+            self.answered = True
+            self.answer = user_input
+            print(f"Correct! You answered '{user_input}'. The correct answers were:")
+            self.printAnswersAsList()
+
+        else:
+            print("These were the correct answers:")
+            self.printAnswersAsList()
+            print("You may be potentially incorrect, but I cannot tell as I'm just a computer.")
+            print(f"Did your answer of '{user_input}' match the above answers enough to be counted as a correct "
+                  f"answer? Please be honest.")
+            self.correct=promptYN()
+            self.answered=True
+            self.answer=user_input
+
     def ask(self):
         """Ask an answer to stdin and store results in myself."""
-        if self.getQuestionType() == QuestionType.FREE_RESPONSE:
-            print("Todo implement asking user to answer FREE_RESPONSE question")
-            x = input(" > ")
 
-            print('u said ' + x)
+        self.printQuestionHeader()
+
+        if self.getQuestionType() == QuestionType.FREE_RESPONSE:
+            self.askFreeResponse()
 
         if self.getQuestionType() == QuestionType.MATCHING:
             print("Todo implement asking user to answer MATCHING question")
+            exit(1)
 
         if self.getQuestionType() == QuestionType.MULTIPLE_CHOICE:
             print("Todo implement asking user to answer MULTIPLE_CHOICE question")
+            exit(1)
 
         if self.getQuestionType() == QuestionType.UNKNOWN:
             print("lol you need to fix this question:")
             print(self)
+            exit(1)
 
     def __str__(self):
         return f"""{self.getTitle()}
@@ -53,8 +106,14 @@ Type: {self.getQuestionType().name}"""
     def getTitle(self) -> str:
         return self.data['title']
 
+    def getAnswers(self) -> List:
+        return self.data['answers']
+
     def getQuestionTypeRaw(self) -> str:
         return self.data['type']
+
+    def getQuestionTypePretty(self) -> str:
+        return self.getQuestionTypeRaw().lower().capitalize()
 
     def getQuestionType(self) -> QuestionType:
         if self.getQuestionTypeRaw().upper() in QuestionTypeDict:
@@ -64,7 +123,10 @@ Type: {self.getQuestionType().name}"""
 
 
 class QuestionBank():
-    def __init__(self, questions: List[Question] = []):
+    def __init__(self, questions=None):
+        if questions is None:
+            questions = []
+
         self.questions = questions
 
     def add_question(self, question: Question):
