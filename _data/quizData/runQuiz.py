@@ -203,7 +203,13 @@ class Question:
                 for key in userChoices:
                     print(f"{key:10s} < --- > {userChoices[key]:10s}")
 
-            matchingResponse = promptMatchingResponse(offset=-1)
+            while True:
+                matchingResponse = promptMatchingResponse(offset=-1)
+                if (matchingResponse[0] >= numQuestions) or (matchingResponse[1] >= numQuestions):
+                    print("Letter/number too high. Please try again.")
+                else:
+                    break
+
             # print(f"user typed ints {matchingResponse}")
             matchingIndices = (
                 answerListPositions[0][matchingResponse[0]],
