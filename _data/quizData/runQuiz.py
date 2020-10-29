@@ -3,6 +3,7 @@ from pprint import pprint
 import argparse
 from enum import Enum
 from typing import Dict, List, Union, Tuple
+import random
 
 ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -27,6 +28,12 @@ def alphaToNumeric(c: str) -> int:
     """Given a character, return its numerical position. A=1, etc."""
     char = c[0].lower()
     return (ord(char) - ord('a')) + 1
+
+
+def shuffledRange(*args, **kwargs):
+    l = list(range(*args, **kwargs))
+    random.shuffle(l)
+    return l
 
 
 assert(alphaToNumeric('a') == 1)
@@ -68,18 +75,32 @@ assert(validateMatchingResponse('b0'))
 assert(validateMatchingResponse('x10'))
 
 
-def parseMatchingResponse(s: str) -> Tuple[int]:
+def parseMatchingResponse(s: str, offset=0) -> List[int]:
     """Given a matching response input (A3, B20, etc), return
     that response input as 2 ints in a tuple."""
 
     lhs, rhs = s[0], s[1:]
 
-    return (alphaToNumeric(lhs), int(rhs))
+    ret = [alphaToNumeric(lhs), int(rhs)]
+
+    ret[0] = ret[0]+offset
+    ret[1] = ret[1]+offset
+
+    return ret
 
 
-assert(parseMatchingResponse('A3') == (1, 3))
-assert(parseMatchingResponse('b4') == (2, 4))
-assert(parseMatchingResponse('X20') == (24, 20))
+assert(parseMatchingResponse('A3') == [1, 3])
+assert(parseMatchingResponse('b4') == [2, 4])
+assert(parseMatchingResponse('X20') == [24, 20])
+
+
+def promptMatchingResponse(offset=0) -> Tuple[int]:
+    """Get a matching response input from stdin."""
+    while True:
+        answer = input('[a-zA-Z][0-9]+ (ex. "b10")\n > ')
+
+        if validateMatchingResponse(answer):
+            return parseMatchingResponse(answer, offset)
 
 
 def promptYN() -> bool:
@@ -142,13 +163,68 @@ class Question:
 
         print("Example: Typing 'B2' matches item B to item 2.")
 
+        print("Don't enter more than 1 choice at a time.")
+
         answerLists = self.getMatchingAnswersAs2Lists()
 
-        # randomized answer list positions. Item 1 still maps to item a, b-2, etc.
-        answerListPositions = ([],[]) #TODO populate
-        
+        userChoices = {}
+        doneAnswering=False
 
-        exit(1)
+        # randomized answer list positions. Item 1 still maps to item a, b-2, etc.
+        answerListPositions = (
+            shuffledRange(0, len(answerLists[0])),
+            shuffledRange(0, len(answerLists[1]))
+        )
+
+        random.shuffle(answerListPositions[0])
+        random.shuffle(answerListPositions[1])
+
+        # pprint(answerListPositions)
+
+        while not doneAnswering:
+
+            i = 0
+            for idx in answerListPositions[0]:
+                print(f"{numericToAlpha(i+1)}: {answerLists[0][idx]}")
+                i += 1
+
+            print()
+
+            i = 0
+            for idx in answerListPositions[1]:
+                print(f"{(i+1)}: {answerLists[1][idx]}")
+                i += 1
+
+            print()
+
+            if userChoices != {}:
+                print("Current choices:")
+                for key in userChoices:
+                    print(f"{key:10s} < --- > {userChoices[key]}")
+
+            matchingResponse = promptMatchingResponse(offset=-1)
+            # print(f"user typed ints {matchingResponse}")
+            matchingIndices = (
+                answerListPositions[0][matchingResponse[0]],
+                answerListPositions[1][matchingResponse[1]],
+            )
+            # print(f"user indices were {matchingIndices}")
+
+            userChoice = [answerLists[0][matchingIndices[0]],
+                        answerLists[1][matchingIndices[1]]]
+            # print(f"user thinks '{userChoice[0]}' matches with {userChoice[1]}")
+
+            # if(matchingIndices[0] == matchingIndices[1]):
+            #     print("user is right")
+            # else:
+            #     print("user is wrong")
+
+            userChoices[userChoice[0]] = userChoice[1]
+
+            
+
+            # print("todo")
+            # exit(1)
 
     def askFreeResponseQuestion(self):
         """Ask a free response question to stdin and store results in myself."""
@@ -215,8 +291,10 @@ Type: {self.getQuestionType().name}"""
 
         if(len(answersTuple[0]) != len(answersTuple[1])):
             pprint(answersTuple)
-            print(f"{len(answersTuple[0])} on left hand side, {len(answersTuple[1])} on right hand side!")
-            raise AssertionError("Must have equal number of matching question answers on both sides!")
+            print(
+                f"{len(answersTuple[0])} on left hand side, {len(answersTuple[1])} on right hand side!")
+            raise AssertionError(
+                "Must have equal number of matching question answers on both sides!")
 
         return answersTuple
 
