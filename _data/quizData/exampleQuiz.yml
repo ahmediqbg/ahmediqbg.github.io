@@ -1,23 +1,28 @@
 title: "Example quiz"
 
 questions:
-  1:
-    title: What is the Python source code file extension?
+  - title: What is the Python source code file extension?
     type: Free Response
     answers:
       - py
       - .py
 
-  2:
-    title: Match the animals to their sounds.
+  - title: What does juice do?
+    type: free response
+    answers:
+      - flow
+      - drip
+      - get drank
+      - evaporate
+
+  - title: Match the animals to their sounds.
     type: Matching
     answers:
       - cat: meow
       - dog: bark
       - snake: hiss
 
-  3:
-    title: What's 2+2?
+  - title: What's 2+2?
     type: Multiple Choice
     answers:
       - "2": True
@@ -25,8 +30,7 @@ questions:
       - "-1"
       - "(2+0)": True
 
-  4:
-    title: What color is the sky?
+  - title: What color is the sky?
     type: Multiple Choice
     answers:
       - Blue: True

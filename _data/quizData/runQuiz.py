@@ -154,8 +154,7 @@ with open(args.file) as f:
 
 questionBank = QuestionBank()
 
-for qnum in quizYaml['questions']:
-    questionData = quizYaml['questions'][qnum]
+for questionData in quizYaml['questions']:
     question = Question(data=questionData)
     questionBank.add_question(question)
     # print(question)
