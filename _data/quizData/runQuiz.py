@@ -160,12 +160,13 @@ class Question:
         """Ask a matching question to stdin and store results in myself."""
 
         print("Match the alphabetic items to the numeric items.")
-
         print("Example: Typing 'B2' matches item B to item 2.")
-
         print("Don't enter more than 1 choice at a time.")
+        print("Also, you can match things you've already chosen...")
+        print("    Ex: B1 <ENTER> B2 <ENTER> B3 <ENTER> is a totally valid input sequence.")
 
         answerLists = self.getMatchingAnswersAs2Lists()
+        numQuestions=len(answerLists[0])
 
         userChoices = {}
         doneAnswering=False
@@ -200,7 +201,7 @@ class Question:
             if userChoices != {}:
                 print("Current choices:")
                 for key in userChoices:
-                    print(f"{key:10s} < --- > {userChoices[key]}")
+                    print(f"{key:10s} < --- > {userChoices[key]:10s}")
 
             matchingResponse = promptMatchingResponse(offset=-1)
             # print(f"user typed ints {matchingResponse}")
@@ -221,7 +222,17 @@ class Question:
 
             userChoices[userChoice[0]] = userChoice[1]
 
-            
+            # if they've answered all the questions,
+            # see if they want to be done.
+            if(len(userChoices.keys()) == numQuestions):
+                print(f"You've answered {numQuestions}/{numQuestions} questions.")
+                print(f"Are you ready to submit this question?")
+                if promptYN():
+                    doneAnswering=True
+                    print("TODO submit and validate the question lol")
+                    exit(1)
+                else:
+                    print("Continuing.")
 
             # print("todo")
             # exit(1)
