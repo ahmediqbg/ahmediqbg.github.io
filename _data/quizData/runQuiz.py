@@ -67,11 +67,15 @@ def validateMatchingResponse(s: str) -> bool:
     except ValueError:
         return False
 
+    # int part must be less than 0 and not equal to 0
+    if int(s[1:]) <= 0:
+        return False
+
     return True
 
 
 assert(validateMatchingResponse('A2'))
-assert(validateMatchingResponse('b0'))
+assert not validateMatchingResponse('b0')
 assert(validateMatchingResponse('x10'))
 
 
@@ -97,7 +101,7 @@ assert(parseMatchingResponse('X20') == [24, 20])
 def promptMatchingResponse(offset=0) -> Tuple[int]:
     """Get a matching response input from stdin."""
     while True:
-        answer = input('[a-zA-Z][0-9]+ (ex. "b10")\n > ')
+        answer = input('[a-zA-Z][1-9]+ (ex. "b10")\n > ')
 
         if validateMatchingResponse(answer):
             return parseMatchingResponse(answer, offset)
@@ -166,10 +170,10 @@ class Question:
         print("    Ex: B1 <ENTER> B2 <ENTER> B3 <ENTER> is a totally valid input sequence.")
 
         answerLists = self.getMatchingAnswersAs2Lists()
-        numQuestions=len(answerLists[0])
+        numQuestions = len(answerLists[0])
 
         userChoices = {}
-        doneAnswering=False
+        doneAnswering = False
 
         # randomized answer list positions. Item 1 still maps to item a, b-2, etc.
         answerListPositions = (
@@ -205,8 +209,9 @@ class Question:
 
             while True:
                 matchingResponse = promptMatchingResponse(offset=-1)
-                if (matchingResponse[0] >= numQuestions) or (matchingResponse[1] >= numQuestions):
-                    print("Letter/number too high. Please try again.")
+                if (matchingResponse[0] >= numQuestions) or \
+                        (matchingResponse[1] >= numQuestions):
+                    print("Letter/number too high/low. Please try again.")
                 else:
                     break
 
@@ -218,7 +223,7 @@ class Question:
             # print(f"user indices were {matchingIndices}")
 
             userChoice = [answerLists[0][matchingIndices[0]],
-                        answerLists[1][matchingIndices[1]]]
+                          answerLists[1][matchingIndices[1]]]
             # print(f"user thinks '{userChoice[0]}' matches with {userChoice[1]}")
 
             # if(matchingIndices[0] == matchingIndices[1]):
@@ -231,10 +236,11 @@ class Question:
             # if they've answered all the questions,
             # see if they want to be done.
             if(len(userChoices.keys()) == numQuestions):
-                print(f"You've answered {numQuestions}/{numQuestions} questions.")
+                print(
+                    f"You've answered {numQuestions}/{numQuestions} questions.")
                 print(f"Are you ready to submit this question?")
                 if promptYN():
-                    doneAnswering=True
+                    doneAnswering = True
                     print("TODO submit and validate the question lol")
                     exit(1)
                 else:
