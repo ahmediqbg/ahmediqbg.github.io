@@ -205,7 +205,7 @@ class Question:
             if userChoices != {}:
                 print("Current choices:")
                 for key in userChoices:
-                    print(f"{key:10s} < --- > {userChoices[key]:10s}")
+                    print(f"{key:10s} : {userChoices[key]:10s}")
 
             while True:
                 matchingResponse = promptMatchingResponse(offset=-1)
@@ -242,13 +242,28 @@ class Question:
                 print(f"Are you ready to submit this question?")
                 if promptYN():
                     doneAnswering = True
-                    print("TODO submit and validate the question lol")
-                    exit(1)
+                    self.answered=True
+                    self.answer=userChoices
+                    # print("TODO submit and validate the question lol")
+
+                    missed_correct_answers=self.validate_matching_response(self.getAnswers(),self.answer)
+
+                    if(missed_correct_answers=={}):
+                        self.correct=True
+                        print("You got all {n}/{n} answers correct!".format(n=numQuestions))
+                    else:
+                        self.correct=False
+                        print("You got {}/{} answers wrong.".format(
+                            len(missed_correct_answers.keys()),numQuestions
+                        ))
+
+                        print("These were your wrong answers")
+                        for key in missed_correct_answers:
+                            print("{} matched with '{}' but should have been matched with '{}'.".format(key,self.answer[key], missed_correct_answers[key]))
+
                 else:
                     print("Continuing.")
 
-            # print("todo")
-            # exit(1)
 
     def askFreeResponseQuestion(self):
         """Ask a free response question to stdin and store results in myself."""
