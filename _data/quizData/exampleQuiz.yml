@@ -26,15 +26,15 @@ questions:
     type: Multiple Choice
     answers:
       "2": True
-      "1"
-      "-1"
+      "1": False
+      "-1": False
       "(2+0)": True
 
   - title: What color is the sky?
     type: Multiple Choice
     answers:
-      - Blue: True
-      - light blue: True
-      - Red
-      - IDK
-      - Pink
+      Blue: True
+      light blue: True
+      Red: False
+      IDK: False
+      Pink: False
