@@ -2,7 +2,7 @@ import yaml
 from pprint import pprint
 import argparse
 from enum import Enum
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Tuple
 
 
 class QuestionType(Enum):
@@ -19,6 +19,31 @@ QuestionTypeDict = {
 }
 
 QuestionTypeDictReversed = {v: k for k, v in QuestionTypeDict.items()}
+
+
+def alphaToNumeric(c: str) -> bool:
+    """Given a character, return its numerical position. A=1, etc."""
+    char = c[0].lower()
+    return (ord(char) - ord('a')) + 1
+
+
+assert(alphaToNumeric('a') == 1)
+assert(alphaToNumeric('b') == 2)
+
+
+def parseMatchingResponse(s: str) -> Tuple[int]:
+    """Given a matching response input (A3, B1, etc), return
+    that response input as 2 ints in a tuple."""
+    assert(len(s) == 2)
+
+    lhs = s[0]
+    rhs = s[1]
+
+    return (alphaToNumeric(lhs), int(rhs))
+
+
+assert(parseMatchingResponse('A3') == (1, 3))
+assert(parseMatchingResponse('b4') == (2, 4))
 
 
 def promptYN() -> bool:
@@ -53,16 +78,17 @@ class Question:
     @staticmethod
     def validate_matching_response(correct_mappings: Dict[str, str],
                                    proposed_mappings: Dict[str, str]) -> Dict[str, str]:
-        """Given a list of proposed mappings of a matching question response, return a mapping of incorrect answers.
+        """Given a list of proposed mappings of a matching question response, return a mapping of correct answers that were not answered correctly.
+
         If the returned mapping is empty, then all answers are correct."""
 
-        incorrect_mappings = {}
+        missed_correct_mappings = {}
 
         for key in correct_mappings:
             if not (correct_mappings[key] == proposed_mappings[key]):
-                incorrect_mappings[key] = proposed_mappings[key]
+                missed_correct_mappings[key] = correct_mappings[key]
 
-        return incorrect_mappings
+        return missed_correct_mappings
 
     def printQuestionHeader(self):
         print('-' * 30)
@@ -91,13 +117,15 @@ class Question:
             self.correct = True
             self.answered = True
             self.answer = user_input
-            print(f"Correct! You answered '{user_input}'. The correct answers were:")
+            print(
+                f"Correct! You answered '{user_input}'. The correct answers were:")
             self.printAnswersAsList()
 
         else:
             print("These were the correct answers:")
             self.printAnswersAsList()
-            print("You may be potentially incorrect, but I cannot tell as I'm just a computer.")
+            print(
+                "You may be potentially incorrect, but I cannot tell as I'm just a computer.")
             print(f"Did your answer of '{user_input}' match the above answers enough to be counted as a correct "
                   f"answer? Please be honest.")
             self.correct = promptYN()
@@ -162,6 +190,19 @@ class QuestionBank():
             if not question.answered:
                 question.askQuestion()
 
+
+assert(Question.validate_free_response(['cat', 'kitty'], 'CAT'))
+assert(Question.validate_matching_response(
+    {'bug': 'lots of legs',
+     'mammal': '2 legs',
+     'cell': 'no legs'},
+
+    {'bug': 'no legs',
+     'mammal': '2 legs',
+     'cell': 'no legs'}) == {
+    'bug': 'lots of legs'
+}
+)
 
 if __name__ == '__main__':
     # Initialize parser
