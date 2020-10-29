@@ -23,7 +23,7 @@ QuestionTypeDict = {
 QuestionTypeDictReversed = {v: k for k, v in QuestionTypeDict.items()}
 
 
-def alphaToNumeric(c: str) -> bool:
+def alphaToNumeric(c: str) -> int:
     """Given a character, return its numerical position. A=1, etc."""
     char = c[0].lower()
     return (ord(char) - ord('a')) + 1
@@ -31,6 +31,16 @@ def alphaToNumeric(c: str) -> bool:
 
 assert(alphaToNumeric('a') == 1)
 assert(alphaToNumeric('b') == 2)
+
+
+def numericToAlpha(i: int) -> str:
+    return chr(i + ord('a') - 1)
+
+
+assert(numericToAlpha(1) == 'a')
+assert(numericToAlpha(3) == 'c')
+assert(alphaToNumeric(numericToAlpha(20)) == 20)
+assert(numericToAlpha(alphaToNumeric('x')) == 'x')
 
 
 def validateMatchingResponse(s: str) -> bool:
@@ -127,13 +137,16 @@ class Question:
 
     def askMatchingQuestion(self):
         """Ask a matching question to stdin and store results in myself."""
-        print("fml. implement me.")
 
         print("Match the alphabetic items to the numeric items.")
 
         print("Example: Typing 'B2' matches item B to item 2.")
 
-        pprint(self.getAnswers())
+        answerLists = self.getMatchingAnswersAs2Lists()
+
+        # randomized answer list positions. Item 1 still maps to item a, b-2, etc.
+        answerListPositions = ([],[]) #TODO populate
+        
 
         exit(1)
 
@@ -189,6 +202,23 @@ Type: {self.getQuestionType().name}"""
 
     def getAnswers(self) -> List:
         return self.data['answers']
+
+    def getMatchingAnswersAs2Lists(self) -> Tuple[List[str]]:
+        # pprint(self.getAnswers())
+
+        answersTuple = ([], [])
+        answers = self.getAnswers()
+
+        for k in self.getAnswers():
+            answersTuple[0].append(k)
+            answersTuple[1].append(answers[k])
+
+        if(len(answersTuple[0]) != len(answersTuple[1])):
+            pprint(answersTuple)
+            print(f"{len(answersTuple[0])} on left hand side, {len(answersTuple[1])} on right hand side!")
+            raise AssertionError("Must have equal number of matching question answers on both sides!")
+
+        return answersTuple
 
     def getQuestionTypeRaw(self) -> str:
         return self.data['type']
