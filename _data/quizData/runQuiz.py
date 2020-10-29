@@ -4,6 +4,8 @@ import argparse
 from enum import Enum
 from typing import Dict, List, Union, Tuple
 
+ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+
 
 class QuestionType(Enum):
     FREE_RESPONSE = 0
@@ -31,19 +33,43 @@ assert(alphaToNumeric('a') == 1)
 assert(alphaToNumeric('b') == 2)
 
 
-def parseMatchingResponse(s: str) -> Tuple[int]:
-    """Given a matching response input (A3, B1, etc), return
-    that response input as 2 ints in a tuple."""
-    assert(len(s) == 2)
+def validateMatchingResponse(s: str) -> bool:
+    """Return true if input looks like 'A1', 'b2', etc"""
 
-    lhs = s[0]
-    rhs = s[1]
+    # string
+    if(type(s) != str):
+        return False
+
+    # 1st char is alphabetic
+    if(s[0].upper() not in ALPHABET.upper()):
+        return False
+
+    # rest of string is numeric
+    try:
+        int(s[1:])
+    except ValueError:
+        return False
+
+    return True
+
+
+assert(validateMatchingResponse('A2'))
+assert(validateMatchingResponse('b0'))
+assert(validateMatchingResponse('x10'))
+
+
+def parseMatchingResponse(s: str) -> Tuple[int]:
+    """Given a matching response input (A3, B20, etc), return
+    that response input as 2 ints in a tuple."""
+
+    lhs, rhs = s[0], s[1:]
 
     return (alphaToNumeric(lhs), int(rhs))
 
 
 assert(parseMatchingResponse('A3') == (1, 3))
 assert(parseMatchingResponse('b4') == (2, 4))
+assert(parseMatchingResponse('X20') == (24, 20))
 
 
 def promptYN() -> bool:
@@ -104,6 +130,8 @@ class Question:
         print("fml. implement me.")
 
         print("Match the alphabetic items to the numeric items.")
+
+        print("Example: Typing 'B2' matches item B to item 2.")
 
         pprint(self.getAnswers())
 
