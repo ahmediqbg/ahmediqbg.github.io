@@ -1,6 +1,13 @@
 title: "Example quiz"
 
 questions:
+  - title: Match the animals to their sounds.
+    type: Matching
+    answers:
+      - cat: meow
+      - dog: bark
+      - snake: hiss
+
   - title: What is the Python source code file extension?
     type: Free Response
     answers:
@@ -14,13 +21,6 @@ questions:
       - drip
       - become drunken
       - evaporate
-
-  - title: Match the animals to their sounds.
-    type: Matching
-    answers:
-      - cat: meow
-      - dog: bark
-      - snake: hiss
 
   - title: What's 2+2?
     type: Multiple Choice

@@ -39,14 +39,30 @@ class Question:
         self.answer = None
         self.correct = False
 
-    def validate_free_response(self, proposed_answer: str) -> bool:
-        answers_uppercase = [x.upper() for x in self.getAnswers()]
+    @staticmethod
+    def validate_free_response(correct_answers: List[str], proposed_answer: str) -> bool:
+        """Given a list of correct answers and 1 proposed answer, return True if the answer exists in the list of correct answers."""
+        answers_uppercase = [x.upper() for x in correct_answers]
         proposed_answer_u = proposed_answer.upper()
 
         if proposed_answer_u in answers_uppercase:
             return True
 
         return False
+
+    @staticmethod
+    def validate_matching_response(correct_mappings: Dict[str, str],
+                                   proposed_mappings: Dict[str, str]) -> Dict[str, str]:
+        """Given a list of proposed mappings of a matching question response, return a mapping of incorrect answers.
+        If the returned mapping is empty, then all answers are correct."""
+
+        incorrect_mappings = {}
+
+        for key in correct_mappings:
+            if not (correct_mappings[key] == proposed_mappings[key]):
+                incorrect_mappings[key] = proposed_mappings[key]
+
+        return incorrect_mappings
 
     def printQuestionHeader(self):
         print('-' * 30)
@@ -57,11 +73,21 @@ class Question:
         for s in self.getAnswers():
             print(f"- {s}")
 
-    def askFreeResponse(self):
-        """Ask a free response answer to stdin and store results in myself."""
+    def askMatchingQuestion(self):
+        """Ask a matching question to stdin and store results in myself."""
+        print("fml. implement me.")
+
+        print("Match the alphabetic items to the numeric items.")
+
+        pprint(self.getAnswers())
+
+        exit(1)
+
+    def askFreeResponseQuestion(self):
+        """Ask a free response question to stdin and store results in myself."""
         user_input = input(" > ")
 
-        if self.validate_free_response(user_input):
+        if self.validate_free_response(self.getAnswers(), user_input):
             self.correct = True
             self.answered = True
             self.answer = user_input
@@ -74,21 +100,20 @@ class Question:
             print("You may be potentially incorrect, but I cannot tell as I'm just a computer.")
             print(f"Did your answer of '{user_input}' match the above answers enough to be counted as a correct "
                   f"answer? Please be honest.")
-            self.correct=promptYN()
-            self.answered=True
-            self.answer=user_input
+            self.correct = promptYN()
+            self.answered = True
+            self.answer = user_input
 
-    def ask(self):
-        """Ask an answer to stdin and store results in myself."""
+    def askQuestion(self):
+        """Ask a question to stdin and store results in myself."""
 
         self.printQuestionHeader()
 
         if self.getQuestionType() == QuestionType.FREE_RESPONSE:
-            self.askFreeResponse()
+            self.askFreeResponseQuestion()
 
         if self.getQuestionType() == QuestionType.MATCHING:
-            print("Todo implement asking user to answer MATCHING question")
-            exit(1)
+            self.askMatchingQuestion()
 
         if self.getQuestionType() == QuestionType.MULTIPLE_CHOICE:
             print("Todo implement asking user to answer MULTIPLE_CHOICE question")
@@ -135,30 +160,31 @@ class QuestionBank():
     def run_quiz(self):
         for question in self.questions:
             if not question.answered:
-                question.ask()
+                question.askQuestion()
 
 
-# Initialize parser
-parser = argparse.ArgumentParser()
+if __name__ == '__main__':
+    # Initialize parser
+    parser = argparse.ArgumentParser()
 
-# Adding optional argument
-parser.add_argument("-f", "--file", required=True, help="Quiz datafile")
+    # Adding optional argument
+    parser.add_argument("-f", "--file", required=True, help="Quiz datafile")
 
-# Read arguments from command line
-args = parser.parse_args()
+    # Read arguments from command line
+    args = parser.parse_args()
 
-print("Using quiz file " + args.file)
+    print("Using quiz file " + args.file)
 
-with open(args.file) as f:
-    quizYaml = yaml.load(f, Loader=yaml.UnsafeLoader)
+    with open(args.file) as f:
+        quizYaml = yaml.load(f, Loader=yaml.UnsafeLoader)
 
-questionBank = QuestionBank()
+    questionBank = QuestionBank()
 
-for questionData in quizYaml['questions']:
-    question = Question(data=questionData)
-    questionBank.add_question(question)
-    # print(question)
+    for questionData in quizYaml['questions']:
+        question = Question(data=questionData)
+        questionBank.add_question(question)
+        # print(question)
 
-questionBank.run_quiz()
+    questionBank.run_quiz()
 
-exit(0)
+    exit(0)
