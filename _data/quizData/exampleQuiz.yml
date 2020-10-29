@@ -7,9 +7,9 @@ questions:
       cat: meow
       dog: bark
       snake: hiss
-      snail: blblbl
-      rock: "*silence*"
-      lion: roar
+      # snail: blblbl
+      # rock: "*silence*"
+      # lion: roar
 
   - title: What is the Python source code file extension?
     type: Free Response
