@@ -42,6 +42,20 @@ def shuffledRange(*args, **kwargs):
     return l
 
 
+def countMatchingElements(l1, l2) -> int:
+    assert(len(l1) == len(l2))
+
+    matches = 0
+    for i in range(0, len(l1)):
+        if(l1[i] == l2[i]):
+            matches += 1
+
+    return matches
+
+
+assert(countMatchingElements([1, 2, 3], [1, 2, 4]) == 2)
+
+
 def alphaToNumeric(c: str) -> int:
     """Given a character, return its numerical position. A=1, etc."""
     char = c[0].lower()
@@ -86,6 +100,10 @@ def validateMatchingResponse(s: str) -> bool:
 
     # string
     if(type(s) != str):
+        return False
+
+    # not empty
+    if(len(s) == 0):
         return False
 
     # 1st char is alphabetic
@@ -218,6 +236,7 @@ class Question:
         # pprint(userChoices)
 
         boolmap = {True: 'x', False: ' '}
+        rightwrongmap = {True: "Right", False: "Wrong"}
 
         while True:
 
@@ -231,11 +250,21 @@ class Question:
 
             if('submit'.upper() == userInput.upper()):
 
+                correctNumber = countMatchingElements(
+                    userChoices, correctChoices)
+
+                print("Submitted.")
+                print("{}/{} answers are correct.".format(correctNumber, len(questions)))
+
                 self.answered = True
                 self.answer = userChoices
+                self.correct = (self.answer == correctChoices)
 
-                print("TODO validate")
-                exit(1)
+                for i in range(0, len(questions)):
+                    correctness = self.answer[i] == correctChoices[i]
+
+                    print(
+                        f"{rightwrongmap[correctness]}: [{boolmap[self.answer[i]]}] {questions[i]}")
 
                 return
 
@@ -246,7 +275,8 @@ class Question:
                     print(f"{userInputNumeric} is too large.")
 
                 else:  # actually use their input
-                    userChoices[userInputNumeric - 1] = not userChoices[userInputNumeric - 1]
+                    userChoices[userInputNumeric -
+                                1] = not userChoices[userInputNumeric - 1]
 
             else:
                 print(f"{userInput} is not numeric.")
