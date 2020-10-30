@@ -29,16 +29,23 @@ def reversedDict(d: dict) -> dict:
 QuestionTypeDictReversed = reversedDict(QuestionTypeDict)
 
 
-def alphaToNumeric(c: str) -> int:
-    """Given a character, return its numerical position. A=1, etc."""
-    char = c[0].lower()
-    return (ord(char) - ord('a')) + 1
+def createObjectList(size=10, fillWith=False):
+    l = []
+    for i in range(size):
+        l.append(fillWith)
+    return l
 
 
 def shuffledRange(*args, **kwargs):
     l = list(range(*args, **kwargs))
     random.shuffle(l)
     return l
+
+
+def alphaToNumeric(c: str) -> int:
+    """Given a character, return its numerical position. A=1, etc."""
+    char = c[0].lower()
+    return (ord(char) - ord('a')) + 1
 
 
 assert(alphaToNumeric('a') == 1)
@@ -53,6 +60,25 @@ assert(numericToAlpha(1) == 'a')
 assert(numericToAlpha(3) == 'c')
 assert(alphaToNumeric(numericToAlpha(20)) == 20)
 assert(numericToAlpha(alphaToNumeric('x')) == 'x')
+
+
+def validateIntegerResponse(s: str) -> bool:
+    """Return true if input looks like '1', '20', etc"""
+    # string
+    if(type(s) != str):
+        return False
+
+    #  string is numeric
+    try:
+        int(s)
+    except ValueError:
+        return False
+
+    # int part must be less than 0 and not equal to 0
+    if int(s) <= 0:
+        return False
+
+    return True
 
 
 def validateMatchingResponse(s: str) -> bool:
@@ -112,6 +138,15 @@ def promptMatchingResponse(offset=0) -> Tuple[int]:
             return parseMatchingResponse(answer, offset)
 
 
+def promptIntegerResponse(offset=0) -> Tuple[int]:
+    """Get an integer response input from stdin."""
+    while True:
+        answer = input('[1-9]+ (ex. "20")\n > ')
+
+        if validateIntegerResponse(answer):
+            return int(answer)
+
+
 def promptYN() -> bool:
     """Get y/n from a user."""
     while True:
@@ -156,14 +191,65 @@ class Question:
 
         return missed_correct_mappings
 
+    def printQuestion(self):
+        print(f"Question:   {self.getTitle()}")
+
     def printQuestionHeader(self):
         print('-' * 30)
         print(f"Type:       {self.getQuestionTypePretty()}")
-        print(f"Question:   {self.getTitle()}")
+        self.printQuestion()
 
     def printAnswersAsList(self):
         for s in self.getAnswers():
             print(f"- {s}")
+
+    def askMultipleChoiceQuestion(self):
+        """Ask a multiple choice question to stdin and store requests in myself."""
+
+        print("Select the correct answer(s).")
+        print("Type in numbers to toggle selection of a choice.")
+        print("Example: Typing '3' toggles selection of the 3rd option.")
+
+        questions, correctChoices = self.getMatchingAnswersAs2Lists()
+        userChoices = createObjectList(len(correctChoices))
+
+        # pprint(questions)
+        # pprint(correctChoices)
+        # pprint(userChoices)
+
+        boolmap = {True: 'x', False: ' '}
+
+        while True:
+
+            self.printQuestion()
+            print("Type 'submit' to submit your answers.")
+
+            for i in range(0, len(questions)):
+                print(f'{i+1:2d}. [{boolmap[userChoices[i]]}] {questions[i]}')
+
+            userInput = input('[1-9]+ (ex. "20")\n > ')
+
+            if('submit'.upper() == userInput.upper()):
+
+                self.answered = True
+                self.answer = userChoices
+
+                print("TODO validate")
+                exit(1)
+
+                return
+
+            if validateIntegerResponse(userInput):
+                userInputNumeric = int(userInput)
+
+                if(userInputNumeric) > len(questions):
+                    print(f"{userInputNumeric} is too large.")
+
+                else:  # actually use their input
+                    userChoices[userInputNumeric - 1] = not userChoices[userInputNumeric - 1]
+
+            else:
+                print(f"{userInput} is not numeric.")
 
     def askMatchingQuestion(self):
         """Ask a matching question to stdin and store results in myself."""
@@ -308,8 +394,7 @@ class Question:
             self.askMatchingQuestion()
 
         if self.getQuestionType() == QuestionType.MULTIPLE_CHOICE:
-            print("Todo implement asking user to answer MULTIPLE_CHOICE question")
-            exit(1)
+            self.askMultipleChoiceQuestion()
 
         if self.getQuestionType() == QuestionType.UNKNOWN:
             print("lol you need to fix this question:")
