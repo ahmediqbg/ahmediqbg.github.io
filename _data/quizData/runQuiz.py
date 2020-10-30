@@ -21,7 +21,12 @@ QuestionTypeDict = {
     'MULTIPLE CHOICE': QuestionType.MULTIPLE_CHOICE,
 }
 
-QuestionTypeDictReversed = {v: k for k, v in QuestionTypeDict.items()}
+
+def reversedDict(d: dict) -> dict:
+    return {v: k for k, v in d.items()}
+
+
+QuestionTypeDictReversed = reversedDict(QuestionTypeDict)
 
 
 def alphaToNumeric(c: str) -> int:
@@ -212,7 +217,8 @@ class Question:
                 if (matchingResponse[0] >= numQuestions) or \
                         (matchingResponse[1] >= numQuestions):
                     print("Letter/number too high/low. Please try again.")
-                    print(f"Highest letter/number: {numericToAlpha(numQuestions)}/{numQuestions}")
+                    print(
+                        f"Highest letter/number: {numericToAlpha(numQuestions)}/{numQuestions}")
                 else:
                     break
 
@@ -242,28 +248,30 @@ class Question:
                 print(f"Are you ready to submit this question?")
                 if promptYN():
                     doneAnswering = True
-                    self.answered=True
-                    self.answer=userChoices
+                    self.answered = True
+                    self.answer = userChoices
                     # print("TODO submit and validate the question lol")
 
-                    missed_correct_answers=self.validate_matching_response(self.getAnswers(),self.answer)
+                    missed_correct_answers = self.validate_matching_response(
+                        self.getAnswers(), self.answer)
 
-                    if(missed_correct_answers=={}):
-                        self.correct=True
-                        print("You got all {n}/{n} answers correct!".format(n=numQuestions))
+                    if(missed_correct_answers == {}):
+                        self.correct = True
+                        print(
+                            "You got all {n}/{n} answers correct!".format(n=numQuestions))
                     else:
-                        self.correct=False
+                        self.correct = False
                         print("You got {}/{} answers wrong.".format(
-                            len(missed_correct_answers.keys()),numQuestions
+                            len(missed_correct_answers.keys()), numQuestions
                         ))
 
                         print("These were your wrong answers:")
                         for key in missed_correct_answers:
-                            print("{} matched with '{}' but should have been matched with '{}'.".format(key,self.answer[key], missed_correct_answers[key]))
+                            print("{} matched with '{}' but should have been matched with '{}'.".format(
+                                key, self.answer[key], missed_correct_answers[key]))
 
                 else:
                     print("Continuing.")
-
 
     def askFreeResponseQuestion(self):
         """Ask a free response question to stdin and store results in myself."""
