@@ -4889,6 +4889,49 @@ After you make your SD Plan, you want to put the plan in place to ensure softwar
 
 #### Risk Assessment for Code Reuse
 
+The CSSLP places a strong emphasis on risk assessment.
+
+Risk assessment is really an info gathering process, used to:
+- Identify and evaluate:
+  - Threat impact
+  - Appropriate threat response
+
+It's important be be aware of all practical risks
+- Risk certainty (will this happen?)
+- Risk impact
+
+Ex: A risk that's highly likely with low impact is not as much of a concern as a risk that's very unlikely with very large impact.
+
+##### Machine level code reuse
+
+Machine level code reuse (what is that??) has been common for years.
+
+Machine level code reuse led to modern programming languages
+- Standard Template Libraries (STLs)
+
+The risk here is that there is an underlying flaw in the reused code.
+It's easier to determine that if the code has been in use for a number of years, especially in STLs.
+
+##### Application level code reuse
+
+Application level code reuse involves repurposing existing components (source code) to build new software.
+
+- This is cost effective
+  - Saves time and reduces cost
+  - Implies a measure of quality control
+    - Meaning that, if you reuse shitty app level code, you'll get risk from reusing it.
+
+It is harder to determine risk with app-level code.
+- The app code is likely not used widely across the world (probably proprietary and only in org)
+- Hasn't been field tested or analyzed
+- There could be problems in code that you're not aware of.
+- The act of modifying the code could exacerbate issues or make new ones.
+
+Main risk with reusing components:
+- Perpetuation of coding issues/bugs
+
+Old code is NOT ALWAYS good code.
+
 #### Code Reuse Plan Best Practices
 
 #### Intellectual Property
