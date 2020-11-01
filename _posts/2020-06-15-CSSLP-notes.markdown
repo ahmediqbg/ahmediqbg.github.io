@@ -5000,9 +5000,107 @@ By mitigating the risks, you validate the whole issue of reusing code.
 
 #### Intellectual Property
 
+Products that are difficult to protect are easily stolen.
+- DVDs
+- Music
+
+Most software products/components are difficult to protect.
+- If a third party company got access to a large web app you owned, and they used modules from it, would you even know?
+
+Many software products and components suffer from this risk.
+
+- Organizations should implement measures to mitigate intellectual property theft
+
+IP theft can be:
+- Plagirism
+- Duplicating products
+- Copying ideas
+
+IP can be difficult to quantify due to its abstract and intangible features.
+
+Software IP can include:
+- The code itself
+- The processes you utilize
+- The algorithms (unless well known/widely used)
+
+IP property theft can be mitigated through:
+- Auditing
+  - Audit anyone who has access to your code.
+- Inspection
+  - If third party vendors are coming onto your premises who might be exposed to IP, you can inspect the portable media that they might bring.
+- Penalties
+  - Can include litigation
+
+It's important to increase awareness of possession rights throughout the supply chain.
+
+Federal regulations, acts and laws define terms for unauthorized software/IP:
+- Renting
+- Leasing
+- Lending
+- Copying
+- Some exceptions exist for creating backup copies
+
 #### Legal Compliance
 
+- Compliance refers to conformance with and satisfaction of relevant laws and regulations
+  - All software within a supply chain must adhere to this
+
+- Regulatory requirements can originate from varied sources:
+  - Industrial
+  - Government
+  - Contractual
+
+- Compliance should be considered throughout all aspects of the supply chain
+  - This includes third party vendors
+
+Example: If you're in healthcare, it's not enough to just be HIPAA and HITECH compliant, but are all of your vendors also HIPAA and HITECH compliant?
+
+- Noncompliance can result in negative organizational repercussions:
+  - Damage to reputation
+  - Financial loses
+  - Legal/criminal actions
+
+Compliance requires appropriate reporting methods.
+
+Reporting should capture objective details which support adherence to regulatory requirements
+- Details should be auditable
+- These reports are given to regulatory bodies as evidence of compliance
+
+- Regulatory bodies can differ
+- Compliance requirements between them can confict or be similar in scope
+
+The best way to do this is to have a single organizational process that's responsible for compliance with all regulations.
+
 #### Supplier Prequalification
+
+- Prequalification solidifies a supplier's trustworthiness
+- Occurs through a certification process
+
+- Buyers are often unaware or not in control over supplier products
+  - Supplier Prequalification:
+    - Mitigates purchaser risk
+    - Reveals development methodologies
+
+- Supplier security considerations are paramount in supply chain mgmt
+  - Example: The famous Target breach came through a 3rd party vendor that was working with Target, and they got compromised. That compromise was used to get CC# info from Target.
+  - Provides reliability and integrity of information and communications technology (ICT)
+
+- It is difficult to ensure ICT with commercial, off-the-shelf (COTS) products
+  - If you're a small business, you may have no way of leveraging the vendor to give you details.
+
+- Buyer should consider:
+  - Capabilities of vendor/contractor
+    - Contractors often overstate (lie) about their capabilities
+    - Determined via historical work
+  - Validation of subcontractor trustworthiness
+
+
+- Third-party entities offer certification or prequalification validation
+  - i.e. ISO Common Criteria evaluation
+- Provides objective validation of a supplier's trustworthiness
+  - Independent of geographical location
+- Provides evaluation of supplier capability
+  - Identifies measures for improvement if necessary
 
 ### Supplier Sourcing
 
