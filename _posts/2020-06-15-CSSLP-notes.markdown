@@ -4936,6 +4936,68 @@ Old code is NOT ALWAYS good code.
 
 #### Code Reuse Plan Best Practices
 
+The primary goal of a reuse plan is to:
+- Collect and store secure, reusable components.
+
+- Reused components require EXTRA assurance measures to:
+  - Avoid perpetuation of coding issues
+  - Validate proper functionality
+    - Modularity, information hiding, decoupling
+  - Confirm security
+
+These reusable components need to have extra assurance because they will be widely used. 
+
+---
+
+Third party unknown source code reuse comes with extra risks.
+
+- Open source code off the internet, like some nice Python package.
+- Code we paid a vendor for (some DLL or something)
+  - If it's a reputable vendor that's been in business for years,
+    it's reasonable to assume that some level of quality control has 
+    been effective within that vendor's dev team.
+  - The bigger issue would be reuse contracts.
+
+Liability in such cases should be clearly identified in reuse contracts
+- Who is liable for risks brought upon by code issues? You, or the vendor?
+- This is defined within the overall risk management plan
+
+Reuse strategy identifies:
+- Type of reuse required
+- Appropriate measures for reuse planning
+
+Reuse planning identifies:
+- Usage of open-source code
+  - This code was made by volunteers who just gave it away
+  - ...heartbleed! Caused by open source technically.
+  - You must assume that open source code has inadequate/absent testing, and that you can do the testing yourself.
+- Any other reusable code
+- Additional products and services
+
+Reuse planning benefits the process by:
+- Assessing advantages of reusable code
+- Mitigating risk with reusable code
+
+Code reuse risks need to be:
+- Identified
+- Documented
+- Prioritized
+
+The risks may be identified by how you're using the code. If the code that caused the heartbleed bug was only used in an internal application, versus being a cornerstone for secure comms with many webservers.
+
+After identifying the risk, you must document and prioritize those risks.
+
+The risks are then disseminated to stakeholders.
+- May be business unit managers, software engineers, vendor representatives.
+
+Now we can all talk about and evaluate the risks.
+
+This validates the reuse process, and is not meant to prevent code reuse.
+By mitigating the risks, you validate the whole issue of reusing code.
+
+- This should occur as an iterative process
+  - You cannot take 1 look and identify all issues and answer all questions
+
 #### Intellectual Property
 
 #### Legal Compliance
