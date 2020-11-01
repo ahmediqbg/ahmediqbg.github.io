@@ -7,16 +7,18 @@ categories: [programming, certification, security]
 
 ## TOC
 
-* 
-This will become a table of contents. Don't touch!  
-{:toc}
-
-## Preamble
+<https://www.isc2.org/Certifications/CSSLP>
 
 This is a collection of notes I've taken for the CSSLP. Hopefully they
 are useful to you as well!
 
-<https://www.isc2.org/Certifications/CSSLP>
+I made a program to study for this test. Feel free to use it.
+
+<https://github.com/HenryFBP/pyconsolequiz>
+
+* 
+This will become a table of contents. Don't touch!  
+{:toc}
 
 ## Secure Software Concepts
 
