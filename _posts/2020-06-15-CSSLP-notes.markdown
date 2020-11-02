@@ -5106,7 +5106,101 @@ The best way to do this is to have a single organizational process that's respon
 
 #### Supplier Sourcing Challenges
 
+Finding the right supplier can be a challenge.
+
+These challenges are very important specifically when dealing with software security.
+
+- All supply chain sources should be scrutinized for trustworthiness
+
+- Analysis and understanding of each supplier's operation will determine the best fit for outsourcing
+
+- Activities of all contractors and subcontractors should be clearly defined:
+  - Who is performing what work elements in appropriate contractual language
+
+Strategic security is also a concern, if you're outsourcing to a foreign country.
+- Political positions of foreign entities may impact supplier trustworthiness
+  - Intentional security flaws?
+
+The degree of foreign organizational involvement requires clear identification
+- This is an entire risk management process in and of itself
+- Clarifies risk management requirements and direction
+
+This is a serious issue if you're a defense contractor. If you're doing something like making videogames, etc, it's not as big of an issue.
+
+Industry sourcing models can help rank suppliers.
+- Rankings set up on risk vs return are very common.
+
+Ranking criteria are identified and scored, like:
+- Technical aptitude
+- Alignment with business objectives
+- Resource challenges (big issue, often contracting companies don't start out with enough resources)
+
+Security trade-offs should be weighed:
+- Strategic improvements vs. maintenance of operations:
+  - Strategic improvements have a higher risk when being outsourced
+  - If you are maintaining a low-priority operation, there is less risk when outsourcing that task
+  - Operational modernization can increase risk
+  - Improvements must be justified
+- High vs low risk:
+  - Risk must be balanced against ability to effectively manage it
+
+Impact of one supplier on another:
+- The introduction of suppliers to the supply chain can impact security
+
+Opportunity costs:
+- Long term investment must be measured against risk and potential opportunity loss
+
+If you have different suppliers in your supply chain, one can actually impact the security of others, especially if there's a progression (TODO what is a progression??)
+
+Let's say Supplier A provides some component to Supplier B who assembles a piece of equipment to be supplied to you. Now, supplier A can negatively impact B or positively impact it.
+
+Outsourcing is going to give you risk. But, if you don't outsource, do you lose opportunities?
+- Are there capabilities that you can outsource and add to your business?
+- Can you increase productivity?
+- All of these have to be weighed against the risks.
+
+The best organizational sourcing decision will be arrived at once these tradeoffs have been appropriately vetted.
+
+Look at opportunity losses/gains, risk versus reward analysis, basic business analysis.
+
 #### Contractual Integrity Controls
+
+Very important part of supply chain management.
+
+You have to have processes in place throughout your supply chain that are controlled by your contracts.
+
+These contractual integrity controls are meant to ensure that the contract's obligations are met, and they have to be included in all supply chain management.
+
+Development processes throughout the supply chain are controlled with contracts
+- Legal binding agreements
+
+Contractual integrity controls must be included within supply chain management
+- Criteria specification
+- Evaluation criteria
+  - How, when, and where will you validate the vendor is actually fulfilling those contractual obligations?
+
+Integrity controls ensure:
+- Appropriate levels of product assurance are carried out
+  - Testing
+  - Audits
+- Appropriate issue resolution measures
+  - For noncompliance
+- Implementation and monitoring of corrective actions
+- Something in place to resolve any issues discovered and confirm that issues were resolved
+
+Administratively, Contractual Integrity Controls assist in contract fulfillment
+- Configuration mgmt
+
+Formal contract configuration management throughout the supply chain should be well:
+- Maintained
+- Controlled
+- Coordinated
+
+This lets you make sure that the contracts with all vendors at every step in the cupply chain are being fulfilled.
+
+This formal contract configuration management should be maintained.
+
+This results in total control of product integrity, by taking control of your supply chain.
 
 #### Vendor Technical Integrity Controls
 
