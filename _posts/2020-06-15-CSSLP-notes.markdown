@@ -5253,12 +5253,65 @@ Managed Services Controls have similar requirements as technical controls, and t
 
 You have a vendor that provides some service/product, and you need to ensure contractual obligations are met.
 
-- Utiliznes a continuous assurance approach
-  - Contract specifies requirements
+- Utilizes a continuous assurance approach
+  - You need to have ongoing assurance that all of the contractual obligations are met
+  - Contract specifies requirements precisely
 
 - Assurance requires specific details of services
+  - ...So that the customer receives what they requested
+
+Service requirements should be specific outlining:
+- Formal terms
+- Contractual terms
+
+ex: It's not enough to say that "The vendor will respond to an issue within 3 business days".
+What is a "response"? Is it a call back? Or does it mean having someone on-site attempting to fix an issue? Or does it mean the issue is fixed?
+
+Your managed services control must be encompassing.
+- Covering everything you expect to be performed
+- What must be performed?
+- How do I evaluate if the work was accomplished?
+- What are remediation methods if a standard wasn't met?
+  - Steps?
+  - Punitive issues?
+- What is "good service"?
+  - Time limit threshold on calls?
+  - Good review threshold?
 
 #### Service-level Agreements
+
+SLAs outline performance expectations between suppliers and customers.
+- Legally binding and made by lawyers (most of the time)
+- Details product or service requirements/performance
+- Details method to determine if agreed upon service/product has been provided
+  - What are the metrics to measure the performance?
+
+The SLA contract:
+- Defines observable behaviors used to identify performance levels
+  - Objective criteria! Numbers!!
+- Specifies criteria to measure behavior accuracy within deliverables
+
+"Was it delivered adequately?"
+
+The SLA contract also addresses:
+- Usage
+  - How long can I use this product? How can I use it?
+- Ownership
+  - Do I own the software? Any/all of the data?
+- Licensing
+  - If you outsource DB Mgmt, and it needs Oracle DB, who pays for the licenses and owns them?
+    - Do you or the vendor own it?
+- Warranty
+  - Is there a warranty with this product?
+
+- Due to the complexities of software, performance adherence is often evaluated by a third party.
+  - The mechanisms for which must be included within the contract
+
+- SLA contract modifications require legal advisement
+  - Changes to metrics, requirements, penalties, etc.
+
+- Maintenance or small "changes" are the customer's responsibility and don't need attornies
+  - i.e. software version upgrades
 
 ### Software Development and Testing
 
