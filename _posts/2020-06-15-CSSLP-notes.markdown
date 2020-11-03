@@ -5204,7 +5204,59 @@ This results in total control of product integrity, by taking control of your su
 
 #### Vendor Technical Integrity Controls
 
+The goal of technical controls are to affirm underlying components of a product.
+- Assuring all components are:
+  - Complete
+  - Correct
+  - Consistent
+
+We need to make sure that a product AND its subcomponents meet our requirements.
+
+Vendor technical integrity controls support:
+- Overall software integrity throughout the supply chain
+  - Product baselines and repositories
+- Timely dissemination of contractual requirements to subcontractors
+
+You have to make sure of everyone in the supply chain, including subcontractors, are aware of the contractual requirements.
+
+Vendor technical integrity controls should include testing and auditing measures
+- Contract security testing
+  - Validation of security assurance aligning with contractual stipulations
+  - Ensuring appropriate verification and validation throughout supply chain
+  - Compiling and disseminating reports
+
+Integrity controls have to align with formal baseline practices
+- Modifications and releases are carefully recorded, documented, and reported
+
+
+Deployment of technical controls provide a framework for correct technical methods (FOR VENDORS) in:
+- Software engineering
+  - Code structure, commenting and variable naming conventions
+- Testing practices
+  - Reuse
+- Data structure use (xml? json?)
+- Resource management
+
+Basically, common commenting, code structure, code quality, code TESTING, data structure standards.
+
+Three testing activities help validate accuracy of technical processes:
+- Unit testing
+  - Occurs within the coding process
+- Integration testing
+  - Occurs within software integration process
+- Qualification testing
+  - Occurs at acceptance checkpoints
+
 #### Managed Services Controls
+
+Managed Services Controls have similar requirements as technical controls, and the goal is the same.
+
+You have a vendor that provides some service/product, and you need to ensure contractual obligations are met.
+
+- Utiliznes a continuous assurance approach
+  - Contract specifies requirements
+
+- Assurance requires specific details of services
 
 #### Service-level Agreements
 
