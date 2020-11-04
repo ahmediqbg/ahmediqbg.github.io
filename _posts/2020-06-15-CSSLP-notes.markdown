@@ -5317,7 +5317,43 @@ The SLA contract also addresses:
 
 #### Technical Controls
 
+Security for your code repo:
+- Is your code base public vs private facing?
+- Authentication
+  - Not everyone should make changes to code
+- Auditing
+  - What changes were made by what user at what time
+- Access Control
+  - Not every user can change every bit of code
+- Protection from destruction
+  - Very few people should be able to delete code, esp. in OSS
+- Rollback
+
+Build environment security:
+- Who can build?
+- Principle of least privilege
+
 #### Code Testing and Validation
+
+This is not about testing code to see if it's up to spec.
+
+Also not about seeing if it's secure code.
+
+This is about specific things that occur when code is checked into and out of source control, or when different developers work on it.
+
+Backdoor detection:
+- Or, when auth controls can be circumvented. Not always intentionally done.
+- Prevent and detect with:
+  - Code inspection
+  - Code comparison
+  - Code review checklist
+- A good policy is to review checked in code, or do random weekly/monthly reviews
+
+Embedded malware detection:
+- Doesn't mean that it's malware in your code, but code that launches some other embedded module.
+- Source code analysis
+- SCA integrated with build
+- Antimalware
 
 #### Security Testing Controls
 
