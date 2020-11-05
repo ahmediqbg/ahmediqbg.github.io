@@ -5357,7 +5357,68 @@ Embedded malware detection:
 
 #### Security Testing Controls
 
+Security Testing Controls are an important part of the entire software dev process and also have to be included in the various aspects of your relationship with vendors within your supply chain.
+
+Security Testing Controls are methodologies where you test the security of your systems, including Software Systems and also those provided/supported by third party external vendors.
+
+The goal of this is to affirm security and integrity across the entire supply chain for the product being implemented and utilized and the processes.
+
+- Assurance methods for security must be contractually defined
+  - Implement comprehensive assurance procedures
+    - Evaluate likelihood and impact of associated risks, i.e. Lower priority for unlikely risks
+
+Sound security testing controls are formed through 8 steps.
+
+1. Initiate a process
+  - Define key security roles. Who does what? What part of the security process does your organization do?
+2. Identify security testing issues throughout every level of the supply
+3. Create a basic security testing plan
+  - Define and identify standards, practices, and audit/control activities
+4. Implement a security testing process
+  - Also, conduct security training for personnel
+5. Assign roles and responsibilities, and schedule jobs
+6. Monitor activity definition and reporting
+7. Identify security issues and resolutions
+8. Periodically evaluate the testing process to ensure optimal performance and viability
+
+All of this is meant to conform to contractual security, which assumes that your contract has security objectives, requirements, and roles clearly defined.
+
 #### Software Requirements Verification and Validation
+
+Verification and validation of software requirements is also an important aspect of software security.
+
+This is something a manager would do, not a software engineer.
+
+Objective:
+- Verify product complies with contractual requirements
+- Assess all functional and nonfunctional requirements
+
+Software must comply with all:
+- Contracts
+- Requirements
+- Standards
+- Plans
+
+This process also applies to subcontractors.
+
+All the contract requirements should be given to the subcontractors. This is very important.
+
+- Timely dissemination of contract requirements
+  - Ensure subcontractors have a clear understanding!!
+- Final deliverables must meet contract requirements
+- Appropriate contractor oversight
+  - Typically product-specific
+
+Subcontractor oversight ensures all product components meet specifications
+- Hardware
+- Systems
+- Software
+- Service stipulations
+
+The supplier is responsible for:
+- Verifications
+- Validations
+- Tests
 
 ### Software Delivery, Operations, and Maintenance
 
