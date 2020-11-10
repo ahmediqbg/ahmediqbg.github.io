@@ -5671,12 +5671,107 @@ Vulnerability mgmt is about:
   - Identified through software assurance (i.e. extensive testing)
 
 - Patching identfied vulnerabilities
-  - TODO
+  - Disseminate the patch to all involved parties and make sure it's applied
+  - Exploit prevention and mitigation
+  - **Timely** release and application of patches is important
 
+All patches and repairs require:
+- Planning!
+- Tracking!
 
+You can't indiscriminately deploy patches without planning and testing. Example: CA eTrust Antivirus, LSASS service.
+
+When you have a new patch, install it on a TEST system to make sure it doesn't screw anything else up.
+
+Track the entire process, and make sure approved patches are applied and there is a way to roll back the process.
+
+- Resolution efforts gain efficiency with appropriate control
+  - This means timely, effective resolution management of all vulnerabilities.
+
+The entire supply chain requires thorough investigation and identification for vulnerable components.
+
+After this, you have to alter the vulnerable component and repair it under **coordinated supervision**.
 
 ### Supplier Transitioning
 
 #### Code Escrow and Data Exports
 
+##### Code Escrow
+
+Code Escrow is storing source code with a trusted third party.
+
+An Escrow Agent will store the code in a secure place until release is needed.
+
+Example: A vendor creates software products and sells them to customers.
+
+The vendor is responsible for updating, maintaining, patching the code.
+
+What happens to the customers if the vendor is either no longer willing or able to support their product?
+1.  Vendor discontinues the product: No updates or patches :(
+2.  Vendor goes out of business: No updates or patches :(
+3.  Code Escrow: The Escrow Agent can release the code to the customers if 1 or 2 happens
+
+Factors to consider with Escrow Agreements:
+- Subject and scope of the escrow
+  - What is stored and how?
+- Conditions for release
+  - What must happen for the Agent to release the source code? (sauce code is extremely valuable)
+- Non-compete clauses
+  - The Agent must not be involved in developing similar software
+- Bankruptcy issues
+  - If the software is in an Escrow but the initial vendor declares bankruptcy, the bankruptcy court may get involved because that software is an asset that may need to be liquidated to pay the debts of the company.
+- Open Source issues
+  - OSS maintain escrows, primarily to maintain integrity of the software.
+
+##### Data Exports
+
+- Exporting data backups
+  - What format will you export the data in?
+    - Is it compatible with the system importing the data?
+- Data formats
+  - A lot of systems use widely used formats like XML, CSV, or JSON.
+  - Healthcare: HL7.
+- System integration
+- System communication
+
 #### Contracts
+
+Software contracts are important to software security.
+
+They are generally a legal agreement between the software producer and the consumer.
+
+Contracts cover:
+- Requirements for software
+  - What does it do?
+- Regulations and standards applicable to the project
+  - May include Software Dev Methodologies
+- Software development
+  - Testing, etc
+- Security Code Reviews
+  - Do your own reviews.
+- Code Ownership
+  - Who owns the code?! Very important.
+  - What does ownership mean?
+  - What can be done with the code?
+- Acceptance criteria
+  - What must be met in order for the customer to accept the software?
+- Certification & Accreditation
+  - Must be detailed in contract.
+
+Contracts usually cover IP rights.
+- Provide protections for components that may originate at lower levels of the supply chain
+- This mitigates copyright violation and piracy.
+- Patents, Copyrights, Trade Secrets, Trademarks must be addresses.
+
+Consequences of disclosure must be defined in the contract.
+- Confidentiality agreements
+- Noncompete agreements
+- Identify confidential information
+- Accidental disclosure
+- Deliberate disclosure
+- Forced disclosure, i.e. a court forces you to disclose
+  - You generally want to immediately notify the owner of the confidential information that you've been subpoenaed and may need to disclose confidential information. That gives the owner an opportunity to contact their attorney.
+- Already publicly disclosed
+  - Is no longer confidential information.
+
+The best advice is to consult an attorney who specializes in these matters and make sure these issues are clearly defined in your contracts.
