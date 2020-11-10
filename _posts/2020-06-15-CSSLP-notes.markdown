@@ -5424,17 +5424,256 @@ The supplier is responsible for:
 
 #### Chain of Custody
 
+Chain of custody is a concept related to forensics and evidence, and it can be applied to software development.
+
+CoC provides:
+- Continuous awareness of product baseline state
+- Monitoring methods
+- Error mitigation
+- Cost reduction
+
+In software dev, it means accounting for software from the moment of design to the moment of deliverable.
+
+It also provides overall insight of product evolution throughout the supply chain.
+
+All changes and transfers made throughout the product lifecycle must be:
+- Authorized
+  - There should never be a change made that was not authorized by a responsible party. 
+- Transparent
+  - It should be documented and verifiable that a particular change was made, why it was made, who authorized it, and the result of the change.
+- Verifiable
+
+This leads us to Configuration Management, which:
+- Maintains integrity of all configuration items
+- Allows for evaluation of changes
+  - Was it effective?
+  - Did it lead to other issues?
+  - ...
+
+Other benefits of Software Configuration Management:
+- A basis to measure quality
+- Improves overall software dev't/maintenance
+- Simplifies testing and quality assurance
+- Mitigates product release management errors
+  - ...by addressing problems early in the process to manage changes
+- Allows you to track components in the software
+- Streamlines change mgmt and problem tracking
+
+
+Software configuration management leverages three aspects of the software development lifecycle process (SDLC)
+1.  Development
+    - Identification process
+2.  Overall configuration management
+    - Authorization and configuration control
+3.  Software Quality Assurance (SQA)
+    - Verification
+
 #### Publishing and Dissemination Controls
+
+How do we control the publishing and dissemination of the software?
+
+These issues are all about ensuring a secure transfer, for customers and throughout the supply chain.
+
+Publishing and dissemination controls help prevent counterfeit products.
+
+Ex: `nmap` tool. OSS that had a version distributed that was bundled with malware! This is an instance where the publishing and dissemination of a product was not tightly controlled and led to counterfeit products.
+
+Publishing and dissemination controls can be in the form of:
+- Product licenses
+  - Certification of product authenticity
+- Encryption
+  - Mitigate exploits like MiTM
+  - Activation should take place over encryption
+  - Contextual metadata
+- Digital signatures
+  - Pub Key transfer, checksums
+- Tamper resistance methods
+  - Internal
+  - External
 
 #### System-of-Systems Integration
 
+A SoS is a system whose components are other systems.
+
+Your org may have a system that's responsible for placing customer orders, maintaining inventory, etc.
+
+You might have a vendor who has their own system, and you choose to integrate these systems in order to make the ordering and processing go smoothly.
+
+The goal of Systems Integrations is to bring these systems together so they cooperate just like a larger system.
+
+Individual component systems of a SoS are relevant to supply chain problems.
+
+Each of these systems have their own security issues, their own risks, and you have to manage the systems individually and in the aggregate.
+
+The integration of components require:
+- Supply chain mgmt
+- Assurance of integrity
+  - Data integrity
+  - Sending data
+- Assurance of effectiveness of concurrent processing
+  - Each component does its own processing
+  - Is it effective?
+
+Who's responsible for systems integration?
+- Systems engineers!
+
+Systems Engineering is concerned with the design, understanding, and testing of larger complex systems.
+- Focus on SoS applications:
+  - Identify the roles of each system
+    - Data format
+    - Comms channels
+  - Characterization
+    - Can you characterize...
+      - Security
+      - Functionality
+  - Conceptualization
+    - What are you trying to achieve?
+    - What should each subsystem do?
+  - Analysis
+    - What does the supersystem do?
+
+Analysis of SoS applications uses methods like:
+- Continuous system modeling
+  - This models the continuous processes of all these systems working together
+- Agent-based modeling
+  - Modeling each individual component agent (TODO what is this?)
+- Unified Modeling Language (UML) can be used
+
+
+The analysis is based on some basic design principles:
+- Abstraction
+  - Abstract the concepts away from the implementation
+    - i.e. for data storage, we care about security and efficiency, we don't care about the database format or protocol.
+- Modularity
+  - Each module is a separate subsystem and they are individually contained, module boundaries are well-defined.
+- Information hiding
+  - No individual component should reveal more information than is absolutely necessary for the other component.
+
+This is relevant to all levels of design, in 1 system or a SoS.
+
 #### Software Authenticity and Integrity
+
+This is related to publishing and dissemination integrity.
+
+All about ensuring that the software used is really the software you expect it to be.
+
+It doesn't only have to do with piracy, it's also about trojan horses -- Adding malware to software.
+
+- Supply chain interface authentication
+- Integrity assurance
+
+The final software product must be disseminated in a manner that ensures authenticity AND integrity.
+
+- Software authenticity requires nonrepudiation of source
+  - Endpoint authentication
+    - Kerberos
+  - PKI
+    - i.e. sign the software with a PrivKey and verify with PubKey.
+
+Integrity is different from authenticity. 
+
+Does the software do what it is supposed to? Is it error-free? Is it performant?
+
+Common methods of integrity checking:
+- Testing
+  - Static checks
+  - Dynamic checks
+- Auditing (at the code level)
+- Targeted bench checks
+  - Executing code at a dev's machine and seeing how it performs
+- Reviewing
+
+
+Counterfeit components within a supply chain can be hard to detect if they're done well. This can threaten the integrity of the entire system.
+
+It is a business liability and sometimes vendors don't update counterfeit components.
+
+Countermeasures:
+- Trusted, vetted repository (foundry) for executable code.
+- Having direct control over the supplier.
+
+It is easier in business-to-business environments to control software integrity and authenticity than it is in widely distributed end user software.
 
 #### Product Deployment and Sustainment Controls
 
+Product Deployment and Sustainment Controls are about having control over the way your product is deployed, and how you sustain the software through config mgmt, updates, and patches.
+- Ensures software changes do not compromise system integrity
+- Allows for evaluation and performance of changes
+- Manages how changes are developed, tested, and deployed.
+- Provides a foundation for quality measurement
+- Simplifies testing and QA methods
+
+Configuration management processes support product deployment and sustainment controls through:
+- Configuration control
+  - Configuration must be secure
+- Verification control
+  - Verify upgrades for appropriateness, compatibility with other software, and OSes.
+  - Custom code extensions
+    - Some products allow extensive mods, like scripting.
+    - This has to be controlled as it could lead to security or performance issues
+
+All of this falls under Operational Readiness, ensuring your product is ready for operation in all the environments it needs to work under.
+
 #### Monitoring and Incident Management
 
-#### Vulnerability Management, Tracking Resolution
+An incident is ANYTHING that interrupts normal operations.
+- Malicious actions
+- User error
+- Power issues
+
+Incident mgmt ensures organizational incident response integrity through:
+- Monitor systems
+  - You can't respond to an incident if you don't know about it.
+- Analyze the incident
+  - And what caused it
+- Response
+  1.  Contain the incident
+  2.  Fix the problem
+  3.  Restore things to normal operation
+  4.  Determine why the incident occurred
+
+Any event an organization deems as harmful will initiate an incident response.
+- Timely responses can only be accomplished with appropriate monitoring.
+
+The entire supply chain should be monitored, (somewhat) manually.
+- Reviews
+- Inspections
+
+Example of an incident response:
+
+-   A hacker with an external IP is attacking a router connected to WAN to get into your system.
+
+    You have a IDS/IPS behind a firewall which is after the router.
+
+IPS/IDS are examples of automated monitoring systems.
+IDS will only detect intrusions, and IPS will detect and prevent intrusions by blocking traffic.
+However, IPS false positives may negatively affect traffic.
+
+The incident response if relevant to every single event that occurs.
+
+It could be an event you predicted, or not (like a data breach).
+
+1. Set up protection for the event.
+2. Detect the event.
+3. Respond to the event.
+
+The difference in response lies in whether or not it was a planned/unplanned event.
+
+Your response should be planned even if the event was not: What do we do if a hard drive craps out? Or there's a virus?
+
+
+#### Vulnerability Management, Tracking, and Resolution
+
+Vulnerability mgmt is about:
+- Identifying what components in your supply chain have vulnerabilities
+- Identification and repair of components in the supply chain
+  - Code modules
+  - Identified through software assurance (i.e. extensive testing)
+
+- Patching identfied vulnerabilities
+  - TODO
+
+
 
 ### Supplier Transitioning
 
