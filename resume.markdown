@@ -35,7 +35,8 @@ May 2016 - Jul 2016, 3 months
 -   Chicago, IL
 -   Graduated in 2020, Bachelor's in Information Technology Management (ITM)
 -   Made the dean's list in Freshman and Senior semesters
--   Current GPA is 3.4
+-   Final Major GPA is 3.45
+-   Overall GPA is 3.341
 
 ### Northside College Preparatory High School
 
