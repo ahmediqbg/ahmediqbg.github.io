@@ -34,7 +34,7 @@ May 2016 - Jul 2016, 3 months
 
 -   Chicago, IL
 -   Graduated in 2020, Bachelor's in Information Technology Management (ITM)
--   Made the dean's list in Freshman and Senior semesters
+-   Made the dean's list in Spring 2016, Fall 2018, Fall 2019.
 -   Final Major GPA is 3.45
 -   Overall GPA is 3.341
 
