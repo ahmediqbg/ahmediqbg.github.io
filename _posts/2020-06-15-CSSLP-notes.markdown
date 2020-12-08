@@ -7,16 +7,18 @@ categories: [programming, certification, security]
 
 ## TOC
 
-* 
-This will become a table of contents. Don't touch!  
-{:toc}
-
-## Preamble
+<https://www.isc2.org/Certifications/CSSLP>
 
 This is a collection of notes I've taken for the CSSLP. Hopefully they
 are useful to you as well!
 
-<https://www.isc2.org/Certifications/CSSLP>
+I made a program to study for this test. Feel free to use it.
+
+<https://github.com/HenryFBP/pyconsolequiz>
+
+* 
+This will become a table of contents. Don't touch!  
+{:toc}
 
 ## Secure Software Concepts
 
@@ -4889,54 +4891,887 @@ After you make your SD Plan, you want to put the plan in place to ensure softwar
 
 #### Risk Assessment for Code Reuse
 
+The CSSLP places a strong emphasis on risk assessment.
+
+Risk assessment is really an info gathering process, used to:
+- Identify and evaluate:
+  - Threat impact
+  - Appropriate threat response
+
+It's important be be aware of all practical risks
+- Risk certainty (will this happen?)
+- Risk impact
+
+Ex: A risk that's highly likely with low impact is not as much of a concern as a risk that's very unlikely with very large impact.
+
+##### Machine level code reuse
+
+Machine level code reuse (what is that??) has been common for years.
+
+Machine level code reuse led to modern programming languages
+- Standard Template Libraries (STLs)
+
+The risk here is that there is an underlying flaw in the reused code.
+It's easier to determine that if the code has been in use for a number of years, especially in STLs.
+
+##### Application level code reuse
+
+Application level code reuse involves repurposing existing components (source code) to build new software.
+
+- This is cost effective
+  - Saves time and reduces cost
+  - Implies a measure of quality control
+    - Meaning that, if you reuse shitty app level code, you'll get risk from reusing it.
+
+It is harder to determine risk with app-level code.
+- The app code is likely not used widely across the world (probably proprietary and only in org)
+- Hasn't been field tested or analyzed
+- There could be problems in code that you're not aware of.
+- The act of modifying the code could exacerbate issues or make new ones.
+
+Main risk with reusing components:
+- Perpetuation of coding issues/bugs
+
+Old code is NOT ALWAYS good code.
+
 #### Code Reuse Plan Best Practices
+
+The primary goal of a reuse plan is to:
+- Collect and store secure, reusable components.
+
+- Reused components require EXTRA assurance measures to:
+  - Avoid perpetuation of coding issues
+  - Validate proper functionality
+    - Modularity, information hiding, decoupling
+  - Confirm security
+
+These reusable components need to have extra assurance because they will be widely used. 
+
+---
+
+Third party unknown source code reuse comes with extra risks.
+
+- Open source code off the internet, like some nice Python package.
+- Code we paid a vendor for (some DLL or something)
+  - If it's a reputable vendor that's been in business for years,
+    it's reasonable to assume that some level of quality control has 
+    been effective within that vendor's dev team.
+  - The bigger issue would be reuse contracts.
+
+Liability in such cases should be clearly identified in reuse contracts
+- Who is liable for risks brought upon by code issues? You, or the vendor?
+- This is defined within the overall risk management plan
+
+Reuse strategy identifies:
+- Type of reuse required
+- Appropriate measures for reuse planning
+
+Reuse planning identifies:
+- Usage of open-source code
+  - This code was made by volunteers who just gave it away
+  - ...heartbleed! Caused by open source technically.
+  - You must assume that open source code has inadequate/absent testing, and that you can do the testing yourself.
+- Any other reusable code
+- Additional products and services
+
+Reuse planning benefits the process by:
+- Assessing advantages of reusable code
+- Mitigating risk with reusable code
+
+Code reuse risks need to be:
+- Identified
+- Documented
+- Prioritized
+
+The risks may be identified by how you're using the code. If the code that caused the heartbleed bug was only used in an internal application, versus being a cornerstone for secure comms with many webservers.
+
+After identifying the risk, you must document and prioritize those risks.
+
+The risks are then disseminated to stakeholders.
+- May be business unit managers, software engineers, vendor representatives.
+
+Now we can all talk about and evaluate the risks.
+
+This validates the reuse process, and is not meant to prevent code reuse.
+By mitigating the risks, you validate the whole issue of reusing code.
+
+- This should occur as an iterative process
+  - You cannot take 1 look and identify all issues and answer all questions
 
 #### Intellectual Property
 
+Products that are difficult to protect are easily stolen.
+- DVDs
+- Music
+
+Most software products/components are difficult to protect.
+- If a third party company got access to a large web app you owned, and they used modules from it, would you even know?
+
+Many software products and components suffer from this risk.
+
+- Organizations should implement measures to mitigate intellectual property theft
+
+IP theft can be:
+- Plagirism
+- Duplicating products
+- Copying ideas
+
+IP can be difficult to quantify due to its abstract and intangible features.
+
+Software IP can include:
+- The code itself
+- The processes you utilize
+- The algorithms (unless well known/widely used)
+
+IP property theft can be mitigated through:
+- Auditing
+  - Audit anyone who has access to your code.
+- Inspection
+  - If third party vendors are coming onto your premises who might be exposed to IP, you can inspect the portable media that they might bring.
+- Penalties
+  - Can include litigation
+
+It's important to increase awareness of possession rights throughout the supply chain.
+
+Federal regulations, acts and laws define terms for unauthorized software/IP:
+- Renting
+- Leasing
+- Lending
+- Copying
+- Some exceptions exist for creating backup copies
+
 #### Legal Compliance
 
+- Compliance refers to conformance with and satisfaction of relevant laws and regulations
+  - All software within a supply chain must adhere to this
+
+- Regulatory requirements can originate from varied sources:
+  - Industrial
+  - Government
+  - Contractual
+
+- Compliance should be considered throughout all aspects of the supply chain
+  - This includes third party vendors
+
+Example: If you're in healthcare, it's not enough to just be HIPAA and HITECH compliant, but are all of your vendors also HIPAA and HITECH compliant?
+
+- Noncompliance can result in negative organizational repercussions:
+  - Damage to reputation
+  - Financial loses
+  - Legal/criminal actions
+
+Compliance requires appropriate reporting methods.
+
+Reporting should capture objective details which support adherence to regulatory requirements
+- Details should be auditable
+- These reports are given to regulatory bodies as evidence of compliance
+
+- Regulatory bodies can differ
+- Compliance requirements between them can confict or be similar in scope
+
+The best way to do this is to have a single organizational process that's responsible for compliance with all regulations.
+
 #### Supplier Prequalification
+
+- Prequalification solidifies a supplier's trustworthiness
+- Occurs through a certification process
+
+- Buyers are often unaware or not in control over supplier products
+  - Supplier Prequalification:
+    - Mitigates purchaser risk
+    - Reveals development methodologies
+
+- Supplier security considerations are paramount in supply chain mgmt
+  - Example: The famous Target breach came through a 3rd party vendor that was working with Target, and they got compromised. That compromise was used to get CC# info from Target.
+  - Provides reliability and integrity of information and communications technology (ICT)
+
+- It is difficult to ensure ICT with commercial, off-the-shelf (COTS) products
+  - If you're a small business, you may have no way of leveraging the vendor to give you details.
+
+- Buyer should consider:
+  - Capabilities of vendor/contractor
+    - Contractors often overstate (lie) about their capabilities
+    - Determined via historical work
+  - Validation of subcontractor trustworthiness
+
+
+- Third-party entities offer certification or prequalification validation
+  - i.e. ISO Common Criteria evaluation
+- Provides objective validation of a supplier's trustworthiness
+  - Independent of geographical location
+- Provides evaluation of supplier capability
+  - Identifies measures for improvement if necessary
 
 ### Supplier Sourcing
 
 #### Supplier Sourcing Challenges
 
+Finding the right supplier can be a challenge.
+
+These challenges are very important specifically when dealing with software security.
+
+- All supply chain sources should be scrutinized for trustworthiness
+
+- Analysis and understanding of each supplier's operation will determine the best fit for outsourcing
+
+- Activities of all contractors and subcontractors should be clearly defined:
+  - Who is performing what work elements in appropriate contractual language
+
+Strategic security is also a concern, if you're outsourcing to a foreign country.
+- Political positions of foreign entities may impact supplier trustworthiness
+  - Intentional security flaws?
+
+The degree of foreign organizational involvement requires clear identification
+- This is an entire risk management process in and of itself
+- Clarifies risk management requirements and direction
+
+This is a serious issue if you're a defense contractor. If you're doing something like making videogames, etc, it's not as big of an issue.
+
+Industry sourcing models can help rank suppliers.
+- Rankings set up on risk vs return are very common.
+
+Ranking criteria are identified and scored, like:
+- Technical aptitude
+- Alignment with business objectives
+- Resource challenges (big issue, often contracting companies don't start out with enough resources)
+
+Security trade-offs should be weighed:
+- Strategic improvements vs. maintenance of operations:
+  - Strategic improvements have a higher risk when being outsourced
+  - If you are maintaining a low-priority operation, there is less risk when outsourcing that task
+  - Operational modernization can increase risk
+  - Improvements must be justified
+- High vs low risk:
+  - Risk must be balanced against ability to effectively manage it
+
+Impact of one supplier on another:
+- The introduction of suppliers to the supply chain can impact security
+
+Opportunity costs:
+- Long term investment must be measured against risk and potential opportunity loss
+
+If you have different suppliers in your supply chain, one can actually impact the security of others, especially if there's a progression (TODO what is a progression??)
+
+Let's say Supplier A provides some component to Supplier B who assembles a piece of equipment to be supplied to you. Now, supplier A can negatively impact B or positively impact it.
+
+Outsourcing is going to give you risk. But, if you don't outsource, do you lose opportunities?
+- Are there capabilities that you can outsource and add to your business?
+- Can you increase productivity?
+- All of these have to be weighed against the risks.
+
+The best organizational sourcing decision will be arrived at once these tradeoffs have been appropriately vetted.
+
+Look at opportunity losses/gains, risk versus reward analysis, basic business analysis.
+
 #### Contractual Integrity Controls
+
+Very important part of supply chain management.
+
+You have to have processes in place throughout your supply chain that are controlled by your contracts.
+
+These contractual integrity controls are meant to ensure that the contract's obligations are met, and they have to be included in all supply chain management.
+
+Development processes throughout the supply chain are controlled with contracts
+- Legal binding agreements
+
+Contractual integrity controls must be included within supply chain management
+- Criteria specification
+- Evaluation criteria
+  - How, when, and where will you validate the vendor is actually fulfilling those contractual obligations?
+
+Integrity controls ensure:
+- Appropriate levels of product assurance are carried out
+  - Testing
+  - Audits
+- Appropriate issue resolution measures
+  - For noncompliance
+- Implementation and monitoring of corrective actions
+- Something in place to resolve any issues discovered and confirm that issues were resolved
+
+Administratively, Contractual Integrity Controls assist in contract fulfillment
+- Configuration mgmt
+
+Formal contract configuration management throughout the supply chain should be well:
+- Maintained
+- Controlled
+- Coordinated
+
+This lets you make sure that the contracts with all vendors at every step in the cupply chain are being fulfilled.
+
+This formal contract configuration management should be maintained.
+
+This results in total control of product integrity, by taking control of your supply chain.
 
 #### Vendor Technical Integrity Controls
 
+The goal of technical controls are to affirm underlying components of a product.
+- Assuring all components are:
+  - Complete
+  - Correct
+  - Consistent
+
+We need to make sure that a product AND its subcomponents meet our requirements.
+
+Vendor technical integrity controls support:
+- Overall software integrity throughout the supply chain
+  - Product baselines and repositories
+- Timely dissemination of contractual requirements to subcontractors
+
+You have to make sure of everyone in the supply chain, including subcontractors, are aware of the contractual requirements.
+
+Vendor technical integrity controls should include testing and auditing measures
+- Contract security testing
+  - Validation of security assurance aligning with contractual stipulations
+  - Ensuring appropriate verification and validation throughout supply chain
+  - Compiling and disseminating reports
+
+Integrity controls have to align with formal baseline practices
+- Modifications and releases are carefully recorded, documented, and reported
+
+
+Deployment of technical controls provide a framework for correct technical methods (FOR VENDORS) in:
+- Software engineering
+  - Code structure, commenting and variable naming conventions
+- Testing practices
+  - Reuse
+- Data structure use (xml? json?)
+- Resource management
+
+Basically, common commenting, code structure, code quality, code TESTING, data structure standards.
+
+Three testing activities help validate accuracy of technical processes:
+- Unit testing
+  - Occurs within the coding process
+- Integration testing
+  - Occurs within software integration process
+- Qualification testing
+  - Occurs at acceptance checkpoints
+
 #### Managed Services Controls
 
+Managed Services Controls have similar requirements as technical controls, and the goal is the same.
+
+You have a vendor that provides some service/product, and you need to ensure contractual obligations are met.
+
+- Utilizes a continuous assurance approach
+  - You need to have ongoing assurance that all of the contractual obligations are met
+  - Contract specifies requirements precisely
+
+- Assurance requires specific details of services
+  - ...So that the customer receives what they requested
+
+Service requirements should be specific outlining:
+- Formal terms
+- Contractual terms
+
+ex: It's not enough to say that "The vendor will respond to an issue within 3 business days".
+What is a "response"? Is it a call back? Or does it mean having someone on-site attempting to fix an issue? Or does it mean the issue is fixed?
+
+Your managed services control must be encompassing.
+- Covering everything you expect to be performed
+- What must be performed?
+- How do I evaluate if the work was accomplished?
+- What are remediation methods if a standard wasn't met?
+  - Steps?
+  - Punitive issues?
+- What is "good service"?
+  - Time limit threshold on calls?
+  - Good review threshold?
+
 #### Service-level Agreements
+
+SLAs outline performance expectations between suppliers and customers.
+- Legally binding and made by lawyers (most of the time)
+- Details product or service requirements/performance
+- Details method to determine if agreed upon service/product has been provided
+  - What are the metrics to measure the performance?
+
+The SLA contract:
+- Defines observable behaviors used to identify performance levels
+  - Objective criteria! Numbers!!
+- Specifies criteria to measure behavior accuracy within deliverables
+
+"Was it delivered adequately?"
+
+The SLA contract also addresses:
+- Usage
+  - How long can I use this product? How can I use it?
+- Ownership
+  - Do I own the software? Any/all of the data?
+- Licensing
+  - If you outsource DB Mgmt, and it needs Oracle DB, who pays for the licenses and owns them?
+    - Do you or the vendor own it?
+- Warranty
+  - Is there a warranty with this product?
+
+- Due to the complexities of software, performance adherence is often evaluated by a third party.
+  - The mechanisms for which must be included within the contract
+
+- SLA contract modifications require legal advisement
+  - Changes to metrics, requirements, penalties, etc.
+
+- Maintenance or small "changes" are the customer's responsibility and don't need attornies
+  - i.e. software version upgrades
 
 ### Software Development and Testing
 
 #### Technical Controls
 
+Security for your code repo:
+- Is your code base public vs private facing?
+- Authentication
+  - Not everyone should make changes to code
+- Auditing
+  - What changes were made by what user at what time
+- Access Control
+  - Not every user can change every bit of code
+- Protection from destruction
+  - Very few people should be able to delete code, esp. in OSS
+- Rollback
+
+Build environment security:
+- Who can build?
+- Principle of least privilege
+
 #### Code Testing and Validation
+
+This is not about testing code to see if it's up to spec.
+
+Also not about seeing if it's secure code.
+
+This is about specific things that occur when code is checked into and out of source control, or when different developers work on it.
+
+Backdoor detection:
+- Or, when auth controls can be circumvented. Not always intentionally done.
+- Prevent and detect with:
+  - Code inspection
+  - Code comparison
+  - Code review checklist
+- A good policy is to review checked in code, or do random weekly/monthly reviews
+
+Embedded malware detection:
+- Doesn't mean that it's malware in your code, but code that launches some other embedded module.
+- Source code analysis
+- SCA integrated with build
+- Antimalware
 
 #### Security Testing Controls
 
+Security Testing Controls are an important part of the entire software dev process and also have to be included in the various aspects of your relationship with vendors within your supply chain.
+
+Security Testing Controls are methodologies where you test the security of your systems, including Software Systems and also those provided/supported by third party external vendors.
+
+The goal of this is to affirm security and integrity across the entire supply chain for the product being implemented and utilized and the processes.
+
+- Assurance methods for security must be contractually defined
+  - Implement comprehensive assurance procedures
+    - Evaluate likelihood and impact of associated risks, i.e. Lower priority for unlikely risks
+
+Sound security testing controls are formed through 8 steps.
+
+1. Initiate a process
+  - Define key security roles. Who does what? What part of the security process does your organization do?
+2. Identify security testing issues throughout every level of the supply
+3. Create a basic security testing plan
+  - Define and identify standards, practices, and audit/control activities
+4. Implement a security testing process
+  - Also, conduct security training for personnel
+5. Assign roles and responsibilities, and schedule jobs
+6. Monitor activity definition and reporting
+7. Identify security issues and resolutions
+8. Periodically evaluate the testing process to ensure optimal performance and viability
+
+All of this is meant to conform to contractual security, which assumes that your contract has security objectives, requirements, and roles clearly defined.
+
 #### Software Requirements Verification and Validation
+
+Verification and validation of software requirements is also an important aspect of software security.
+
+This is something a manager would do, not a software engineer.
+
+Objective:
+- Verify product complies with contractual requirements
+- Assess all functional and nonfunctional requirements
+
+Software must comply with all:
+- Contracts
+- Requirements
+- Standards
+- Plans
+
+This process also applies to subcontractors.
+
+All the contract requirements should be given to the subcontractors. This is very important.
+
+- Timely dissemination of contract requirements
+  - Ensure subcontractors have a clear understanding!!
+- Final deliverables must meet contract requirements
+- Appropriate contractor oversight
+  - Typically product-specific
+
+Subcontractor oversight ensures all product components meet specifications
+- Hardware
+- Systems
+- Software
+- Service stipulations
+
+The supplier is responsible for:
+- Verifications
+- Validations
+- Tests
 
 ### Software Delivery, Operations, and Maintenance
 
 #### Chain of Custody
 
+Chain of custody is a concept related to forensics and evidence, and it can be applied to software development.
+
+CoC provides:
+- Continuous awareness of product baseline state
+- Monitoring methods
+- Error mitigation
+- Cost reduction
+
+In software dev, it means accounting for software from the moment of design to the moment of deliverable.
+
+It also provides overall insight of product evolution throughout the supply chain.
+
+All changes and transfers made throughout the product lifecycle must be:
+- Authorized
+  - There should never be a change made that was not authorized by a responsible party. 
+- Transparent
+  - It should be documented and verifiable that a particular change was made, why it was made, who authorized it, and the result of the change.
+- Verifiable
+
+This leads us to Configuration Management, which:
+- Maintains integrity of all configuration items
+- Allows for evaluation of changes
+  - Was it effective?
+  - Did it lead to other issues?
+  - ...
+
+Other benefits of Software Configuration Management:
+- A basis to measure quality
+- Improves overall software dev't/maintenance
+- Simplifies testing and quality assurance
+- Mitigates product release management errors
+  - ...by addressing problems early in the process to manage changes
+- Allows you to track components in the software
+- Streamlines change mgmt and problem tracking
+
+
+Software configuration management leverages three aspects of the software development lifecycle process (SDLC)
+1.  Development
+    - Identification process
+2.  Overall configuration management
+    - Authorization and configuration control
+3.  Software Quality Assurance (SQA)
+    - Verification
+
 #### Publishing and Dissemination Controls
+
+How do we control the publishing and dissemination of the software?
+
+These issues are all about ensuring a secure transfer, for customers and throughout the supply chain.
+
+Publishing and dissemination controls help prevent counterfeit products.
+
+Ex: `nmap` tool. OSS that had a version distributed that was bundled with malware! This is an instance where the publishing and dissemination of a product was not tightly controlled and led to counterfeit products.
+
+Publishing and dissemination controls can be in the form of:
+- Product licenses
+  - Certification of product authenticity
+- Encryption
+  - Mitigate exploits like MiTM
+  - Activation should take place over encryption
+  - Contextual metadata
+- Digital signatures
+  - Pub Key transfer, checksums
+- Tamper resistance methods
+  - Internal
+  - External
 
 #### System-of-Systems Integration
 
+A SoS is a system whose components are other systems.
+
+Your org may have a system that's responsible for placing customer orders, maintaining inventory, etc.
+
+You might have a vendor who has their own system, and you choose to integrate these systems in order to make the ordering and processing go smoothly.
+
+The goal of Systems Integrations is to bring these systems together so they cooperate just like a larger system.
+
+Individual component systems of a SoS are relevant to supply chain problems.
+
+Each of these systems have their own security issues, their own risks, and you have to manage the systems individually and in the aggregate.
+
+The integration of components require:
+- Supply chain mgmt
+- Assurance of integrity
+  - Data integrity
+  - Sending data
+- Assurance of effectiveness of concurrent processing
+  - Each component does its own processing
+  - Is it effective?
+
+Who's responsible for systems integration?
+- Systems engineers!
+
+Systems Engineering is concerned with the design, understanding, and testing of larger complex systems.
+- Focus on SoS applications:
+  - Identify the roles of each system
+    - Data format
+    - Comms channels
+  - Characterization
+    - Can you characterize...
+      - Security
+      - Functionality
+  - Conceptualization
+    - What are you trying to achieve?
+    - What should each subsystem do?
+  - Analysis
+    - What does the supersystem do?
+
+Analysis of SoS applications uses methods like:
+- Continuous system modeling
+  - This models the continuous processes of all these systems working together
+- Agent-based modeling
+  - Modeling each individual component agent (TODO what is this?)
+- Unified Modeling Language (UML) can be used
+
+
+The analysis is based on some basic design principles:
+- Abstraction
+  - Abstract the concepts away from the implementation
+    - i.e. for data storage, we care about security and efficiency, we don't care about the database format or protocol.
+- Modularity
+  - Each module is a separate subsystem and they are individually contained, module boundaries are well-defined.
+- Information hiding
+  - No individual component should reveal more information than is absolutely necessary for the other component.
+
+This is relevant to all levels of design, in 1 system or a SoS.
+
 #### Software Authenticity and Integrity
+
+This is related to publishing and dissemination integrity.
+
+All about ensuring that the software used is really the software you expect it to be.
+
+It doesn't only have to do with piracy, it's also about trojan horses -- Adding malware to software.
+
+- Supply chain interface authentication
+- Integrity assurance
+
+The final software product must be disseminated in a manner that ensures authenticity AND integrity.
+
+- Software authenticity requires nonrepudiation of source
+  - Endpoint authentication
+    - Kerberos
+  - PKI
+    - i.e. sign the software with a PrivKey and verify with PubKey.
+
+Integrity is different from authenticity. 
+
+Does the software do what it is supposed to? Is it error-free? Is it performant?
+
+Common methods of integrity checking:
+- Testing
+  - Static checks
+  - Dynamic checks
+- Auditing (at the code level)
+- Targeted bench checks
+  - Executing code at a dev's machine and seeing how it performs
+- Reviewing
+
+
+Counterfeit components within a supply chain can be hard to detect if they're done well. This can threaten the integrity of the entire system.
+
+It is a business liability and sometimes vendors don't update counterfeit components.
+
+Countermeasures:
+- Trusted, vetted repository (foundry) for executable code.
+- Having direct control over the supplier.
+
+It is easier in business-to-business environments to control software integrity and authenticity than it is in widely distributed end user software.
 
 #### Product Deployment and Sustainment Controls
 
+Product Deployment and Sustainment Controls are about having control over the way your product is deployed, and how you sustain the software through config mgmt, updates, and patches.
+- Ensures software changes do not compromise system integrity
+- Allows for evaluation and performance of changes
+- Manages how changes are developed, tested, and deployed.
+- Provides a foundation for quality measurement
+- Simplifies testing and QA methods
+
+Configuration management processes support product deployment and sustainment controls through:
+- Configuration control
+  - Configuration must be secure
+- Verification control
+  - Verify upgrades for appropriateness, compatibility with other software, and OSes.
+  - Custom code extensions
+    - Some products allow extensive mods, like scripting.
+    - This has to be controlled as it could lead to security or performance issues
+
+All of this falls under Operational Readiness, ensuring your product is ready for operation in all the environments it needs to work under.
+
 #### Monitoring and Incident Management
 
-#### Vulnerability Management, Tracking Resolution
+An incident is ANYTHING that interrupts normal operations.
+- Malicious actions
+- User error
+- Power issues
+
+Incident mgmt ensures organizational incident response integrity through:
+- Monitor systems
+  - You can't respond to an incident if you don't know about it.
+- Analyze the incident
+  - And what caused it
+- Response
+  1.  Contain the incident
+  2.  Fix the problem
+  3.  Restore things to normal operation
+  4.  Determine why the incident occurred
+
+Any event an organization deems as harmful will initiate an incident response.
+- Timely responses can only be accomplished with appropriate monitoring.
+
+The entire supply chain should be monitored, (somewhat) manually.
+- Reviews
+- Inspections
+
+Example of an incident response:
+
+-   A hacker with an external IP is attacking a router connected to WAN to get into your system.
+
+    You have a IDS/IPS behind a firewall which is after the router.
+
+IPS/IDS are examples of automated monitoring systems.
+IDS will only detect intrusions, and IPS will detect and prevent intrusions by blocking traffic.
+However, IPS false positives may negatively affect traffic.
+
+The incident response if relevant to every single event that occurs.
+
+It could be an event you predicted, or not (like a data breach).
+
+1. Set up protection for the event.
+2. Detect the event.
+3. Respond to the event.
+
+The difference in response lies in whether or not it was a planned/unplanned event.
+
+Your response should be planned even if the event was not: What do we do if a hard drive craps out? Or there's a virus?
+
+
+#### Vulnerability Management, Tracking, and Resolution
+
+Vulnerability mgmt is about:
+- Identifying what components in your supply chain have vulnerabilities
+- Identification and repair of components in the supply chain
+  - Code modules
+  - Identified through software assurance (i.e. extensive testing)
+
+- Patching identfied vulnerabilities
+  - Disseminate the patch to all involved parties and make sure it's applied
+  - Exploit prevention and mitigation
+  - **Timely** release and application of patches is important
+
+All patches and repairs require:
+- Planning!
+- Tracking!
+
+You can't indiscriminately deploy patches without planning and testing. Example: CA eTrust Antivirus, LSASS service.
+
+When you have a new patch, install it on a TEST system to make sure it doesn't screw anything else up.
+
+Track the entire process, and make sure approved patches are applied and there is a way to roll back the process.
+
+- Resolution efforts gain efficiency with appropriate control
+  - This means timely, effective resolution management of all vulnerabilities.
+
+The entire supply chain requires thorough investigation and identification for vulnerable components.
+
+After this, you have to alter the vulnerable component and repair it under **coordinated supervision**.
 
 ### Supplier Transitioning
 
 #### Code Escrow and Data Exports
 
+##### Code Escrow
+
+Code Escrow is storing source code with a trusted third party.
+
+An Escrow Agent will store the code in a secure place until release is needed.
+
+Example: A vendor creates software products and sells them to customers.
+
+The vendor is responsible for updating, maintaining, patching the code.
+
+What happens to the customers if the vendor is either no longer willing or able to support their product?
+1.  Vendor discontinues the product: No updates or patches :(
+2.  Vendor goes out of business: No updates or patches :(
+3.  Code Escrow: The Escrow Agent can release the code to the customers if 1 or 2 happens
+
+Factors to consider with Escrow Agreements:
+- Subject and scope of the escrow
+  - What is stored and how?
+- Conditions for release
+  - What must happen for the Agent to release the source code? (sauce code is extremely valuable)
+- Non-compete clauses
+  - The Agent must not be involved in developing similar software
+- Bankruptcy issues
+  - If the software is in an Escrow but the initial vendor declares bankruptcy, the bankruptcy court may get involved because that software is an asset that may need to be liquidated to pay the debts of the company.
+- Open Source issues
+  - OSS maintain escrows, primarily to maintain integrity of the software.
+
+##### Data Exports
+
+- Exporting data backups
+  - What format will you export the data in?
+    - Is it compatible with the system importing the data?
+- Data formats
+  - A lot of systems use widely used formats like XML, CSV, or JSON.
+  - Healthcare: HL7.
+- System integration
+- System communication
+
 #### Contracts
+
+Software contracts are important to software security.
+
+They are generally a legal agreement between the software producer and the consumer.
+
+Contracts cover:
+- Requirements for software
+  - What does it do?
+- Regulations and standards applicable to the project
+  - May include Software Dev Methodologies
+- Software development
+  - Testing, etc
+- Security Code Reviews
+  - Do your own reviews.
+- Code Ownership
+  - Who owns the code?! Very important.
+  - What does ownership mean?
+  - What can be done with the code?
+- Acceptance criteria
+  - What must be met in order for the customer to accept the software?
+- Certification & Accreditation
+  - Must be detailed in contract.
+
+Contracts usually cover IP rights.
+- Provide protections for components that may originate at lower levels of the supply chain
+- This mitigates copyright violation and piracy.
+- Patents, Copyrights, Trade Secrets, Trademarks must be addresses.
+
+Consequences of disclosure must be defined in the contract.
+- Confidentiality agreements
+- Noncompete agreements
+- Identify confidential information
+- Accidental disclosure
+- Deliberate disclosure
+- Forced disclosure, i.e. a court forces you to disclose
+  - You generally want to immediately notify the owner of the confidential information that you've been subpoenaed and may need to disclose confidential information. That gives the owner an opportunity to contact their attorney.
+- Already publicly disclosed
+  - Is no longer confidential information.
+
+The best advice is to consult an attorney who specializes in these matters and make sure these issues are clearly defined in your contracts.
