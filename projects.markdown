@@ -4,9 +4,32 @@ title: Projects
 permalink: /projects/
 ---
 
+## OSINT Dashboard: "Bowser"
+
+This is a group project that invovled creating a dashboard to gather open-source intelligence.
+
+Our group chose to monitor the imageboard ["4chan"](https://en.wikipedia.org/wiki/4chan) for racism, hate speech, terrorist keywords, and a handful of other categories that may be useful to law enforcement or governments.
+
+- [You can view the GitHub repository for this project by clicking here.](https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser)
+- [You can view a presentation on our project by clicking here.](https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser/blob/master/final-presentation.pdf)
+
+<img src="https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser/raw/master/.screenshots/screen1.png"/>
+
+<img src="https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser/raw/master/.screenshots/screen2.png"/>
+
+<img src="https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser/raw/master/.screenshots/screen3.png"/>
+
+This project was 1 frontend Node.js application that consumed 1 backend Python web API.
+
+My role was backend developer. I helped lead a few junior devs who worked on some data analysis and contributed to the backend.
+
+I was responsible for making most of the Python backend, writing test cases, writing CI/CD, and setting up development/testing workflows for all of the other developers.
+
+The end result is a powerful tool for searching hundreds or thousands of posts from the imageboard, using text analysis to determine if any posts contain information of interests. Also, anybody can download and try the project out. The documentation is sufficient for most people to figure out how to self-host and can work on Windows, Linux, and OSX.
+
 ## Using Big Data Analytics & Visualization: Improving Preparedness & Responsiveness to Fire Emergencies & Other Disasters
 
-This was an Inter-professional Project (IPRO) that took place at Illinois Institute of Technology that involved creating a suite of tools which aided the American Red Cross of Chicago in detecting, analyzing, and responding to fire-related disasters that people report on Twitter in the Chicago-land area.
+This is an Inter-professional Project (IPRO) that took place at Illinois Institute of Technology that involved creating a suite of tools which aided the American Red Cross of Chicago in detecting, analyzing, and responding to fire-related disasters that people report on Twitter in the Chicago-land area.
 
 The Git repository associated with this IPRO is below.
 
@@ -32,6 +55,8 @@ During my work at OBPL as a librarian, I was involved with a program to replace 
 old. The only purpose these new computers would serve would be to provide access to a book catalogue website, nothing else.
 
 ### Guides
+
+<!-- TODO: FIX overflow on some of the ```code blocks``` in the MD files! -->
 
 -   Backing up and restoring
     [(MD)](/static/files/opac-documentation/BACKING_UP_AND_RESTORING.txt)
