@@ -11,7 +11,7 @@ This is a group project that invovled creating a dashboard to gather open-source
 Our group chose to monitor the imageboard ["4chan"](https://en.wikipedia.org/wiki/4chan) for racism, hate speech, terrorist keywords, and a handful of other categories that may be useful to law enforcement or governments.
 
 - [You can view the GitHub repository for this project by clicking here.](https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser)
-- [You can view a presentation on our project by clicking here.](https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser/blob/master/final-presentation.pdf)
+- [You can view a presentation on our project by clicking here.](https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser/blob/master/ITMS448%20OSINT%20Dashboard%20-%20Bowser%20-%20Final%20Presentation.pdf)
 
 <img src="https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser/raw/master/.screenshots/screen1.png"/>
 
