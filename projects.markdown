@@ -25,6 +25,8 @@ My role was backend developer. I helped lead a few junior devs who worked on som
 
 I was responsible for making most of the Python backend, writing test cases, writing CI/CD, and setting up development/testing workflows for all of the other developers.
 
+I also helped set up data analysis tools for data analysts on my team, and you can [view the tools here](https://github.com/HenryFBP/ITMS448-osint-dashboard-Bowser/tree/master/data-analysis) or view our presentation for some interesting graphs produced by our analysts.
+
 The end result is a powerful tool for searching hundreds or thousands of posts from the imageboard, using text analysis to determine if any posts contain information of interests. Also, anybody can download and try the project out. The documentation is sufficient for most people to figure out how to self-host and can work on Windows, Linux, and OSX.
 
 ## Using Big Data Analytics & Visualization: Improving Preparedness & Responsiveness to Fire Emergencies & Other Disasters
