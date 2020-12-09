@@ -43,7 +43,7 @@ There is also a package on the Python Package Index (PyPI).
 
 ### Whitepaper
 
-[You can read the whitepaper produced for this project by clicking here.](/static/files/Twitter_Scraper_Chicago_Fire_FINAL_2.pdf)
+[You can read the whitepaper produced for this project by clicking here.](/static/files/IPRO - Improving Incident Response of the American Red Cross in the Greater Chicago Area by Using Text Classification of Posts From Twitter.pdf)
 
 ### Awards
 
