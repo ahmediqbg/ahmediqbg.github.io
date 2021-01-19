@@ -85,4 +85,73 @@ This will become a table of contents. Don't touch!
 
 ## Section 3: Node Dockerfile Best Practice Basics
 
-TODO
+### Dockerfile Best Practice Basics
+
+#### COPY vs ADD
+
+- Use COPY and not ADD most of the time.
+- COPY and ADD essentially do the same thing but ADD does a lot more. Default to COPY.
+
+#### npm and yarn
+
+-   npm/yarn are not necessary to install, you can usually use the one that comes with node.
+-   Also it doesn't matter if you use npm or yarn.
+-   Make sure you always clean up extra stuff (`npm cache clean --force`)
+-   Use `CMD node`, not `npm`
+-   `npm` does not work well as an init process, which is how containers work. 1 process launches everything else.
+    -   `npm` does not pass signals correctly to node and tends to improperly shut down the container.
+
+#### WORKDIR or mkdir
+
+-   Use `WORKDIR` and not `RUN cd`/`RUN mkdir`
+    -   ...however `WORKDIR` will not set permissions on dirs like `chown`
+
+### FROM Base Image Guidelines
+
+-   Base image is the image all of your Node apps will be built on.
+-   Stick to even numbered major Node releases
+    -   Even=stable, odd=experimental
+-   Don't use `:latest` tag
+-   Pick a stable node version early and stick with that
+-   Start with Debian if migrating versions
+-   Stick with what you know and move to Alpine (more minimal and smaller) later
+    -   Not every app will work flawlessly out of the box using an Alpine base image
+-   Don't use `:slim`
+    -   ...but it has `apt`. Use this only if you CAN'T use Alpine. May be a PITA to modify.
+-   Don't use `:onbuild`.
+    -   It's a Dockerfile command that we don't use (why tho?)
+    -   It tends to cause problems later on
+    -   Originally it was the idea that commands could be set in an official repo that would execute whenever you pulled an image
+    -   This caused users to experience a lack of causality in their commands and not be able to know what was being executed
+
+#### <https://hub.docker.com/_/node>
+
+-   All images by default use Debian as their base image.
+    -   You get `apt`, `openssl`, `bash`, etc.
+-   Latest image is >800MB
+-   We will use 11/alpine and 10/alpine.
+
+### When to use Alpine, Debian, or CentOS images
+
+- <https://kubedex.com/follow-up-container-scanning-comparison/>
+- <https://www.youtube.com/watch?v=e2pAkcqYCG8>
+
+#### Alpine
+
+-   Alpine is 'small' and 'sec focused'
+-   Minimal utilities OOTB
+-   But Debian/Ubuntu bases are smaller now too (100MB/85MB)
+    -   Used to be 150/200MB
+-   Who cares about 100MB anyways?
+    -   IoT?
+-   Alpine has its own issues
+    -   2018 nodemon had a problem only on Alpine
+-   Alpine CVE scanning fails
+    -   Current Alpine CVE scanning doesn't work due to an Alpine file translation database linking issue
+    -   Debian/Ubuntu/CentOS do work better with the CVE scanning
+
+- Enterprises may require CentOS or Ubuntu/Debian (there is no CentOS/RHEL Node image)
+
+### Assignment: Making a CentOS Node Image
+
+See code repo at top.
