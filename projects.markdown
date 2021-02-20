@@ -41,6 +41,10 @@ There is also a package on the Python Package Index (PyPI).
 
 <https://pypi.org/project/twitter-fire-scraper/>
 
+This is a useful Git guide I wrote for my teammates.
+
+<https://github.com/HenryFBP/IPRO497-Analytics-Team/blob/master/Documents/How%20to%20contribute%20to%20this%20project.pdf>
+
 ### Whitepaper
 
 [You can read the whitepaper produced for this project by clicking here.](/static/files/IPRO - Improving Incident Response of the American Red Cross in the Greater Chicago Area by Using Text Classification of Posts From Twitter.pdf)
