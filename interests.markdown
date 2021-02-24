@@ -54,16 +54,40 @@ Nature is something I love, and camping is super relaxing for me.
 
 ## Video Games
 
-### Minecraft 
+### Minecraft, and more
 
 Minecraft is likely my most-played game, with over 1,500 hours.
 
 Factorio, Terraria, and other derivatives are stuff I love.
 
-### FPS
+- Rimworld
+- Dwarf Fortress
+- Far Cry
+- Oxygen Not Included
 
-I also adore the Doom (DOS esp.) series and Castlevania (GBA games!).
+### FPS/MP Shooter
+
+I also adore the Doom (DOS esp.) series and other good shooters.
+
+- Quake Eternal
+- Splitgate Arena Warfare
+- Wolfenstein
+- ULTRAKILL
 
 ### Fighting
 
 Super Smash Brothers is great too.
+
+- Ultra Fight da Kyanta 2
+
+### Etc
+
+- Cogmind
+- Hackmud
+- Rust
+- Dyson Sphere Program
+- FATE
+- Castlevania (GBA games!)
+- Summon Night Swordcraft Story
+- Harvest Moon
+- WarioWare
