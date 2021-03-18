@@ -12,9 +12,9 @@ This is a list of certifications/classes I have taken.
 
 ## School
 
-### Illinois Institute of Technology: Undergraduate (Bachelor's)
+### Illinois Institute of Technology: Bachelor's in Information Technology Management
 
-My major was ITM during my undergraduate degree (bachelor's).
+My major was Information Technology Management during my undergraduate degree.
 
 #### Summer 2014
 SCI 111 - Computational Science
