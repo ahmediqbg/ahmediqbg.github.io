@@ -2,7 +2,7 @@
 title: Henry Post
 draft: false
 role: Security Analyst
-avatar: images/icon.png
+avatar: images/pictures-of-me/headshot.jpg
 bio: "
 
 SITE UNDER CONSTRUCTION!<br><br>
