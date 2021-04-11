@@ -11,4 +11,4 @@ If you forgot to do that, you can run these commands to initialize and fetch fro
 
 ## Running
 
-    hugo serve
+    hugo serve 
