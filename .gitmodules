@@ -1,5 +1,5 @@
-[submodule "themes/hugo-eureka"]
-	path = themes/hugo-eureka
+[submodule "themes/eureka"]
+	path = themes/eureka
 	url = https://github.com/wangchucheng/hugo-eureka
 [submodule "themes/ananke"]
 	path = themes/ananke
