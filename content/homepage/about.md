@@ -4,6 +4,9 @@ draft: false
 role: Security Analyst
 avatar: images/icon.png
 bio: "
+
+SITE UNDER CONSTRUCTION!<br><br>
+
 This is the website of me, Henry Post, and it has my work experience, personal projects, and general info about me.
 "
 organization:
