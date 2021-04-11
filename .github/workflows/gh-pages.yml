@@ -21,9 +21,9 @@ jobs:
           # extended: true
 
       - name: Custom Bandcamp step
-        run: 
-          - ls -lash
-          - echo 'wee woo wee woo WEEWOOWEEWOOWEEWOOWEEWOO'
+        run: |
+          ls -lash
+          echo 'wee woo wee woo WEEWOOWEEWOOWEEWOOWEEWOO'
 
       - name: Build
         run: hugo --minify
