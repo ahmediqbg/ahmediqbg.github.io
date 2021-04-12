@@ -8,3 +8,6 @@ main:
   - name: Docs
     url: /docs/
     weight: 3
+  - name: Resume
+    url: /resume/
+    weight: 4
