@@ -116,16 +116,16 @@ ITMS 448 - Cyber Security Technologies
 
 <https://udemy.com/course/buffer-overflow-course-exploit-development/>
 
-![](/static/images/udemy-certificates/UC-01ed10f6-3061-436f-b74d-f6be27737cdc.jpg)
+![](/images/udemy-certificates/UC-01ed10f6-3061-436f-b74d-f6be27737cdc.jpg)
 
 ### Expert Malware Analysis and Reverse Engineering
 
 <https://www.udemy.com/course/expert-malware-analysis-and-reverse-engineering/>
 
-![](/static/images/udemy-certificates/UC-4bd750a8-8a31-443b-9cce-eb92d76d21f8.jpg)
+![](/images/udemy-certificates/UC-4bd750a8-8a31-443b-9cce-eb92d76d21f8.jpg)
 
 ### Kali Linux Web App Pentesting Labs
 
 <https://www.udemy.com/course/kali-linux-web-app-pentesting-labs/>
 
-![](/static/images/udemy-certificates/UC-f69d96a5-084a-47ee-be3f-7c501416f7a8.jpg)
+![](/images/udemy-certificates/UC-f69d96a5-084a-47ee-be3f-7c501416f7a8.jpg)

@@ -45,13 +45,13 @@ This is a useful Git guide I wrote for my teammates.
 
 ### Whitepaper
 
-[You can read the whitepaper produced for this project by clicking here.](/static/files/IPRO - Improving Incident Response of the American Red Cross in the Greater Chicago Area by Using Text Classification of Posts From Twitter.pdf)
+[You can read the whitepaper produced for this project by clicking here.](/files/IPRO%20-%20Improving%20Incident%20Response%20of%20the%20American%20Red%20Cross%20in%20the%20Greater%20Chicago%20Area%20by%20Using%20Text%20Classification%20of%20Posts%20From%20Twitter.pdf)
 
 ### Awards
 
 We won both Dean's Choice and Best in Track for a total of two awards.
 
-<img src="/static/images/awards-tfs.jpg" width="1175">
+<img src="/images/awards-tfs.jpg" width="1175">
 
 ## OPAC Library Reference PC Replacement
 
@@ -63,28 +63,28 @@ old. The only purpose these new computers would serve would be to provide access
 <!-- TODO: FIX overflow on some of the ```code blocks``` in the MD files! -->
 
 -   Backing up and restoring
-    [(MD)](/static/files/opac-documentation/BACKING_UP_AND_RESTORING.txt)
-    [(PDF)](/static/files/opac-documentation/BACKING_UP_AND_RESTORING.pdf)
+    [(MD)](/files/opac-documentation/BACKING_UP_AND_RESTORING.txt)
+    [(PDF)](/files/opac-documentation/BACKING_UP_AND_RESTORING.pdf)
 
 -   Booting into Linux
-    [(MD)](/static/files/opac-documentation/BOOTING_INTO_LINUX.txt)
-    [(PDF)](/static/files/opac-documentation/BOOTING_INTO_LINUX.pdf)
+    [(MD)](/files/opac-documentation/BOOTING_INTO_LINUX.txt)
+    [(PDF)](/files/opac-documentation/BOOTING_INTO_LINUX.pdf)
 
 -   Configuration directories
-    [(MD)](/static/files/opac-documentation/CONFIGURATION_DIRECTORIES.txt)
-    [(PDF)](/static/files/opac-documentation/CONFIGURATION_DIRECTORIES.pdf)
+    [(MD)](/files/opac-documentation/CONFIGURATION_DIRECTORIES.txt)
+    [(PDF)](/files/opac-documentation/CONFIGURATION_DIRECTORIES.pdf)
 
 -   Making a new Linux flash drive
-    [(MD)](/static/files/opac-documentation/MAKING_A_NEW_LINUX_FLASH_DRIVE.txt)
-    [(PDF)](/static/files/opac-documentation/MAKING_A_NEW_LINUX_FLASH_DRIVE.pdf)
+    [(MD)](/files/opac-documentation/MAKING_A_NEW_LINUX_FLASH_DRIVE.txt)
+    [(PDF)](/files/opac-documentation/MAKING_A_NEW_LINUX_FLASH_DRIVE.pdf)
 
 -   Power user tips
-    [(MD)](/static/files/opac-documentation/POWER_USER_TIPS.txt)
-    [(PDF)](/static/files/opac-documentation/POWER_USER_TIPS.pdf)
+    [(MD)](/files/opac-documentation/POWER_USER_TIPS.txt)
+    [(PDF)](/files/opac-documentation/POWER_USER_TIPS.pdf)
 
 -   Whitelisting new domains
-    [(MD)](/static/files/opac-documentation/WHITELISTING_NEW_DOMAINS.txt)
-    [(PDF)](/static/files/opac-documentation/WHITELISTING_NEW_DOMAINS.pdf)
+    [(MD)](/files/opac-documentation/WHITELISTING_NEW_DOMAINS.txt)
+    [(PDF)](/files/opac-documentation/WHITELISTING_NEW_DOMAINS.pdf)
 
 
 ## Arduino Soil Tester
