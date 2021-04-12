@@ -1,7 +1,33 @@
 ---
 title: Certifications
-toc: true
 ---
+
+## TOC
+
+<!-- TOC -->
+
+- [TOC](#toc)
+- [Aside](#aside)
+- [School](#school)
+    - [Illinois Institute of Technology: Bachelor's in Information Technology Management](#illinois-institute-of-technology-bachelors-in-information-technology-management)
+        - [Summer 2014](#summer-2014)
+        - [Fall 2015](#fall-2015)
+        - [Spring 2016](#spring-2016)
+        - [Fall 2016](#fall-2016)
+        - [Spring 2017](#spring-2017)
+        - [Fall 2017](#fall-2017)
+        - [Spring 2018](#spring-2018)
+        - [Fall 2018](#fall-2018)
+        - [Spring 2019](#spring-2019)
+        - [Fall 2019](#fall-2019)
+- [UDemy Classes](#udemy-classes)
+    - [Ethical Hacking & Bug Hunting: Buffer Overflow For Beginners](#ethical-hacking--bug-hunting-buffer-overflow-for-beginners)
+    - [Expert Malware Analysis and Reverse Engineering](#expert-malware-analysis-and-reverse-engineering)
+    - [Kali Linux Web App Pentesting Labs](#kali-linux-web-app-pentesting-labs)
+
+<!-- /TOC -->
+
+## Aside
 
 This is a list of certifications/classes I have taken.
 

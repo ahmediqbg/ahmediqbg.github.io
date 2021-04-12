@@ -2,6 +2,34 @@
 title: Resume
 ---
 
+## TOC
+
+<!-- TOC -->
+
+- [TOC](#toc)
+- [Aside](#aside)
+- [Summary of employment](#summary-of-employment)
+    - [Security Analyst, U.S. Bank](#security-analyst-us-bank)
+    - [Private Tutor, Wyzant](#private-tutor-wyzant)
+    - [Librarian/IT Contractor, Martha's Vineyard, Massachusetts](#librarianit-contractor-marthas-vineyard-massachusetts)
+    - [Computer Science and ITM Tutor, Illinois Institute of Technology](#computer-science-and-itm-tutor-illinois-institute-of-technology)
+    - [Technician, uBreakiFix](#technician-ubreakifix)
+    - [Junior Engineer, Northside College Preparatory High School](#junior-engineer-northside-college-preparatory-high-school)
+- [Education](#education)
+    - [Illinois Institute of Technology](#illinois-institute-of-technology)
+    - [Northside College Preparatory High School](#northside-college-preparatory-high-school)
+- [Work](#work)
+    - [Security Analyst](#security-analyst)
+    - [Private Tutor, Wyzant](#private-tutor-wyzant)
+    - [CS and ITM Tutor](#cs-and-itm-tutor)
+    - [Technician](#technician)
+    - [Librarian/IT Contractor, Oak Bluffs Public Library](#librarianit-contractor-oak-bluffs-public-library)
+    - [Junior Engineer](#junior-engineer)
+
+<!-- /TOC -->
+
+## Aside
+
 [Click here to download a PDF version.](/files/resume.pdf)
 	
 Henry Post
