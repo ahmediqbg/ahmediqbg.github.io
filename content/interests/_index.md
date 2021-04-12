@@ -6,6 +6,8 @@ title: Interests
 
 TODO - FIX BANDCAMP TEMPLATE TAGS...
 
+<div>Short Description of {{.Site.Data.User0123.Name}}: <p>{{ index .Site.Data.User0123 "Short Description" | markdownify }}</p></div>
+
 ## Recreation
 
 I like to run and swim in my free time, and (rarely) will scuba dive.
