@@ -19,7 +19,7 @@ organization:
 social:
   - icon: envelope
     iconPack: fas
-    url: mailto:example@example.com
+    url: mailto:resplendent.falconeer@gmail.com
   # - icon: twitter
   #   iconPack: fab
   #   url: https://example.com/
@@ -61,17 +61,3 @@ I'm a Security Analyst at U.S. Bank, Illinois Institute of Technology alumni, an
 In my free time I like to bake, go cycling, play video games, and scuba dive (if I have enough time).
 
 Check out <u>[my GitHub](https://github.com/HenryFBP/)</u> for code that I make, and message me if you'd like to get tutored on something or have any questions.
-
-
-## Details  
-
-Nunc pellentesque vitae:
-- Morbi accumsan nibh efficitur diam molestie, non dignissim diam facilisis.
-- Donec dignissim leo in mollis faucibus.
-- Donec blandit lacus a pellentesque fermentum.
-
-Donec mollis sollicitudin:
-- Nunc dictum purus ornare purus consectetur, eu pellentesque massa ullamcorper.
-- Aliquam eu leo vitae justo aliquam tincidunt.
-- Fusce non massa id augue interdum feugiat sed et nulla.
-- Vivamus molestie augue in tristique laoreet.
