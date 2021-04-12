@@ -3,11 +3,8 @@ layout: post
 title:  "Snort Intrusion Detection, Rule Writing, and PCAP Analysis"
 date:   2020-05-30
 categories: [network, security]
+toc: true
 ---
-
-## TOC
-* This will become a table of contents. Don't touch!
-{:toc}
 
 ## The course
 

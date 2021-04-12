@@ -1,12 +1,9 @@
 ---
 title: Certifications
+toc: true
 ---
 
 This is a list of certifications/classes I have taken.
-
-## TOC
-* This will become a table of contents. Don't touch!
-{:toc}
 
 ## School
 

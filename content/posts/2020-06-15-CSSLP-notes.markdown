@@ -3,9 +3,10 @@ layout: post
 title: "Certified Secure Software Lifecycle Professional (CSSLP) Notes"
 date: 2020-06-15
 categories: [programming, certification, security]
+toc: true
 ---
 
-## TOC
+## Preamble
 
 <https://www.isc2.org/Certifications/CSSLP>
 
@@ -15,10 +16,6 @@ are useful to you as well!
 I made a program to study for this test. Feel free to use it.
 
 <https://github.com/HenryFBP/pyconsolequiz>
-
-* 
-This will become a table of contents. Don't touch!  
-{:toc}
 
 ## Secure Software Concepts
 

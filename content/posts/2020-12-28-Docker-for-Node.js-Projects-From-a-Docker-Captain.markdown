@@ -3,18 +3,15 @@ layout: post
 title: "Docker for Node.js Projects From a Docker Captain"
 date: 2020-12-28
 categories: [docker, programming, security]
+toc: true
 ---
 
 
-## TOC
+## Preamble
 
 From <https://www.udemy.com/course/docker-mastery-for-nodejs/>.
 
 Code/work in <http://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain.git>.
-
-* 
-This will become a table of contents. Don't touch!  
-{:toc}
 
 ## Section 2: Docker Compose Basics
 
