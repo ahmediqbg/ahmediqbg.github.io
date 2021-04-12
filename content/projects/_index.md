@@ -2,6 +2,24 @@
 title: Projects
 ---
 
+
+## TOC
+
+<!-- TOC -->
+
+- [TOC](#toc)
+- [OSINT Dashboard: "Bowser"](#osint-dashboard-bowser)
+- [Using Big Data Analytics & Visualization: Improving Preparedness & Responsiveness to Fire Emergencies & Other Disasters](#using-big-data-analytics--visualization-improving-preparedness--responsiveness-to-fire-emergencies--other-disasters)
+    - [Whitepaper](#whitepaper)
+    - [Awards](#awards)
+- [OPAC Library Reference PC Replacement](#opac-library-reference-pc-replacement)
+    - [Guides](#guides)
+- [Arduino Soil Tester](#arduino-soil-tester)
+- [Mathematica ASCII Compression Algorithm](#mathematica-ascii-compression-algorithm)
+- [Desktop-in-a-suitcase](#desktop-in-a-suitcase)
+
+<!-- /TOC -->
+
 ## OSINT Dashboard: "Bowser"
 
 This is a group project that invovled creating a dashboard to gather open-source intelligence.
