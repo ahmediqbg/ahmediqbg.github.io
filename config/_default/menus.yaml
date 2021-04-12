@@ -1,13 +1,42 @@
 main:
-  - name: About
-    url: '#about'
+  - name: Contact
+    url: /contact/
+    weight: 2
+
+  - name: About Site
+    url: /about-site/
     weight: 1
+
   - name: Posts
     url: /posts/
-    weight: 2
-  - name: Docs
-    url: /docs/
     weight: 3
+
+  - name: Interests
+    url: /interests/
+    weight: 4
+
+  - name: Projects
+    url: /projects/
+    weight: 5
+
   - name: Resume
     url: /resume/
-    weight: 4
+    weight: 6
+
+  - name: Skills
+    url: /skills/
+    weight: 7
+
+  - name: Certifications
+    url: /certifications/
+    weight: 8
+
+  - name: Why me?
+    url: /why-me/
+    weight: 8
+
+  - name: Docs
+    url: /docs/
+    weight: 10
+
+#     about-site contact posts interests projects resume skills certifications why-me?
