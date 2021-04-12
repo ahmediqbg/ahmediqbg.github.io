@@ -14,7 +14,7 @@ Clone <http://github.com/HenryFBP/henryFBP.github.io> and just edit it and reupl
 
 Alternatively, you can [fork it](https://github.com/HenryFBP/henryfbp.github.io/fork).
 
-See [this link](xxx todo) for more info.
+See [this link](https://www.wangchucheng.com/en/docs/hugo-eureka/getting-started/) and [this intro link](https://gohugo.io/getting-started/installing/) for more info.
 
 ## Q: Nice favicon. Where's it from?
 
