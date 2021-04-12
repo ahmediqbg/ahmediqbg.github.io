@@ -7,6 +7,10 @@ bio: "
 
 SITE UNDER CONSTRUCTION!<br><br>
 
+TODO:<br>
+- FIX TOC<br>
+- FIX ARTICLE DATES/NAMES<br>
+
 This is the website of me, Henry Post, and it has my work experience, personal projects, and general info about me.
 "
 organization:
