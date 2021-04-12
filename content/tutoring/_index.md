@@ -1,7 +1,5 @@
 ---
-layout: page
-title: Tutoring Reviews
-permalink: /tutoring/
+title: Tutoring
 ---
 
 Wyzant is a tutoring website that I used to teach while I was enrolled in my undergrad degree at IIT.
