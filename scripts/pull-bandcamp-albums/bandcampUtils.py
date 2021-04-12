@@ -15,7 +15,7 @@ ITEM_NUM=10
 
 
 def get_data_folder():
-    output_dir = Path("../../_data/").resolve()
+    output_dir = Path("../../data/").resolve()
     file_folder = Path(__file__).parent
     return Path.joinpath(file_folder, output_dir)
 
