@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Skills
-permalink: /skills/
 ---
 
 This section is a detailed breakdown of my skills and knowledge. A resume for people who like to read!
