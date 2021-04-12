@@ -3,6 +3,7 @@ layout: post
 title:  "On making security easy to implement"
 date:   2020-05-25 13:30:00 -0500
 categories: [personal, programming, security, rant]
+draft: true
 ---
 
 # THIS IS A DRAFT

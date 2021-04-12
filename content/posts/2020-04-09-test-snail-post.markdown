@@ -3,6 +3,7 @@ layout: post
 title:  "test post"
 date:   2020-04-09 13:30:07 -0500
 categories: test
+draft: true
 ---
 
 hello i am test post
