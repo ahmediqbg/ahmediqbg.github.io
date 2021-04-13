@@ -25,11 +25,11 @@ Nature is something I love, and camping is super relaxing for me.
 
 ### Recently Wishlisted Bandcamp Albums
 
-{{< bandcamppurchases >}}
+{{< bandcampwishlist >}}
 
 ### Recently Purchased Bandcamp Albums
 
-{{< bandcampwishlist >}}
+{{< bandcamppurchases >}}
 
 ## Video Games
 
