@@ -4,6 +4,8 @@ title: Interests
 
 <!--<script src="/static/js/bandcamp.js"> JK, CORS prevents me from working. ;_;_-->
 
+{{< mathtest >}}
+
 TODO - FIX BANDCAMP TEMPLATE TAGS...
 
 <div>Short Description of {{.Site.Data.User0123.Name}}: <p>{{ index .Site.Data.User0123 "Short Description" | markdownify }}</p></div>

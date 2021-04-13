@@ -16,3 +16,7 @@ If you forgot to do that, you can run these commands to initialize and fetch fro
 ## Setup
 
 Read <https://www.wangchucheng.com/en/docs/hugo-eureka/getting-started/>
+
+## Other Resources
+
+- <https://ruddra.com/hugo-add-toc-anywhere/>
