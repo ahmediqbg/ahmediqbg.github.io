@@ -13,6 +13,10 @@ If you forgot to do that, you can run these commands to initialize and fetch fro
 
     hugo serve 
 
+### Draft mode
+
+    hugo serve -D
+
 ## Setup
 
 Read <https://www.wangchucheng.com/en/docs/hugo-eureka/getting-started/>
