@@ -33,7 +33,7 @@ main:
 
   - name: Why me?
     url: /why-me/
-    weight: 8
+    weight: 9
 
   - name: Docs
     url: /docs/
