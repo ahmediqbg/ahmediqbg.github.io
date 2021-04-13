@@ -2,14 +2,6 @@
 title: Interests
 ---
 
-<!--<script src="/static/js/bandcamp.js"> JK, CORS prevents me from working. ;_;_-->
-
-{{< mathtest >}}
-
-TODO - FIX BANDCAMP TEMPLATE TAGS...
-
-<div>Short Description of {{.Site.Data.User0123.Name}}: <p>{{ index .Site.Data.User0123 "Short Description" | markdownify }}</p></div>
-
 ## Recreation
 
 I like to run and swim in my free time, and (rarely) will scuba dive.
@@ -33,28 +25,11 @@ Nature is something I love, and camping is super relaxing for me.
 
 ### Recently Wishlisted Bandcamp Albums
 
-<div style="height: 50vh; overflow: auto;">
-
-{%- for album in site.data.bandcamp_wishlisted_albums -%}
-    
-<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album={{ album.id }}/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="{{ album.item_url | escape }}">{{ album.title | escape }}</a></iframe>
-
-{%- endfor -%}
-
-</div>
-
+{{< bandcamppurchases >}}
 
 ### Recently Purchased Bandcamp Albums
 
-<div style="height: 50vh; overflow: auto;">
-
-{%- for album in site.data.bandcamp_purchased_albums -%}
-    
-<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album={{ album.id }}/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="{{ album.item_url | escape }}">{{ album.title | escape }}</a></iframe>
-
-{%- endfor -%}
-
-</div>
+{{< bandcampwishlist >}}
 
 ## Video Games
 

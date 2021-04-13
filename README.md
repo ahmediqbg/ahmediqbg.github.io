@@ -20,3 +20,4 @@ Read <https://www.wangchucheng.com/en/docs/hugo-eureka/getting-started/>
 ## Other Resources
 
 - <https://ruddra.com/hugo-add-toc-anywhere/>
+- <https://gohugobrasil.netlify.app/templates/data-templates/>
