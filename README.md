@@ -25,3 +25,9 @@ Read <https://www.wangchucheng.com/en/docs/hugo-eureka/getting-started/>
 
 - <https://ruddra.com/hugo-add-toc-anywhere/>
 - <https://gohugobrasil.netlify.app/templates/data-templates/>
+
+## TODO
+
+-   fix favicon
+    -   resources.GetMatch icon hugo
+    -   link rel="icon"
