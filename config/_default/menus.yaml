@@ -11,8 +11,8 @@ main:
     url: /posts/
     weight: 3
 
-  - name: Interests
-    url: /interests/
+  - name: Hobbies
+    url: /hobbies/
     weight: 4
 
   - name: Projects
@@ -39,4 +39,4 @@ main:
   #   url: /docs/
   #   weight: 10
 
-#     about-site contact posts interests projects resume skills certifications why-me?
+#     about-site contact posts hobbies projects resume skills certifications why-me?

@@ -1,5 +1,5 @@
 ---
-title: Interests
+title: Hobbies
 ---
 
 ## Recreation

@@ -1661,7 +1661,7 @@ This one looks like:
 
 This data is (probably) data you're the most familiar with.
 
-<a href="/interests/">Click this for an example of unstructured data.</a>
+<a href="/hobbies/">Click this for an example of unstructured data.</a>
 
 Emails, word documents, reports, essays, letters, ...paintings, etc. are all unstructured data. That machines do not know how to process. You can write whatever you want in an email or essay, especially a word document, ESPECIALLY a powerpoint.
 
