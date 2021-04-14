@@ -35,8 +35,8 @@ main:
     url: /why-me/
     weight: 9
 
-  - name: Docs
-    url: /docs/
-    weight: 10
+  # - name: Docs
+  #   url: /docs/
+  #   weight: 10
 
 #     about-site contact posts interests projects resume skills certifications why-me?
