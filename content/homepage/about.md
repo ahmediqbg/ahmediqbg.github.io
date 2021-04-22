@@ -1,5 +1,5 @@
 ---
-title: Ed
+title: Ed test
 draft: false
 role: Security Analyst
 avatar: images/pictures-of-me/headshot.jpg
