@@ -1,5 +1,5 @@
 ---
-title: Henry Post
+title: Ed
 draft: false
 role: Security Analyst
 avatar: images/pictures-of-me/headshot.jpg
