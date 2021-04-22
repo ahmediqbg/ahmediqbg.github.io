@@ -1,13 +1,13 @@
 ---
-title: Ed test
+title: Ed
 draft: false
-role: Security Analyst
+role: Computer Engineering Student
 avatar: images/pictures-of-me/headshot.jpg
 bio: "
 This is the website of me, Henry Post, and it has my work experience, personal projects, and general info about me.
 "
 organization:
-  name: U.S. Bank
+  name: Harding University
   url: https://www.usbank.com/index.html
 social:
   - icon: envelope
@@ -47,9 +47,9 @@ widget:
 
 ## Self Introduction
 
-<i><small>Opinions expressed are solely my own and do not express the views or opinions of my employer.</small></i>
+<i><small>This site.</small></i>
 
-I'm a Security Analyst at U.S. Bank, Illinois Institute of Technology alumni, and used to work as a private tutor for Python, Java, and web development.
+I'm a Senior at Harding University, and used to work as a private tutor for C++, JavaScript, and varouis math levels ranging from calculus to differential equation .
 
 In my free time I like to bake, go cycling, play video games, and scuba dive (if I have enough time).
 
