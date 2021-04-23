@@ -11,9 +11,9 @@ main:
     url: /posts/
     weight: 3
 
-  - name: Hobbies
-    url: /hobbies/
-    weight: 4
+  # - name: Hobbies
+  #   url: /hobbies/
+  #   weight: 4
 
   - name: Projects
     url: /projects/
@@ -27,9 +27,9 @@ main:
     url: /skills/
     weight: 7
 
-  - name: Certifications
-    url: /certifications/
-    weight: 8
+  # - name: Certifications
+  #   url: /certifications/
+  #   weight: 8
 
   - name: Why me?
     url: /why-me/

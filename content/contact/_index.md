@@ -4,18 +4,12 @@ title: Contact
 
 ## Github
 
-<https://github.com/HenryFBP/>
+<https://github.com/ahmedqibg/>
 
 ## LinkedIn
 
-<https://www.linkedin.com/in/henryfbp/>
+<https://www.linkedin.com/in/ahmed-abdulamir-6579901b6>
 
-## Email
-    resplendent [dot] falconeer [at] g/m/a/i/l [dot] c.o.m
 
-If you want a fast response, I suggest using Google Hangouts to ping me in Gmail.
 
-I don't check my email often but check Google Hangouts more frequently.
-
-## Nintendo Switch Friend Code
-    SW-1744-0564-6702
+If you want a fast response, I suggest reaching out to me via email at <aabdulamir@harding.edu>

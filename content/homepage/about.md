@@ -4,21 +4,21 @@ draft: false
 role: Computer Engineering Student
 avatar: images/pictures-of-me/headshot.jpg
 bio: "
-This is the website of me, Henry Post, and it has my work experience, personal projects, and general info about me.
+This is the website of me, Ed Abdulamir, and it has my work experience, personal projects, and general info about me.
 "
 organization:
   name: Harding University
-  url: https://www.usbank.com/index.html
+  url: https://www.harding.edu/
 social:
   - icon: envelope
     iconPack: fas
-    url: mailto:resplendent.falconeer@gmail.com
+    url: mailto:aabdulamir@haarding.edu
   # - icon: twitter
   #   iconPack: fab
   #   url: https://example.com/
   - icon: github
     iconPack: fab
-    url: https://github.com/HenryFBP
+    url: https://github.com/ahmediqbg
 
 weight: 1
 widget:
@@ -47,10 +47,9 @@ widget:
 
 ## Self Introduction
 
-<i><small>This site.</small></i>
+<i><small>This site will only give you a rough idea of my personality, as text cannot express how outgoing I am</small></i>
 
-I'm a Senior at Harding University, and used to work as a private tutor for C++, JavaScript, and varouis math levels ranging from calculus to differential equation .
+I'm a senior at Harding University, and used to work as a private tutor for C++, JavaScript, and varouis math levels ranging from calculus to differential equation .
 
-In my free time I like to bake, go cycling, play video games, and scuba dive (if I have enough time).
+In my free time I like to play soccer, go cycling, listen to music, and try new food.
 
-Check out <u>[my GitHub](https://github.com/HenryFBP/)</u> for code that I make, and message me if you'd like to get tutored on something or have any questions.
