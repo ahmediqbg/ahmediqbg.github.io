@@ -9,6 +9,8 @@ If you forgot to do that, you can run these commands to initialize and fetch fro
     git submodule init
     git submodule update
 
+test
+
 ## Running
 
     hugo serve 
