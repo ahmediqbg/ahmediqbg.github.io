@@ -4,6 +4,7 @@ title: "Certified Secure Software Lifecycle Professional (CSSLP) Notes"
 date: 2020-06-15
 categories: [programming, certification, security]
 toc: true
+draft: true
 ---
 
 ## Preamble

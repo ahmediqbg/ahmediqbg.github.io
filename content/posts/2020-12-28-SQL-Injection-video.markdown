@@ -3,6 +3,7 @@ layout: post
 title: "SQL Injection Video"
 date: 2021-01-19
 categories: [sql injection, injection, programming, security]
+draft: true
 ---
 
 A video I made about SQL Injection. Took about 5 hours total. I don't do video editing or stuff like this frequently, but thought I'd post it here. Enjoy!

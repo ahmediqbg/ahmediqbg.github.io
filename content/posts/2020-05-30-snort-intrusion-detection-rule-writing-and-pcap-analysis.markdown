@@ -4,6 +4,7 @@ title:  "Snort Intrusion Detection, Rule Writing, and PCAP Analysis"
 date:   2020-05-30
 categories: [network, security]
 toc: true
+draft: true
 ---
 
 ## The course
