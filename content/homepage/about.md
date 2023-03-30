@@ -49,7 +49,7 @@ widget:
 
 <i><small>This site will only give you a rough idea of my personality, as text cannot express how outgoing I am</small></i>
 
-I'm a senior at Harding University, and used to work as a private tutor for C++, JavaScript, and varouis math levels ranging from calculus to differential equation .
+I'm a computer engineering graduate of Harding University, and used to work as a private tutor for C++, JavaScript, and varouis math levels ranging from calculus to differential equation. I am now working with Amazon in operations as an Area Manager. 
 
 In my free time I like to play soccer, go cycling, listen to music, and try new food.
 
