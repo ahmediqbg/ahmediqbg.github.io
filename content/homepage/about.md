@@ -6,6 +6,7 @@ avatar: images/pictures-of-me/headshot.jpg
 bio: "
 This is the website of me, Ed Abdulamir, and it has my work experience, personal projects, and general info about me.
 "
+testParam: "testValue"
 organization:
   name: Harding University
   url: https://www.harding.edu/

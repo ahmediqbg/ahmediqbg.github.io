@@ -25,6 +25,12 @@
 
     </div>
 
+    {{ with .Params.testParam }}
+    <div class="py-8 text-lg leading-normal">
+      {{ . | markdownify }}
+    </div>
+    {{ end }}
+
     {{ with .Params.bio }}
       <div class="py-8 text-lg leading-normal">
         {{ . | markdownify }}
