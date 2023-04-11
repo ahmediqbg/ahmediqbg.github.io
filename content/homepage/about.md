@@ -1,12 +1,12 @@
 ---
 title: Ed
 draft: false
-role: Computer Engineering Student
+role: Computer Engineering Graduate
 avatar: images/pictures-of-me/headshot.jpg
 bio: "
 This is the website of me, Ed Abdulamir, and it has my work experience, personal projects, and general info about me.
 "
-testParam: "testValue"
+testParam: "Occupation: Amazon Operations- Area Manager"
 organization:
   name: Harding University
   url: https://www.harding.edu/
